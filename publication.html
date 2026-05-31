@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication Details</title>
+    <!-- Use Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-light">
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <h1 class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">Karel Berka</a></h1>
+            <nav class="nav">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#publications" class="nav-link">Publications</a>
+                <a href="index.html#activity" class="nav-link">Activity</a>
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle dark mode">
+                    <!-- Sun/Moon SVG logic is handled by JS -->
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Subpage Content -->
+    <main class="container" style="padding-top: 120px; padding-bottom: 80px; min-height: calc(100vh - 200px);">
+        
+        <div id="loading-state" style="text-align: center; padding: 4rem 0;">
+            <p>Loading publication details...</p>
+        </div>
+
+        <div id="error-state" class="hidden" style="text-align: center; padding: 4rem 0;">
+            <h2>Publication Not Found</h2>
+            <p>We couldn't find the requested publication. It may have been removed or the link is incorrect.</p>
+            <a href="index.html#publications" class="btn-primary" style="margin-top: 1rem; display: inline-block;">Return to Portfolio</a>
+        </div>
+
+        <div id="pub-details" class="pub-details-container hidden">
+            <a href="index.html#publications" class="back-link">← Back to all publications</a>
+            
+            <div class="pub-details-grid">
+                <!-- Left: Large Image -->
+                <div class="pub-details-image">
+                    <img id="pd-image" src="" alt="Publication artwork">
+                </div>
+
+                <!-- Right: Details -->
+                <div class="pub-details-content">
+                    <div class="pub-meta">
+                        <span id="pd-category" class="topic-tag">Category</span>
+                        <span id="pd-year" class="pub-year-badge">Year</span>
+                    </div>
+                    
+                    <h2 id="pd-title" class="pd-title">Title</h2>
+                    <p id="pd-authors" class="pd-authors">Authors</p>
+                    <p id="pd-journal" class="pd-journal">Journal</p>
+                    
+                    <div class="pd-actions" style="margin-top: 2rem;">
+                        <a id="btn-official" href="#" target="_blank" rel="noopener" class="btn btn-primary hidden">Official Publication</a>
+                        <a id="btn-oa" href="#" target="_blank" rel="noopener" class="btn btn-secondary hidden">Read Open Access</a>
+                        <a id="btn-preprint" href="#" target="_blank" rel="noopener" class="btn btn-secondary hidden">Read Preprint</a>
+                        <a id="btn-github" href="#" target="_blank" rel="noopener" class="btn btn-secondary hidden">GitHub</a>
+                    </div>
+                    
+                    <div class="pd-abstract-container">
+                        <h3>Abstract</h3>
+                        <p id="pd-abstract" class="pd-abstract">Abstract text will go here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Karel Berka. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Load Data and JS -->
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Publication Rendering Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const pubId = urlParams.get('id');
+
+            const loading = document.getElementById('loading-state');
+            const error = document.getElementById('error-state');
+            const details = document.getElementById('pub-details');
+
+            if (!pubId || typeof publicationsData === 'undefined') {
+                loading.classList.add('hidden');
+                error.classList.remove('hidden');
+                return;
+            }
+
+            // Find the publication in the data array
+            const pub = publicationsData.find(p => p.id === pubId);
+
+            if (!pub) {
+                loading.classList.add('hidden');
+                error.classList.remove('hidden');
+                return;
+            }
+
+            // Render Data
+            document.getElementById('pd-image').src = pub.image;
+            document.getElementById('pd-title').textContent = pub.title;
+            document.getElementById('pd-authors').textContent = pub.authors || 'Karel Berka et al.';
+            
+            // Build Journal string with ročník/volume, issue, pages
+            let journalStr = pub.journal || 'Preprint / Manuscript';
+            if (pub.year) {
+                journalStr += ', ' + pub.year;
+            }
+            if (pub.volume) {
+                journalStr += ', ' + pub.volume;
+            }
+            if (pub.issue) {
+                journalStr += '(' + pub.issue + ')';
+            }
+            if (pub.pages) {
+                journalStr += ', ' + pub.pages;
+            }
+            
+            document.getElementById('pd-journal').textContent = journalStr;
+            document.getElementById('pd-year').textContent = pub.year;
+            document.getElementById('pd-category').textContent = pub.category;
+            
+            const abstractElem = document.getElementById('pd-abstract');
+            if (pub.abstract) {
+                abstractElem.textContent = pub.abstract;
+            } else {
+                abstractElem.innerHTML = '<em>No abstract available for this record.</em>';
+            }
+
+            // Buttons
+            const btnOfficial = document.getElementById('btn-official');
+            if (pub.doi) {
+                btnOfficial.href = 'https://doi.org/' + pub.doi;
+                btnOfficial.textContent = 'doi: ' + pub.doi;
+                btnOfficial.classList.remove('hidden');
+            }
+
+            const btnOa = document.getElementById('btn-oa');
+            const btnPreprint = document.getElementById('btn-preprint');
+            if (pub.oa_url) {
+                if (pub.oa_is_preprint) {
+                    btnPreprint.href = pub.oa_url;
+                    btnPreprint.classList.remove('hidden');
+                } else {
+                    btnOa.href = pub.oa_url;
+                    btnOa.classList.remove('hidden');
+                }
+            }
+            
+            const btnGithub = document.getElementById('btn-github');
+            if (pub.github) {
+                btnGithub.href = pub.github;
+                btnGithub.classList.remove('hidden');
+            }
+
+            // Show details
+            loading.classList.add('hidden');
+            details.classList.remove('hidden');
+            
+            // Set document title
+            document.title = pub.title + " - Karel Berka";
+        });
+    </script>
+</body>
+</html>
