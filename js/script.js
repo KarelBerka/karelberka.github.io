@@ -158,9 +158,19 @@ function initMolecularCanvas() {
         if (lang === 'cs') {
             langEnElements.forEach(el => el.style.display = 'none');
             langCsElements.forEach(el => el.style.display = ''); // Revert to default display
+            
+            // Translate placeholders
+            document.querySelectorAll('[data-placeholder-cs]').forEach(el => {
+                el.placeholder = el.getAttribute('data-placeholder-cs');
+            });
         } else {
             langCsElements.forEach(el => el.style.display = 'none');
             langEnElements.forEach(el => el.style.display = ''); // Revert to default display
+            
+            // Translate placeholders
+            document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+                el.placeholder = el.getAttribute('data-placeholder-en');
+            });
         }
         document.documentElement.lang = lang;
         localStorage.setItem('kb-lang', lang);
@@ -470,10 +480,15 @@ function initContactForm() {
         e.preventDefault(); // Intercept actual submission
 
         const submitBtn = form.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.textContent;
+        const originalBtnHTML = submitBtn.innerHTML;
+        const currentLang = document.documentElement.lang || 'en';
         
         // Visual sending state
-        submitBtn.textContent = 'Sending Message...';
+        if (currentLang === 'cs') {
+            submitBtn.textContent = 'Odesílám zprávu...';
+        } else {
+            submitBtn.textContent = 'Sending Message...';
+        }
         submitBtn.disabled = true;
 
         const name = document.getElementById('form-name').value;
@@ -482,12 +497,18 @@ function initContactForm() {
         // Since it's a GitHub pages static site, we mock the success. 
         // In the real world, the user can hook this up to Formspree, Web3Forms or standard mailto.
         setTimeout(() => {
-            submitBtn.textContent = originalBtnText;
+            submitBtn.innerHTML = originalBtnHTML;
             submitBtn.disabled = false;
 
             // Show positive feedback
             feedback.className = 'form-feedback success';
-            feedback.innerHTML = `Thank you, <strong>${name}</strong>! Your inquiry regarding your selected topic has been simulated. In a live environment, this would submit to <strong>karel.berka@upol.cz</strong>.`;
+            feedback.style.display = 'block';
+            
+            if (currentLang === 'cs') {
+                feedback.innerHTML = `Děkuji, <strong>${name}</strong>! Váš dotaz ohledně vybraného tématu byl simulován. V ostrém provozu by byl odeslán na adresu <strong>karel.berka@upol.cz</strong>.`;
+            } else {
+                feedback.innerHTML = `Thank you, <strong>${name}</strong>! Your inquiry regarding your selected topic has been simulated. In a live environment, this would submit to <strong>karel.berka@upol.cz</strong>.`;
+            }
             
             // Scroll feedback into view
             feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

@@ -2603,38 +2603,44 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title"><span class="lang-en">Get in Touch</span><span class="lang-cs" style="display: none;">Kontakt</span></h2>
-                    <p class="section-subtitle">Reach out for academic collaborations, research queries, or student projects</p>
+                    <p class="section-subtitle">
+                        <span class="lang-en">Reach out for academic collaborations, research queries, or student projects</span>
+                        <span class="lang-cs" style="display: none;">Neváhejte mě kontaktovat ohledně vědecké spolupráce, výzkumných dotazů nebo studentských prací</span>
+                    </p>
                     <div class="divider"></div>
                 </div>
                 <div class="grid grid-2">
                     <div class="contact-info-block">
-                        <h3>Office &amp; Laboratory Address</h3>
-<div class="lang-en">
-                        <p class="office-lead">Department of Physical Chemistry</p>
-                        <p class="office-sub">Faculty of Science, Palacký University Olomouc</p>
+                        <h3>
+                            <span class="lang-en">Office &amp; Laboratory Address</span>
+                            <span class="lang-cs" style="display: none;">Adresa kanceláře a laboratoře</span>
+                        </h3>
+                        
+                        <div class="lang-en">
+                            <p class="office-lead">Department of Physical Chemistry</p>
+                            <p class="office-sub">Faculty of Science, Palacký University Olomouc</p>
+                        </div>
+                        <div class="lang-cs" style="display: none;">
+                            <p class="office-lead">Katedra fyzikální chemie</p>
+                            <p class="office-sub">Přírodovědecká fakulta, Univerzita Palackého v Olomouci</p>
+                        </div>
                         
                         <div class="address-details">
                             <div class="address-item">
-</div>
-<div class="lang-cs" style="display: none;">
-                        <p class="office-lead">Katedra fyzikální chemie</p>
-                        <p>Přírodovědecká fakulta, Univerzita Palackého v Olomouci</p>
-                        <p>17. listopadu 1192/12</p>
-                        <p>771 46 Olomouc</p>
-                        <p>Česká republika</p>
-</div>
                                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
                                     <circle cx="12" cy="10" r="3"></circle>
                                 </svg>
-                                <span>17. listopadu 12, 771 46 Olomouc, Czech Republic</span>
+                                <span class="lang-en">17. listopadu 12, 771 46 Olomouc, Czech Republic</span>
+                                <span class="lang-cs" style="display: none;">tř. 17. listopadu 1192/12, 771 46 Olomouc, Česká republika</span>
                             </div>
                             <div class="address-item">
                                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
                                 </svg>
-                                <span>Room 3.009</span>
+                                <span class="lang-en">Room 3.009</span>
+                                <span class="lang-cs" style="display: none;">Kancelář 3.009</span>
                             </div>
                             <div class="address-item">
                                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
@@ -2667,30 +2673,53 @@
                     </div>
 
                     <div class="contact-form-block">
-                        <h3>Send a Message</h3>
+                        <h3>
+                            <span class="lang-en">Send a Message</span>
+                            <span class="lang-cs" style="display: none;">Napište mi zprávu</span>
+                        </h3>
                         <form id="contact-form" action="#" method="POST">
                             <div class="form-group">
-                                <label for="form-name">Name</label>
-                                <input type="text" id="form-name" name="name" required placeholder="Dr. Jane Doe">
+                                <label for="form-name">
+                                    <span class="lang-en">Name</span>
+                                    <span class="lang-cs" style="display: none;">Jméno</span>
+                                </label>
+                                <input type="text" id="form-name" name="name" required placeholder="Dr. Jane Doe" data-placeholder-en="Dr. Jane Doe" data-placeholder-cs="Dr. Jan Novák">
                             </div>
                             <div class="form-group">
-                                <label for="form-email">Email Address</label>
+                                <label for="form-email">
+                                    <span class="lang-en">Email Address</span>
+                                    <span class="lang-cs" style="display: none;">E-mailová adresa</span>
+                                </label>
                                 <input type="email" id="form-email" name="email" required placeholder="jane.doe@example.com">
                             </div>
                             <div class="form-group">
-                                <label for="form-subject">Subject</label>
+                                <label for="form-subject">
+                                    <span class="lang-en">Subject</span>
+                                    <span class="lang-cs" style="display: none;">Předmět</span>
+                                </label>
                                 <select id="form-subject" name="subject">
-                                    <option value="collaboration">Research Collaboration</option>
-                                    <option value="student">Student Thesis / Internship</option>
-                                    <option value="tools">MOLEonline / ChannelsDB / MolMeDB Query</option>
-                                    <option value="other">General Inquiry</option>
+                                    <option value="collaboration" class="lang-en">Research Collaboration</option>
+                                    <option value="student" class="lang-en">Student Thesis / Internship</option>
+                                    <option value="tools" class="lang-en">MOLEonline / ChannelsDB / MolMeDB Query</option>
+                                    <option value="other" class="lang-en">General Inquiry</option>
+                                    
+                                    <option value="collaboration" class="lang-cs" style="display: none;">Vědecká spolupráce</option>
+                                    <option value="student" class="lang-cs" style="display: none;">Diplomová/bakalářská práce / Stáž</option>
+                                    <option value="tools" class="lang-cs" style="display: none;">Dotaz k MOLEonline / ChannelsDB / MolMeDB</option>
+                                    <option value="other" class="lang-cs" style="display: none;">Obecný dotaz</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="form-message">Message</label>
-                                <textarea id="form-message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+                                <label for="form-message">
+                                    <span class="lang-en">Message</span>
+                                    <span class="lang-cs" style="display: none;">Zpráva</span>
+                                </label>
+                                <textarea id="form-message" name="message" rows="5" required placeholder="Write your message here..." data-placeholder-en="Write your message here..." data-placeholder-cs="Zde napište svou zprávu..."></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <span class="lang-en">Send Message</span>
+                                <span class="lang-cs" style="display: none;">Odeslat zprávu</span>
+                            </button>
                             <div id="form-feedback" class="form-feedback"></div>
                         </form>
                     </div>
@@ -2706,8 +2735,11 @@
                 <div class="footer-signature-wrapper">
                     <img src="img/profile/BioAlphabet.png" alt="Karel Berka protein signature" class="footer-signature-img">
                 </div>
-                <p>&copy; 2026 Prof. Karel Berka. All rights reserved.</p>
-                <p class="footer-sub">Built with vanilla HTML/CSS/JS for high performance and zero dependencies.</p>
+                <p>&copy; 2026 Prof. Karel Berka. <span class="lang-en">All rights reserved.</span><span class="lang-cs" style="display: none;">Všechna práva vyhrazena.</span></p>
+                <p class="footer-sub">
+                    <span class="lang-en">Built with vanilla HTML/CSS/JS for high performance and zero dependencies.</span>
+                    <span class="lang-cs" style="display: none;">Vytvořeno v čistém HTML/CSS/JS pro vysoký výkon a nulové závislosti.</span>
+                </p>
             </div>
             <div class="footer-right">
                 <div class="social-links">
