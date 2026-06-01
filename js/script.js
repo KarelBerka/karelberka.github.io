@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initPublicationsFilter();
     initCopyDOI();
     initContactForm();
-    initSocialFeed();
 });
 
 /* ==========================================================================
@@ -505,63 +504,6 @@ function initContactForm() {
     });
 }
 
-/* ==========================================================================
-   8. Social Networks Feed Interactivity
-   ========================================================================== */
-function initSocialFeed() {
-    const feedTabBtns = document.querySelectorAll('.feed-tab-btn');
-    const feedTabContents = document.querySelectorAll('.feed-tab-content');
 
-    if (feedTabBtns && feedTabContents) {
-        feedTabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const feedId = btn.getAttribute('data-feed');
-                
-                feedTabBtns.forEach(b => {
-                    b.classList.remove('active');
-                    b.setAttribute('aria-selected', 'false');
-                });
-                feedTabContents.forEach(c => c.classList.remove('active'));
-                
-                btn.classList.add('active');
-                btn.setAttribute('aria-selected', 'true');
-                const targetContent = document.getElementById(`feed-${feedId}`);
-                if (targetContent) targetContent.classList.add('active');
-            });
-        });
-    }
-
-    // Social Feed Interactive Likes & Reposts
-    const actionBtns = document.querySelectorAll('.feed-action-btn');
-    if (actionBtns) {
-        actionBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const countSpan = btn.querySelector('.count');
-                let count = parseInt(countSpan.textContent, 10);
-                
-                if (btn.classList.contains('like-btn')) {
-                    if (btn.classList.contains('liked')) {
-                        btn.classList.remove('liked');
-                        count--;
-                    } else {
-                        btn.classList.add('liked');
-                        count++;
-                    }
-                } else if (btn.classList.contains('repost-btn')) {
-                    if (btn.classList.contains('reposted')) {
-                        btn.classList.remove('reposted');
-                        count--;
-                    } else {
-                        btn.classList.add('reposted');
-                        count++;
-                    }
-                }
-                
-                countSpan.textContent = count;
-            });
-        
-});
-    }
-}
 
 

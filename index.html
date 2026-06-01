@@ -134,7 +134,7 @@
                 </div>
                 <div class="grid grid-2">
                     <!-- Left Column: Intro & STAG -->
-                    <div>
+                    <div id="teaching">
                         <div class="lang-en">
                             <p>
                                 I am actively involved in teaching at the Department of Physical Chemistry. My primary courses focus on computational chemistry, biomolecular simulations, and drug design.
@@ -2513,185 +2513,85 @@
             </div>
         </section>
 
-        <!-- Social Feed & Updates Section -->
-        <section id="social-feed" class="section alt-bg">
+        <!-- ChemData Lab Section -->
+        <section id="chemdata" class="section alt-bg">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title"><span class="lang-en">Updates &amp; Social Feed</span><span class="lang-cs" style="display: none;">Novinky a sítě</span></h2>
-                    <p class="section-subtitle">Stay connected with our latest research activities and announcements</p>
+                    <h2 class="section-title">
+                        <span class="lang-en">ChemData Lab</span>
+                        <span class="lang-cs" style="display: none;">ChemData Lab</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        <span class="lang-en">Research group in computational chemistry, structural bioinformatics, and database development</span>
+                        <span class="lang-cs" style="display: none;">Výzkumná skupina v oblasti výpočetní chemie, strukturní bioinformatiky a vývoje databází</span>
+                    </p>
                     <div class="divider"></div>
                 </div>
 
-                <div class="social-feed-container">
-                    <div class="feed-tabs-wrapper">
-                        <div class="feed-tabs" role="tablist" aria-label="Social feeds">
-                            <button class="feed-tab-btn active" data-feed="bluesky" role="tab" aria-selected="true">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px; vertical-align: middle;">
-                                    <path d="M12 10.8c-1.5-2.2-4.5-5.3-7.5-6.8C2 2.8.8 3.5.8 5.3c0 .8.4 4.8.6 5.7.4 1.7 1.5 2.1 3 1.8-2.6.5-5.2 2-5.2 4.7 0 3 4.2 4.2 6.8 2.2 1 .8 2.5 2 4 2 1.5 0 3-1.2 4-2 2.6 2 6.8.8 6.8-2.2 0-2.7-2.6-4.2-5.2-4.7 1.5.3 2.6-.1 3-1.8.2-.9.6-4.9.6-5.7 0-1.8-1.2-2.5-3.7-1.3-3 1.5-6 4.6-7.5 6.8z"/>
-                                </svg>
-                                Bluesky / X
-                            </button>
-                            <button class="feed-tab-btn" data-feed="linkedin" role="tab" aria-selected="false">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 8px; vertical-align: middle;">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                </svg>
-                                LinkedIn
-                            </button>
-                            <button class="feed-tab-btn" data-feed="news" role="tab" aria-selected="false">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;">
-                                    <path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v11"></path>
-                                    <path d="M12 12H5"></path>
-                                    <path d="M16 8H5"></path>
-                                    <polyline points="21 8 21 20 17 20"></polyline>
-                                </svg>
-                                Lab News
-                            </button>
-                        </div>
+                <div class="grid grid-2">
+                    <!-- Left: About the Lab -->
+                    <div class="chemdata-info">
+                        <h3 class="subsection-title">
+                            <span class="lang-en">Our Focus</span>
+                            <span class="lang-cs" style="display: none;">Náš výzkum</span>
+                        </h3>
+                        <p class="lang-en">
+                            The ChemData Lab at Palacký University Olomouc bridges chemical data science with biology and physics. We develop state-of-the-art tools and databases to study biomolecular systems, focusing on:
+                        </p>
+                        <p class="lang-cs" style="display: none;">
+                            ChemData Lab na Univerzitě Palackého v Olomouci propojuje chemickou datovou vědu s biologií a fyzikou. Vyvíjíme špičkové nástroje a databáze pro studium biomolekulárních systémů se zaměřením na:
+                        </p>
+                        <ul class="custom-list" id="tools">
+                            <li>
+                                <span class="lang-en"><strong>Biomacromolecular Channels</strong>: Analyzing tunnels, pores, and gates in proteins (developers of MOLEonline and ChannelsDB).</span>
+                                <span class="lang-cs" style="display: none;"><strong>Biomakromolekulární kanály</strong>: Analýza tunelů, pórů a hradel v proteinech (vývojáři MOLEonline a ChannelsDB).</span>
+                            </li>
+                            <li>
+                                <span class="lang-en"><strong>Membrane Simulations</strong>: Studying small-molecule interactions with phospholipid bilayers (developers of MolMeDB).</span>
+                                <span class="lang-cs" style="display: none;"><strong>Membránové simulace</strong>: Studium interakcí malých molekul s fosfolipidovými dvouvrstvami (vývojáři MolMeDB).</span>
+                            </li>
+                            <li>
+                                <span class="lang-en"><strong>Drug Design & Machine Learning</strong>: Applying deep learning to predict transport kinetics and molecular properties.</span>
+                                <span class="lang-cs" style="display: none;"><strong>Návrh léčiv a strojové učení</strong>: Využití hlubokého učení pro predikci kinetiky transportu a molekulárních vlastností.</span>
+                            </li>
+                        </ul>
                     </div>
 
-                    <div class="feed-content-area">
-                        <!-- Bluesky / X Feed -->
-                        <div class="feed-tab-content active" id="feed-bluesky">
-                            <div class="feed-list">
-                                <!-- Post 1 -->
-                                <div class="feed-card">
-                                    <div class="feed-card-header">
-                                        <img src="img/profile/Ja_2015_by_Jorge_Cham_PhD_Comics_AP-0074.jpg" alt="Karel Berka caricature" class="feed-avatar">
-                                        <div class="feed-user-meta">
-                                            <span class="feed-display-name">Karel Berka</span>
-                                            <span class="feed-handle">@karelberka.bsky.social</span>
-                                            <span class="feed-date">• 2d ago</span>
-                                        </div>
-                                        <div class="feed-platform-icon">
-                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" class="bluesky-color">
-                                                <path d="M12 10.8c-1.5-2.2-4.5-5.3-7.5-6.8C2 2.8.8 3.5.8 5.3c0 .8.4 4.8.6 5.7.4 1.7 1.5 2.1 3 1.8-2.6.5-5.2 2-5.2 4.7 0 3 4.2 4.2 6.8 2.2 1 .8 2.5 2 4 2 1.5 0 3-1.2 4-2 2.6 2 6.8.8 6.8-2.2 0-2.7-2.6-4.2-5.2-4.7 1.5.3 2.6-.1 3-1.8.2-.9.6-4.9.6-5.7 0-1.8-1.2-2.5-3.7-1.3-3 1.5-6 4.6-7.5 6.8z"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="feed-card-body">
-                                        <p>Excited to present our collaborative paper in <em>PCCP</em> analyzing ladderane lipids inside anammox bacterial membranes. Phenomenal work combining MD simulation and lipid vesicle assembly with František Štěpánek (UCT Prague) and coworkers! 🧬🔬 <a href="https://doi.org/10.1039/D5CP05432A" target="_blank" rel="noopener" class="feed-link">doi.org/10.1039/D5CP05432A</a></p>
-                                    </div>
-                                    <div class="feed-card-footer">
-                                        <button class="feed-action-btn like-btn" aria-label="Like post">
-                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                                            </svg>
-                                            <span class="count">48</span>
-                                        </button>
-                                        <button class="feed-action-btn repost-btn" aria-label="Repost">
-                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <polyline points="17 1 21 5 17 9"></polyline>
-                                                <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-                                                <polyline points="7 23 3 19 7 15"></polyline>
-                                                <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-                                            </svg>
-                                            <span class="count">12</span>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- Post 2 -->
-                                <div class="feed-card">
-                                    <div class="feed-card-header">
-                                        <img src="img/profile/Ja_2015_by_Jorge_Cham_PhD_Comics_AP-0074.jpg" alt="Karel Berka caricature" class="feed-avatar">
-                                        <div class="feed-user-meta">
-                                            <span class="feed-display-name">Karel Berka</span>
-                                            <span class="feed-handle">@karelberka.bsky.social</span>
-                                            <span class="feed-date">• 1w ago</span>
-                                        </div>
-                                        <div class="feed-platform-icon">
-                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" class="bluesky-color">
-                                                <path d="M12 10.8c-1.5-2.2-4.5-5.3-7.5-6.8C2 2.8.8 3.5.8 5.3c0 .8.4 4.8.6 5.7.4 1.7 1.5 2.1 3 1.8-2.6.5-5.2 2-5.2 4.7 0 3 4.2 4.2 6.8 2.2 1 .8 2.5 2 4 2 1.5 0 3-1.2 4-2 2.6 2 6.8.8 6.8-2.2 0-2.7-2.6-4.2-5.2-4.7 1.5.3 2.6-.1 3-1.8.2-.9.6-4.9.6-5.7 0-1.8-1.2-2.5-3.7-1.3-3 1.5-6 4.6-7.5 6.8z"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="feed-card-body">
-                                        <p>Atomic Charge Calculator III is officially out in <em>Nucleic Acids Research</em>! Our web service now handles computing charges on millions of atoms in a few seconds. Supported by ELIXIR-CZ computational infrastructure. Try it out at <a href="https://acc3.biodata.ceitec.cz" target="_blank" rel="noopener" class="feed-link">acc3.biodata.ceitec.cz</a> ⚡️💻</p>
-                                    </div>
-                                    <div class="feed-card-footer">
-                                        <button class="feed-action-btn like-btn" aria-label="Like post">
-                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                                            </svg>
-                                            <span class="count">64</span>
-                                        </button>
-                                        <button class="feed-action-btn repost-btn" aria-label="Repost">
-                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <polyline points="17 1 21 5 17 9"></polyline>
-                                                <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
-                                                <polyline points="7 23 3 19 7 15"></polyline>
-                                                <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
-                                            </svg>
-                                            <span class="count">18</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- Right: Thesis Announcements -->
+                    <div class="chemdata-announcements">
+                        <div class="announcement-header">
+                            <span class="badge">Announcements</span>
+                            <h3 class="subsection-title">
+                                <span class="lang-en">🎓 Thesis Opportunities (2026/2027)</span>
+                                <span class="lang-cs" style="display: none;">🎓 Témata vysokoškolských prací (2026/2027)</span>
+                            </h3>
                         </div>
-
-                        <!-- LinkedIn Feed -->
-                        <div class="feed-tab-content" id="feed-linkedin">
-                            <div class="feed-list">
-                                <div class="feed-card">
-                                    <div class="feed-card-header">
-                                        <img src="img/profile/Ja_2015_by_Jorge_Cham_PhD_Comics_AP-0074.jpg" alt="Karel Berka caricature" class="feed-avatar">
-                                        <div class="feed-user-meta">
-                                            <span class="feed-display-name">Karel Berka</span>
-                                            <span class="feed-handle">Professor at Palacký University Olomouc</span>
-                                            <span class="feed-date">• 5d ago</span>
-                                        </div>
-                                        <div class="feed-platform-icon">
-                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" class="linkedin-color">
-                                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="feed-card-body">
-                                        <p>Honored to be part of the ELIXIR and Toxicology Community paper published in F1000Research! Our joint efforts will help establish clear workflows and standard data exchanges for computer-aided toxicology across European infrastructures. A big thanks to all co-authors for this fantastic community achievement. 🔗📈</p>
-                                    </div>
-                                    <div class="feed-card-footer">
-                                        <button class="feed-action-btn like-btn" aria-label="Like post">
-                                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-                                            </svg>
-                                            <span class="count">112</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Lab News Feed -->
-                        <div class="feed-tab-content" id="feed-news">
-                            <div class="feed-list">
-                                <div class="feed-card">
-                                    <div class="feed-card-header">
-                                        <div class="feed-avatar news-avatar">CD</div>
-                                        <div class="feed-user-meta">
-                                            <span class="feed-display-name">ChemData Lab Announcements</span>
-                                            <span class="feed-handle">chemdata.upol.cz</span>
-                                            <span class="feed-date">• May 2026</span>
-                                        </div>
-                                        <div class="feed-platform-icon">
-                                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="news-color">
-                                                <path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v11"></path>
-                                                <polyline points="21 8 21 20 17 20"></polyline>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="feed-card-body">
-                                        <h4>🎓 Thesis Opportunities for Academic Year 2026/2027</h4>
-                                        <p>ChemData Lab is offering new Bachelor and Master thesis topics focusing on:</p>
-                                        <ul style="padding-left: 20px; margin-bottom: 12px; font-size: 0.95rem; color: var(--text-secondary);">
-                                            <li>Predicting small-molecule membrane transport kinetics using deep learning.</li>
-                                            <li>Geometric modeling of biomacromolecular channel gates in the AlphaFold Database.</li>
-                                            <li>Development of interactive visualizations for channel profiling.</li>
-                                        </ul>
-                                        <p>Students will gain hands-on experience in computational chemistry, PyTorch modeling, and web service engineering. Drop an email to Karel Berka or visit Office 3.009 for more details!</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="lang-en">
+                            We offer Bachelor, Master, and Ph.D. thesis topics for motivated students interested in computational chemistry, deep learning (PyTorch), and web service engineering:
+                        </p>
+                        <p class="lang-cs" style="display: none;">
+                            Nabízíme témata bakalářských, diplomových a disertačních prací pro motivované studenty se zájmem o výpočetní chemii, hluboké učení (PyTorch) a vývoj webových služeb:
+                        </p>
+                        <ul class="opportunities-list">
+                            <li>
+                                <span class="lang-en">Predicting small-molecule membrane transport kinetics using deep learning.</span>
+                                <span class="lang-cs" style="display: none;">Predikce kinetiky transportu malých molekul přes membrány pomocí hlubokého učení.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Geometric modeling of biomacromolecular channel gates in the AlphaFold Database.</span>
+                                <span class="lang-cs" style="display: none;">Geometrické modelování hradel biomakromolekulárních kanálů v databázi AlphaFold.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Development of interactive web visualizations for protein channel profiling.</span>
+                                <span class="lang-cs" style="display: none;">Vývoj interaktivních webových vizualizací pro profilování proteinových kanálů.</span>
+                            </li>
+                        </ul>
+                        <p class="opportunities-contact lang-en">
+                            Students gain hands-on experience with modern computational toolkits. Contact <strong>Karel Berka</strong> (<a href="mailto:karel.berka@upol.cz" class="inline-link">karel.berka@upol.cz</a>) or visit Office 3.009 for details.
+                        </p>
+                        <p class="opportunities-contact lang-cs" style="display: none;">
+                            Studenti získají praktické zkušenosti s moderními výpočetními nástroji. Kontaktujte <strong>Karla Berku</strong> (<a href="mailto:karel.berka@upol.cz" class="inline-link">karel.berka@upol.cz</a>) nebo navštivte kancelář 3.009.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -2824,6 +2724,16 @@
                         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                             <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                        </svg>
+                    </a>
+                    <a href="https://bsky.app/profile/karelberka.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky Profile">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M12 10.8c-1.5-2.2-4.5-5.3-7.5-6.8C2 2.8.8 3.5.8 5.3c0 .8.4 4.8.6 5.7.4 1.7 1.5 2.1 3 1.8-2.6.5-5.2 2-5.2 4.7 0 3 4.2 4.2 6.8 2.2 1 .8 2.5 2 4 2 1.5 0 3-1.2 4-2 2.6 2 6.8.8 6.8-2.2 0-2.7-2.6-4.2-5.2-4.7 1.5.3 2.6-.1 3-1.8.2-.9.6-4.9.6-5.7 0-1.8-1.2-2.5-3.7-1.3-3 1.5-6 4.6-7.5 6.8z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                         </svg>
                     </a>
                 </div>
