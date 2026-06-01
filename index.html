@@ -88,8 +88,8 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
+        <!-- About Section (Hero) -->
+        <section id="about" class="hero-section">
             <div class="container hero-container">
                 <div class="hero-content">
                     <span class="badge">Academic Homepage</span>
@@ -101,7 +101,6 @@
                     <p class="hero-description">
                         Leading research in <strong>computational chemistry</strong>, <strong>structural bioinformatics</strong>, and <strong>biomolecular simulation</strong> at Palacký University Olomouc. Creating advanced software and database platforms to decipher protein structures, channels, and small-molecule membrane transport.
                     </p>
-
 
                     <div class="hero-actions">
                         <a href="#tools" class="btn btn-primary">Explore Scientific Tools</a>
@@ -116,7 +115,7 @@
                 </div>
             </div>
             <div class="hero-scroll-indicator">
-                <a href="#about" aria-label="Scroll down to About section">
+                <a href="#chemdata" aria-label="Scroll down to ChemData Lab section">
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="12" y1="5" x2="12" y2="19"></line>
                         <polyline points="19 12 12 19 5 12"></polyline>
@@ -125,16 +124,100 @@
             </div>
         </section>
 
-        <!-- About & Affiliations Section -->
-        <section id="about" class="section">
+        <!-- ChemData Lab Section -->
+        <section id="chemdata" class="section alt-bg">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title"><span class="lang-en">Biography &amp; Affiliations</span><span class="lang-cs" style="display: none;">O mně &amp; Afilace</span></h2>
+                    <h2 class="section-title">
+                        <span class="lang-en">ChemData Lab</span>
+                        <span class="lang-cs" style="display: none;">ChemData Lab</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        <span class="lang-en">Research group in computational chemistry, structural bioinformatics, and database development</span>
+                        <span class="lang-cs" style="display: none;">Výzkumná skupina v oblasti výpočetní chemie, strukturní bioinformatiky a vývoje databází</span>
+                    </p>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="grid grid-2">
+                    <!-- Left: About the Lab -->
+                    <div class="chemdata-info">
+                        <h3 class="subsection-title">
+                            <span class="lang-en">Our Focus</span>
+                            <span class="lang-cs" style="display: none;">Náš výzkum</span>
+                        </h3>
+                        <p class="lang-en">
+                            The ChemData Lab at Palacký University Olomouc bridges chemical data science with biology and physics. We develop state-of-the-art tools and databases to study biomolecular systems, focusing on:
+                        </p>
+                        <p class="lang-cs" style="display: none;">
+                            ChemData Lab na Univerzitě Palackého v Olomouci propojuje chemickou datovou vědu s biologií a fyzikou. Vyvíjíme špičkové nástroje a databáze pro studium biomolekulárních systémů se zaměřením na:
+                        </p>
+                        <ul class="custom-list" id="tools">
+                            <li>
+                                <span class="lang-en"><strong>Biomacromolecular Channels</strong>: Analyzing tunnels, pores, and gates in proteins (developers of MOLEonline and ChannelsDB).</span>
+                                <span class="lang-cs" style="display: none;"><strong>Biomakromolekulární kanály</strong>: Analýza tunelů, pórů a hradel v proteinech (vývojáři MOLEonline a ChannelsDB).</span>
+                            </li>
+                            <li>
+                                <span class="lang-en"><strong>Membrane Simulations</strong>: Studying small-molecule interactions with phospholipid bilayers (developers of MolMeDB).</span>
+                                <span class="lang-cs" style="display: none;"><strong>Membránové simulace</strong>: Studium interakcí malých molekul s fosfolipidovými dvouvrstvami (vývojáři MolMeDB).</span>
+                            </li>
+                            <li>
+                                <span class="lang-en"><strong>Drug Design & Machine Learning</strong>: Applying deep learning to predict transport kinetics and molecular properties.</span>
+                                <span class="lang-cs" style="display: none;"><strong>Návrh léčiv a strojové učení</strong>: Využití hlubokého učení pro predikci kinetiky transportu a molekulárních vlastností.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Right: Thesis Announcements -->
+                    <div class="chemdata-announcements">
+                        <div class="announcement-header">
+                            <span class="badge">Announcements</span>
+                            <h3 class="subsection-title">
+                                <span class="lang-en">🎓 Thesis Opportunities (2026/2027)</span>
+                                <span class="lang-cs" style="display: none;">🎓 Témata vysokoškolských prací (2026/2027)</span>
+                            </h3>
+                        </div>
+                        <p class="lang-en">
+                            We offer Bachelor, Master, and Ph.D. thesis topics for motivated students interested in computational chemistry, deep learning (PyTorch), and web service engineering:
+                        </p>
+                        <p class="lang-cs" style="display: none;">
+                            Nabízíme témata bakalářských, diplomových a disertačních prací pro motivované studenty se zájmem o výpočetní chemii, hluboké učení (PyTorch) a vývoj webových služeb:
+                        </p>
+                        <ul class="opportunities-list">
+                            <li>
+                                <span class="lang-en">Predicting small-molecule membrane transport kinetics using deep learning.</span>
+                                <span class="lang-cs" style="display: none;">Predikce kinetiky transportu malých molekul přes membrány pomocí hlubokého učení.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Geometric modeling of biomacromolecular channel gates in the AlphaFold Database.</span>
+                                <span class="lang-cs" style="display: none;">Geometrické modelování hradel biomakromolekulárních kanálů v databázi AlphaFold.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Development of interactive web visualizations for protein channel profiling.</span>
+                                <span class="lang-cs" style="display: none;">Vývoj interaktivních webových vizualizací pro profilování proteinových kanálů.</span>
+                            </li>
+                        </ul>
+                        <p class="opportunities-contact lang-en">
+                            Students gain hands-on experience with modern computational toolkits. Contact <strong>Karel Berka</strong> (<a href="mailto:karel.berka@upol.cz" class="inline-link">karel.berka@upol.cz</a>) or visit Office 3.009 for details.
+                        </p>
+                        <p class="opportunities-contact lang-cs" style="display: none;">
+                            Studenti získají praktické zkušenosti s moderními výpočetními nástroji. Kontaktujte <strong>Karla Berku</strong> (<a href="mailto:karel.berka@upol.cz" class="inline-link">karel.berka@upol.cz</a>) nebo navštivte kancelář 3.009.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teaching Section -->
+        <section id="teaching" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title"><span class="lang-en">Teaching</span><span class="lang-cs" style="display: none;">Výuka</span></h2>
                     <div class="divider"></div>
                 </div>
                 <div class="grid grid-2">
                     <!-- Left Column: Intro & STAG -->
-                    <div id="teaching">
+                    <div>
                         <div class="lang-en">
                             <p>
                                 I am actively involved in teaching at the Department of Physical Chemistry. My primary courses focus on computational chemistry, biomolecular simulations, and drug design.
@@ -2513,89 +2596,7 @@
             </div>
         </section>
 
-        <!-- ChemData Lab Section -->
-        <section id="chemdata" class="section alt-bg">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">
-                        <span class="lang-en">ChemData Lab</span>
-                        <span class="lang-cs" style="display: none;">ChemData Lab</span>
-                    </h2>
-                    <p class="section-subtitle">
-                        <span class="lang-en">Research group in computational chemistry, structural bioinformatics, and database development</span>
-                        <span class="lang-cs" style="display: none;">Výzkumná skupina v oblasti výpočetní chemie, strukturní bioinformatiky a vývoje databází</span>
-                    </p>
-                    <div class="divider"></div>
-                </div>
 
-                <div class="grid grid-2">
-                    <!-- Left: About the Lab -->
-                    <div class="chemdata-info">
-                        <h3 class="subsection-title">
-                            <span class="lang-en">Our Focus</span>
-                            <span class="lang-cs" style="display: none;">Náš výzkum</span>
-                        </h3>
-                        <p class="lang-en">
-                            The ChemData Lab at Palacký University Olomouc bridges chemical data science with biology and physics. We develop state-of-the-art tools and databases to study biomolecular systems, focusing on:
-                        </p>
-                        <p class="lang-cs" style="display: none;">
-                            ChemData Lab na Univerzitě Palackého v Olomouci propojuje chemickou datovou vědu s biologií a fyzikou. Vyvíjíme špičkové nástroje a databáze pro studium biomolekulárních systémů se zaměřením na:
-                        </p>
-                        <ul class="custom-list" id="tools">
-                            <li>
-                                <span class="lang-en"><strong>Biomacromolecular Channels</strong>: Analyzing tunnels, pores, and gates in proteins (developers of MOLEonline and ChannelsDB).</span>
-                                <span class="lang-cs" style="display: none;"><strong>Biomakromolekulární kanály</strong>: Analýza tunelů, pórů a hradel v proteinech (vývojáři MOLEonline a ChannelsDB).</span>
-                            </li>
-                            <li>
-                                <span class="lang-en"><strong>Membrane Simulations</strong>: Studying small-molecule interactions with phospholipid bilayers (developers of MolMeDB).</span>
-                                <span class="lang-cs" style="display: none;"><strong>Membránové simulace</strong>: Studium interakcí malých molekul s fosfolipidovými dvouvrstvami (vývojáři MolMeDB).</span>
-                            </li>
-                            <li>
-                                <span class="lang-en"><strong>Drug Design & Machine Learning</strong>: Applying deep learning to predict transport kinetics and molecular properties.</span>
-                                <span class="lang-cs" style="display: none;"><strong>Návrh léčiv a strojové učení</strong>: Využití hlubokého učení pro predikci kinetiky transportu a molekulárních vlastností.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Right: Thesis Announcements -->
-                    <div class="chemdata-announcements">
-                        <div class="announcement-header">
-                            <span class="badge">Announcements</span>
-                            <h3 class="subsection-title">
-                                <span class="lang-en">🎓 Thesis Opportunities (2026/2027)</span>
-                                <span class="lang-cs" style="display: none;">🎓 Témata vysokoškolských prací (2026/2027)</span>
-                            </h3>
-                        </div>
-                        <p class="lang-en">
-                            We offer Bachelor, Master, and Ph.D. thesis topics for motivated students interested in computational chemistry, deep learning (PyTorch), and web service engineering:
-                        </p>
-                        <p class="lang-cs" style="display: none;">
-                            Nabízíme témata bakalářských, diplomových a disertačních prací pro motivované studenty se zájmem o výpočetní chemii, hluboké učení (PyTorch) a vývoj webových služeb:
-                        </p>
-                        <ul class="opportunities-list">
-                            <li>
-                                <span class="lang-en">Predicting small-molecule membrane transport kinetics using deep learning.</span>
-                                <span class="lang-cs" style="display: none;">Predikce kinetiky transportu malých molekul přes membrány pomocí hlubokého učení.</span>
-                            </li>
-                            <li>
-                                <span class="lang-en">Geometric modeling of biomacromolecular channel gates in the AlphaFold Database.</span>
-                                <span class="lang-cs" style="display: none;">Geometrické modelování hradel biomakromolekulárních kanálů v databázi AlphaFold.</span>
-                            </li>
-                            <li>
-                                <span class="lang-en">Development of interactive web visualizations for protein channel profiling.</span>
-                                <span class="lang-cs" style="display: none;">Vývoj interaktivních webových vizualizací pro profilování proteinových kanálů.</span>
-                            </li>
-                        </ul>
-                        <p class="opportunities-contact lang-en">
-                            Students gain hands-on experience with modern computational toolkits. Contact <strong>Karel Berka</strong> (<a href="mailto:karel.berka@upol.cz" class="inline-link">karel.berka@upol.cz</a>) or visit Office 3.009 for details.
-                        </p>
-                        <p class="opportunities-contact lang-cs" style="display: none;">
-                            Studenti získají praktické zkušenosti s moderními výpočetními nástroji. Kontaktujte <strong>Karla Berku</strong> (<a href="mailto:karel.berka@upol.cz" class="inline-link">karel.berka@upol.cz</a>) nebo navštivte kancelář 3.009.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Contact Section -->
         <section id="contact" class="section">
