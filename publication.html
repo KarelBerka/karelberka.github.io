@@ -80,7 +80,8 @@
                     <div class="pd-actions" style="margin-top: 2rem;">
                         <a id="btn-official" href="#" target="_blank" rel="noopener" class="btn btn-primary hidden">Official Publication</a>
                         <a id="btn-oa" href="#" target="_blank" rel="noopener" class="btn btn-secondary hidden">Read Open Access</a>
-                        <a id="btn-preprint" href="#" target="_blank" rel="noopener" class="btn btn-secondary hidden">Read Preprint</a>
+                        <a id="btn-preprint" href="#" class="btn btn-secondary hidden">Preprint</a>
+                        <a id="btn-fairsharing" href="#" class="btn btn-secondary hidden">FAIRsharing Record</a>
                         <a id="btn-github" href="#" target="_blank" rel="noopener" class="btn btn-secondary hidden">GitHub</a>
                     </div>
                     
@@ -173,11 +174,25 @@
             if (pub.oa_url) {
                 if (pub.oa_is_preprint) {
                     btnPreprint.href = pub.oa_url;
+                    btnPreprint.setAttribute('target', '_blank');
+                    btnPreprint.setAttribute('rel', 'noopener');
+                    btnPreprint.textContent = "Read Preprint";
                     btnPreprint.classList.remove('hidden');
                 } else {
                     btnOa.href = pub.oa_url;
                     btnOa.classList.remove('hidden');
                 }
+            }
+            if (pub.preprint_id) {
+                btnPreprint.href = 'publication.html?id=' + pub.preprint_id;
+                btnPreprint.textContent = "Preprint";
+                btnPreprint.classList.remove('hidden');
+            }
+            
+            const btnFairsharing = document.getElementById('btn-fairsharing');
+            if (pub.fairsharing_id) {
+                btnFairsharing.href = 'publication.html?id=' + pub.fairsharing_id;
+                btnFairsharing.classList.remove('hidden');
             }
             
             const btnGithub = document.getElementById('btn-github');

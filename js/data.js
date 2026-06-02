@@ -256,7 +256,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkad1012",
     "oa_url": null,
     "oa_is_preprint": false,
-    "github": "https://github.com/sb-ncbr/channelsdb"
+    "github": "https://github.com/sb-ncbr/channelsdb",
+    "preprint_id": "pub_2023_NoJournal_UnknownAuthor"
   },
   {
     "title": "Analysis and Visualization of Protein Channels, Tunnels, and Pores with MOLEonline and ChannelsDB 2.0",
@@ -802,7 +803,9 @@ const publicationsData = [
     "id": "10.1093/database/baz078",
     "oa_url": null,
     "oa_is_preprint": false,
-    "github": "https://github.com/MolMeDB/MolMeDB"
+    "github": "https://github.com/MolMeDB/MolMeDB",
+    "preprint_id": "pub_2020_NoJournal_UnknownAuthor",
+    "fairsharing_id": "pub_2025_UniversityofOxfordUKFAIRsharing_UnknownAuthor"
   },
   {
     "title": "Automated Family-Wide Annotation of Secondary Structure Elements.",
