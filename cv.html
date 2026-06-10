@@ -183,24 +183,16 @@
         }
 
         .cv-pub-list {
-            list-style: none;
-            padding: 0;
+            list-style: decimal;
+            padding-left: 20px;
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
 
         .cv-pub-item {
-            padding: 12px;
-            background: var(--bg-surface-alt);
-            border-radius: 8px;
-            border-left: 4px solid var(--color-accent);
             font-size: 0.95rem;
-        }
-
-        .cv-pub-title {
-            font-weight: 600;
-            color: var(--text-primary);
+            color: var(--text-secondary);
         }
 
         /* Page sizes for printing */
@@ -230,8 +222,6 @@
             /* Styling strictly for printing */
             .cv-pub-item {
                 background: none !important;
-                border-left: 2px solid #000000 !important;
-                padding-left: 8px !important;
             }
             a {
                 text-decoration: underline !important;
@@ -555,7 +545,45 @@
                 return document.documentElement.lang || 'en';
             }
 
-            // Function to render publications list dynamically
+            // Helper to format authors and metadata into ACS style
+            function formatACS(p) {
+                let authors = '';
+                if (p.authors) {
+                    const rawAuthors = p.authors.split(',').map(s => s.trim()).filter(Boolean);
+                    const formattedAuthors = rawAuthors.map(author => {
+                        if (author.includes('Consortium') || author.includes('Node') || author.includes('ELIXIR') || author.includes('Czech COVID-19')) return author;
+                        const parts = author.split(/\s+/);
+                        if (parts.length < 2) return author;
+                        const lastName = parts[parts.length - 1];
+                        const initials = parts.slice(0, -1).map(x => x.charAt(0) + '.').join('');
+                        const nameString = `${lastName}, ${initials}`;
+                        if (lastName === 'Berka' && (initials.startsWith('K') || initials.startsWith('P'))) {
+                            return `<strong>${nameString}</strong>`;
+                        }
+                        return nameString;
+                    });
+                    authors = formattedAuthors.join('; ');
+                }
+
+                const title = p.title ? ` ${p.title}.` : '';
+                const journalPart = p.journal ? ` <em>${p.journal}</em>` : ' <em>Preprint</em>';
+                const yearPart = p.year ? ` <strong>${p.year}</strong>` : '';
+                
+                let volPart = '';
+                if (p.volume) {
+                    volPart = `, <em>${p.volume}</em>`;
+                    if (p.issue) {
+                        volPart += ` (${p.issue})`;
+                    }
+                }
+
+                const pagesPart = p.pages ? `, ${p.pages}` : '';
+                const doiPart = p.doi ? ` DOI: <a href="https://doi.org/${p.doi}" target="_blank">${p.doi}</a>.` : '.';
+
+                return `${authors}.${title}${journalPart}${yearPart}${volPart}${pagesPart}.${doiPart}`;
+            }
+
+            // Function to render publications list dynamically as a numbered list
             function getPublicationsHTML(format) {
                 const lang = getLang();
                 let filtered = [...publicationsData];
@@ -586,18 +614,15 @@
 
                 if (filtered.length === 0) return '';
 
-                let html = `<ul class="cv-pub-list">`;
+                let html = `<ol class="cv-pub-list" style="margin-left: 20px;">`;
                 filtered.forEach(p => {
-                    const doiStr = p.doi ? ` DOI: <a href="https://doi.org/${p.doi}" target="_blank">${p.doi}</a>` : '';
                     html += `
-                        <li class="cv-pub-item">
-                            <span class="cv-pub-title">${p.title}</span><br>
-                            <small>${p.authors}</small><br>
-                            <em>${p.journal || 'Preprint'}</em>, ${p.year}.${doiStr}
+                        <li class="cv-pub-item" style="margin-bottom: 12px; line-height: 1.5; padding: 4px 0;">
+                            ${formatACS(p)}
                         </li>
                     `;
                 });
-                html += `</ul>`;
+                html += `</ol>`;
                 return html;
             }
 
