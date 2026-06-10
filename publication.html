@@ -46,16 +46,7 @@
 
     <!-- Subpage Content -->
     <main class="container" style="padding-top: 120px; padding-bottom: 80px; min-height: calc(100vh - 200px);">
-        
-        <div id="loading-state" style="text-align: center; padding: 4rem 0;">
-            <p>Loading publication details...</p>
-        </div>
-
-        <div id="error-state" class="hidden" style="text-align: center; padding: 4rem 0;">
-            <h2>Publication Not Found</h2>
-            <p>We couldn't find the requested publication. It may have been removed or the link is incorrect.</p>
-            <a href="index.html#publications" class="btn-primary" style="margin-top: 1rem; display: inline-block;">Return to Portfolio</a>
-        </div>
+    
 
         <div id="pub-details" class="pub-details-container hidden">
             <a href="index.html#publications" class="back-link">← Back to all publications</a>
@@ -110,14 +101,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const pubId = urlParams.get('id');
-
-            const loading = document.getElementById('loading-state');
-            const error = document.getElementById('error-state');
             const details = document.getElementById('pub-details');
 
             if (!pubId || typeof publicationsData === 'undefined') {
-                loading.classList.add('hidden');
-                error.classList.remove('hidden');
                 return;
             }
 
@@ -125,8 +111,6 @@
             const pub = publicationsData.find(p => p.id === pubId);
 
             if (!pub) {
-                loading.classList.add('hidden');
-                error.classList.remove('hidden');
                 return;
             }
 
@@ -202,7 +186,7 @@
             }
 
             // Show details
-            loading.classList.add('hidden');
+
             details.classList.remove('hidden');
             
             // Set document title
