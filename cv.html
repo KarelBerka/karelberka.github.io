@@ -545,6 +545,44 @@
                 return document.documentElement.lang || 'en';
             }
 
+            // Helper to identify actual peer-reviewed publications / preprints
+            function isPublication(p) {
+                if (!p.authors || p.authors.trim() === '') return false;
+                if (p.title && (p.title.includes('FAIRsharing') || p.title.includes('Ownership and Maintenance') || p.title.includes('Ownership of'))) return false;
+                return true;
+            }
+
+            // Function to render non-publication items (registrations/entries)
+            function getNonPublicationsHTML() {
+                const lang = getLang();
+                let nonPubs = publicationsData.filter(p => !isPublication(p));
+                
+                // Remove duplicates
+                const seen = new Set();
+                nonPubs = nonPubs.filter(p => {
+                    const key = p.doi || p.id;
+                    if (!key) return true;
+                    if (seen.has(key)) return false;
+                    seen.add(key);
+                    return true;
+                });
+
+                if (nonPubs.length === 0) return '';
+
+                let html = `<ul style="padding-left: 20px; margin-bottom: 24px; line-height: 1.6;">`;
+                nonPubs.forEach(p => {
+                    const journalStr = p.journal ? `, <em>${p.journal}</em>` : '';
+                    const urlStr = p.github ? ` (Link: <a href="${p.github}" target="_blank">${p.github}</a>)` : '';
+                    html += `
+                        <li style="margin-bottom: 8px; font-size: 0.95rem; color: var(--text-secondary);">
+                            <strong>${p.title}</strong> (${p.year})${journalStr}${urlStr}
+                        </li>
+                    `;
+                });
+                html += `</ul>`;
+                return html;
+            }
+
             // Helper to format authors and metadata into ACS style
             function formatACS(p) {
                 let authors = '';
@@ -588,9 +626,10 @@
                 const lang = getLang();
                 let filtered = [...publicationsData];
                 
-                // Remove duplicates by DOI/ID
+                // Remove duplicates by DOI/ID, and exclude non-publications
                 const seen = new Set();
                 filtered = filtered.filter(p => {
+                    if (!isPublication(p)) return false;
                     const key = p.doi || p.id;
                     if (!key) return true;
                     if (seen.has(key)) return false;
@@ -753,6 +792,11 @@
                                 ${isOnePage ? (lang === 'cs' ? 'Nedávné Publikace (Výběr)' : 'Recent Publications (Selection)') : (lang === 'cs' ? 'Vybrané Publikace' : 'Key Publications')}
                             </div>
                             ${getPublicationsHTML(currentFormat)}
+
+                            ${currentFormat === 'full' ? `
+                                <div class="cv-section-title">${lang === 'cs' ? 'Databázové a Softwarové Záznamy' : 'Database & Software Registrations'}</div>
+                                ${getNonPublicationsHTML()}
+                            ` : ''}
 
                             ${!isOnePage ? `
                                 <div class="page-break"></div>
