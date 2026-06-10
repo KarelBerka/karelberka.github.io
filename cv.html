@@ -3,257 +3,783 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV | Prof. Karel Berka</title>
-    <meta name="description" content="Curriculum Vitae of Prof. Karel Berka.">
+    <title>Curriculum Vitae | Prof. Karel Berka</title>
+    <meta name="description" content="Curriculum Vitae of Prof. Karel Berka. Toggle between Full CV, 1-Page Resume, 2-Page Resume, and Europass formats.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Modern CV Page Custom Styles */
+        .cv-hero {
+            background: var(--gradient-hero);
+            padding: 120px 0 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cv-controls-card {
+            background: var(--bg-surface);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--border-color);
+            border-radius: var(--card-radius);
+            padding: 24px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .controls-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            width: 100%;
+        }
+
+        /* Full length buttons */
+        .cv-format-btn {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-surface-alt);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .cv-format-btn:hover {
+            background: var(--border-color);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .cv-format-btn.active {
+            background: var(--gradient-accent);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+        }
+
+        .print-btn {
+            grid-column: 1 / -1;
+            background: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            margin-top: 8px;
+        }
+
+        .print-btn:hover {
+            background: var(--color-primary-light);
+            color: var(--color-primary);
+        }
+
+        /* Render Container styles */
+        .cv-paper {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--card-radius);
+            padding: 48px;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Europass Layout Specific Style overrides */
+        .europass-layout {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .europass-row {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+            border-bottom: 1px solid var(--border-color);
+            padding: 24px 0;
+        }
+
+        .europass-row:last-child {
+            border-bottom: none;
+        }
+
+        .europass-left {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        .europass-right h3 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .europass-header-logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        /* Generic CV layout details */
+        .cv-section-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 32px 0 16px;
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 6px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cv-section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .cv-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 24px;
+        }
+
+        .timeline-year {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--color-primary);
+            min-width: 90px;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex-grow: 1;
+        }
+
+        .cv-pub-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .cv-pub-item {
+            padding: 12px;
+            background: var(--bg-surface-alt);
+            border-radius: 8px;
+            border-left: 4px solid var(--color-accent);
+            font-size: 0.95rem;
+        }
+
+        .cv-pub-title {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Page sizes for printing */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                font-size: 11pt !important;
+            }
+            #site-header, footer, .cv-controls-card, canvas {
+                display: none !important;
+            }
+            .cv-hero {
+                padding: 0 !important;
+                background: none !important;
+                border: none !important;
+            }
+            .cv-paper {
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                background: transparent !important;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+            /* Styling strictly for printing */
+            .cv-pub-item {
+                background: none !important;
+                border-left: 2px solid #000000 !important;
+                padding-left: 8px !important;
+            }
+            a {
+                text-decoration: underline !important;
+                color: #000000 !important;
+            }
+        }
+    </style>
 </head>
 <body class="dark-theme">
     <!-- Header (same navigation as index) -->
     <header id="site-header">
         <div class="nav-container">
-            <a href="#" class="logo" id="nav-logo">
+            <a href="index.html" class="logo" id="nav-logo">
                 <img src="img/profile/Ja_2015_by_Jorge_Cham_PhD_Comics_AP-0074.jpg" alt="Karel Berka caricature logo" class="logo-caricature-img">
                 <span class="logo-text">Karel Berka</span>
             </a>
             <nav id="nav-menu" aria-label="Primary Navigation">
                 <ul>
-                    <li><a href="#about" class="nav-link"><span class="lang-en">About</span><span class="lang-cs" style="display: none;">O mně</span></a></li>
-                    <li><a href="#chemdata" class="nav-link"><span class="lang-en">ChemData Lab</span><span class="lang-cs" style="display: none;">ChemData Lab</span></a></li>
-                    <li><a href="#tools" class="nav-link"><span class="lang-en">Tools</span><span class="lang-cs" style="display: none;">Nástroje</span></a></li>
-                    <li><a href="#teaching" class="nav-link"><span class="lang-en">Teaching</span><span class="lang-cs" style="display: none;">Výuka</span></a></li>
-                    <li><a href="#outreach" class="nav-link"><span class="lang-en">Outreach</span><span class="lang-cs" style="display: none;">Popularizace</span></a></li>
-                    <li><a href="#publications" class="nav-link"><span class="lang-en">Publications</span><span class="lang-cs" style="display: none;">Publikace</span></a></li>
-                    <li><a href="cv.html" class="nav-link">CV</a></li>
+                    <li><a href="index.html#about" class="nav-link"><span class="lang-en">About</span><span class="lang-cs" style="display: none;">O mně</span></a></li>
+                    <li><a href="index.html#chemdata" class="nav-link"><span class="lang-en">ChemData Lab</span><span class="lang-cs" style="display: none;">ChemData Lab</span></a></li>
+                    <li><a href="index.html#tools" class="nav-link"><span class="lang-en">Tools</span><span class="lang-cs" style="display: none;">Nástroje</span></a></li>
+                    <li><a href="index.html#teaching" class="nav-link"><span class="lang-en">Teaching</span><span class="lang-cs" style="display: none;">Výuka</span></a></li>
+                    <li><a href="index.html#outreach" class="nav-link"><span class="lang-en">Outreach</span><span class="lang-cs" style="display: none;">Popularizace</span></a></li>
+                    <li><a href="index.html#publications" class="nav-link"><span class="lang-en">Publications</span><span class="lang-cs" style="display: none;">Publikace</span></a></li>
+                    <li><a href="cv.html" class="nav-link active">CV</a></li>
                 </ul>
             </nav>
             <div class="nav-controls">
-                <button id="lang-toggle" aria-label="Toggle Language" title="Switch Language" style="background: none; border: 1px solid var(--border-color); color: var(--text-color); padding: 0.2rem 0.5rem; border-radius: 4px; cursor: pointer; font-family: var(--font-primary); font-weight: 600; font-size: 0.9rem; margin-right: 0.5rem;">CZ</button>
-                <button id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle Theme">🌙</button>
-                <button id="mobile-menu-toggle" aria-label="Toggle mobile menu"><span></span><span></span><span></span></button>
+                <button id="lang-toggle" aria-label="Toggle Language" title="Switch Language" style="background: none; border: 1px solid var(--border-color); color: var(--text-color); padding: 0.2rem 0.5rem; border-radius: 4px; cursor: pointer; font-family: var(--font-primary); font-weight: 600; font-size: 0.9rem; margin-right: 0.5rem;">
+                    <span class="lang-en">CZ</span>
+                    <span class="lang-cs" style="display: none;">EN</span>
+                </button>
+                <button id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle Theme">
+                    <svg class="icon moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="icon sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <button id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
-    <main>
-        <section id="cv" class="section">
-            <div class="container">
-                <div class="cv-content">
-                    <!-- Original CV content -->
-                    <h1>prof. RNDr. Karel Berka, Ph.D.</h1>
-                    <p>OSOBNÍ ÚDAJE:</p>
-                    <p>Kontaktní adresa:		Horní Hejčínská 51/6, Olomouc, Česká Republika, 779 00</p>
-                    <p>Email:			karel.berka@upol.cz</p>
-                    <p>Telefon:			(+420) 58 563 4769</p>
-                    <p>Narozen:			19.6.1982 v Opavě</p>
-                    <p>ORCID			https://orcid.org/0000-0001-9472-2589</p>
-                    <p>Vzdělání:</p>
-                    <p>2025	profesor Biomedicinální chemie a strukturní biologie, Masarykova U Brno</p>
-                    <p>2016	docent Fyzikální chemie, Přírodovědecká fakulta U Palackého v Olomouci</p>
-                    <p>Habilitační práce: „Interakce malých molekul s biologickými membránami“</p>
-                    <p>2009	Ph.D. Modelování chemických vlastností nano- a biomateriálů, Přírodovědecká fakulta U Karlovy v Praze, ve spolupráci s Ústavem organické chemie a biochemie AV ČR.</p>
-                    <p>Disertační práce: “Side-chain Side-chain Interactions in Proteins.”</p>
-                    <p>2008	RNDr. Fyzikální chemie, Přírodovědecká fakulta UK v Praze</p>
-                    <p>2001-2006	Mgr. Fyzikální chemie, Přírodovědecká fakulta UK v Praze</p>
-                    <p>Diplomová práce: “Modelling of ligand-binding site structure of the human MT2 melatonin receptor”</p>
-                    <p>ZAMĚSTNÁNÍ:</p>
-                    <p>2025 – doposud:	Profesor, Katedra fyzikální chemie, Přírodovědecká fakulta, UP v Olomouci</p>
-                    <p>2018 – 2025:	Docent, Katedra fyzikální chemie, Přírodovědecká fakulta, UP v Olomouci</p>
-                    <p>2010 – 2018:	Vědecký pracovník (Junior Researcher), Regionální centrum pokročilých technologií a materiálů (RCPTM) UP v Olomouci.</p>
-                    <p>2010 – 2018:	Odborný asistent, Katedra fyzikální chemie, Přírodovědecká fakulta, UP v Olomouci.</p>
-                    <p>Dříve:	Ústav organické chemie a biochemie AV ČR, Fyziologický ústav AV ČR.</p>
-                    <p>VĚDECKÁ SPECIALIZACE:</p>
-                    <p>Interakce malých molekul s biologickými membránami (molmedb.upol.cz, MD, QM, QSAR), in silico návrh léčiv (molekulární dokování, chemoinformatika), liposomální transport léčiv, strukturní bioinformatika (ELIXIR-CZ).</p>
-                    <!-- Remaining CV sections omitted for brevity -->
+
+    <canvas id="molecular-canvas"></canvas>
+
+    <main class="cv-hero">
+        <div class="container">
+            <!-- CV layout control panel -->
+            <div class="cv-controls-card">
+                <div class="controls-title">
+                    <span class="lang-en">Select CV Format</span>
+                    <span class="lang-cs" style="display: none;">Vyberte formát CV</span>
+                </div>
+                <div class="controls-grid">
+                    <button class="cv-format-btn active" data-format="full">
+                        <span class="lang-en">Academic / Full CV</span>
+                        <span class="lang-cs" style="display: none;">Akademické / Úplné CV</span>
+                    </button>
+                    <button class="cv-format-btn" data-format="onepage">
+                        <span class="lang-en">1-Page Resume</span>
+                        <span class="lang-cs" style="display: none;">1-stránkové CV</span>
+                    </button>
+                    <button class="cv-format-btn" data-format="twopage">
+                        <span class="lang-en">2-Page Resume</span>
+                        <span class="lang-cs" style="display: none;">2-stránkové CV</span>
+                    </button>
+                    <button class="cv-format-btn" data-format="europass">
+                        <span class="lang-en">EU / Europass</span>
+                        <span class="lang-cs" style="display: none;">Evropský formát</span>
+                    </button>
+                    <button class="cv-format-btn print-btn" onclick="window.print()">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        <span class="lang-en">Print / Save as PDF</span>
+                        <span class="lang-cs" style="display: none;">Tisk / Uložit do PDF</span>
+                    </button>
                 </div>
             </div>
-        </section>
+
+            <!-- CV Render target -->
+            <div class="cv-paper" id="cv-render-target">
+                <!-- Will be dynamically generated -->
+            </div>
+        </div>
     </main>
+
     <footer>
-        <div class="container">
+        <div class="container" style="text-align: center; padding: 20px 0;">
             <p>&copy; 2026 Prof. Karel Berka. All rights reserved.</p>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+
+    <!-- Load Data first, then script, then local CV rendering logic -->
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Bilingual CV Data Object
+        const cvData = {
+            personal: {
+                name: "prof. RNDr. Karel Berka, Ph.D.",
+                address: {
+                    en: "Horni Hejcinska 51/6, Olomouc, Czech Republic, 779 00",
+                    cs: "Horní Hejčínská 51/6, Olomouc, Česká Republika, 779 00"
+                },
+                email: "karel.berka@upol.cz",
+                phone: "(+420) 58 563 4769",
+                birth: {
+                    en: "Born: June 19, 1982 in Opava",
+                    cs: "Narozen: 19. 6. 1982 v Opavě"
+                },
+                orcid: "https://orcid.org/0000-0001-9472-2589",
+                orcidId: "0000-0001-9472-2589"
+            },
+            education: [
+                {
+                    year: "2025",
+                    en: "Professor of Medicinal Chemistry and Structural Biology, Masaryk University, Brno",
+                    cs: "profesor Biomedicinální chemie a strukturní biologie, Masarykova U Brno"
+                },
+                {
+                    year: "2016",
+                    en: "Associate Professor (Docent) of Physical Chemistry, Palacký University Olomouc. Habilitation thesis: 'Interactions of small molecules with biological membranes'",
+                    cs: "docent Fyzikální chemie, Přírodovědecká fakulta U Palackého v Olomouci. Habilitační práce: „Interakce malých molekul s biologickými membránami“"
+                },
+                {
+                    year: "2009",
+                    en: "Ph.D. in Modeling of Chemical Properties of Nano- and Biomaterials, Charles University in Prague in cooperation with the IOCB CAS. Doctoral thesis: 'Side-chain Side-chain Interactions in Proteins.'",
+                    cs: "Ph.D. Modelování chemických vlastností nano- a biomateriálů, Přírodovědecká fakulta U Karlovy v Praze, ve spolupráci s Ústavem organické chemie a biochemie AV ČR. Disertační práce: „Side-chain Side-chain Interactions in Proteins.“"
+                },
+                {
+                    year: "2008",
+                    en: "RNDr. in Physical Chemistry, Faculty of Science, Charles University in Prague",
+                    cs: "RNDr. Fyzikální chemie, Přírodovědecká fakulta UK v Praze"
+                },
+                {
+                    year: "2001-2006",
+                    en: "Mgr. in Physical Chemistry, Faculty of Science, Charles University in Prague. Master thesis: 'Modelling of ligand-binding site structure of the human MT2 melatonin receptor'",
+                    cs: "Mgr. Fyzikální chemie, Přírodovědecká fakulta UK v Praze. Diplomová práce: „Modelling of ligand-binding site structure of the human MT2 melatonin receptor“"
+                }
+            ],
+            employment: [
+                {
+                    period: { en: "2025 – present", cs: "2025 – doposud" },
+                    position: { en: "Professor, Department of Physical Chemistry, Faculty of Science, Palacký University Olomouc", cs: "Profesor, Katedra fyzikální chemie, Přírodovědecká fakulta, UP v Olomouci" }
+                },
+                {
+                    period: { en: "2018 – 2025", cs: "2018 – 2025" },
+                    position: { en: "Associate Professor, Department of Physical Chemistry, Faculty of Science, Palacký University Olomouc", cs: "Docent, Katedra fyzikální chemie, Přírodovědecká fakulta, UP v Olomouci" }
+                },
+                {
+                    period: { en: "2010 – 2018", cs: "2010 – 2018" },
+                    position: { en: "Junior Researcher, Regional Centre of Advanced Technologies and Materials (RCPTM), Palacký University Olomouc", cs: "Vědecký pracovník (Junior Researcher), Regionální centrum pokročilých technologií a materiálů (RCPTM) UP v Olomouci." }
+                },
+                {
+                    period: { en: "2010 – 2018", cs: "2010 – 2018" },
+                    position: { en: "Assistant Professor, Department of Physical Chemistry, Faculty of Science, Palacký University Olomouc", cs: "Odborný asistent, Katedra fyzikální chemie, Přírodovědecká fakulta, UP v Olomouci." }
+                },
+                {
+                    period: { en: "Before 2010", cs: "Dříve" },
+                    position: { en: "Institute of Organic Chemistry and Biochemistry of the CAS, Institute of Physiology of the CAS", cs: "Ústav organické chemie a biochemie AV ČR, Fyziologický ústav AV ČR." }
+                }
+            ],
+            specialization: {
+                en: "Interactions of small molecules with biological membranes (molmedb.upol.cz, MD, QM, QSAR), in silico drug design (molecular docking, chemoinformatics), liposomal drug transport, structural bioinformatics (ELIXIR-CZ).",
+                cs: "Interakce malých molekul s biologickými membránami (molmedb.upol.cz, MD, QM, QSAR), in silico návrh léčiv (molekulární dokování, chemoinformatika), liposomální transport léčiv, strukturní bioinformatika (ELIXIR-CZ)."
+            },
+            internships: [
+                {
+                    year: "2018",
+                    details: { en: "Uppsala Universitet, Uppsala, Sweden, group of prof. Ch. Bergström", cs: "Uppsala Universitet, Uppsala, Švédsko, skupina prof. Ch. Bergström" }
+                },
+                {
+                    year: "2010-2016",
+                    details: { en: "Université de Limoges, Limoges, France, group of dr. P. Trouillas (6 visits)", cs: "6x od 2010 do 2016 Université de Limoges, Limoges, Francie, skupina dr. P. Trouillase" }
+                },
+                {
+                    year: "2009",
+                    details: { en: "POSTECH, Pohang, South Korea, group of prof. Kwang S. Kim", cs: "POSTECH, Pohang, Jižní Korea, skupina prof. Kwang S. Kima" }
+                },
+                {
+                    year: "2008-2015",
+                    details: { en: "EBI-EMBL, Hinxton, United Kingdom, group of prof. J. Thornton (5 visits)", cs: "5x od 2008 do 2015 EBI-EMBL, Hinxton, Velká Británie, skupina prof. J. Thorntona" }
+                },
+                {
+                    year: "2005",
+                    details: { en: "Erasmus internship at LBPA, ENS Cachan, Paris, France, group of prof. A. Lewit-Bentley", cs: "Erasmus na LBPA, ENS Cachan, Paříž, Francie, skupina prof. A. Lewit-Bentley" }
+                }
+            ],
+            summaryStats: {
+                en: "112+ peer-reviewed scientific articles with impact factor (according to WoS), 5300+ citations, 5123 without self-citations (as of March 15, 2026), h-index: 36, 85+ conference contributions, 50+ lectures.",
+                cs: "112+ recenzovaných vědeckých článků s impakt faktorem (dle WOS), 5300+ citací, 5123 bez sebecitací (15.3.2026), Hirschův index: 36, 85+ příspěvků na konferencích, 50+ přednášek."
+            },
+            grants: [
+                {
+                    period: "2026 – 2028",
+                    title: {
+                        en: "ELIXIR IMPACT: Swiss-Czech Partnership for the Integration of Molecular, Pathogenic, and Clinical Data with Artificial Intelligence Technologies (co-PI, WP1 lead)",
+                        cs: "ELIXIR IMPACT: Swiss-Czech Partnership for the Integration of Molecular, Pathogenic, and Clinical Data with Artificial Intelligence Technologies (co-PI, WP1 lead)"
+                    }
+                },
+                {
+                    period: "2024 – 2026",
+                    title: {
+                        en: "GAČR 24-11986S, Liposomal probes into colligative drug permeability, co-PI",
+                        cs: "GAČR 24-11986S, Liposomal probes into colligative drug permeability, co-PI"
+                    }
+                },
+                {
+                    period: "2021 – 2024",
+                    title: {
+                        en: "AURORA-RI: Aurora Alliance - Research and Innovation for Societal Impact, 101035804, European Commission-H2020-EU.5, WP3 co-lead",
+                        cs: "AURORA-RI: Aurora Alliance - Research and Innovation for Societal Impact, 101035804, European Commission-H2020-EU.5, WP3 co-lead"
+                    }
+                },
+                {
+                    period: "2021 – 2023",
+                    title: {
+                        en: "ELIXIR-CONVERGE: Connect and align ELIXIR Nodes to deliver sustainable FAIR life-science data management services, 871075, European Commission-H2020-EU.1.4, responsible contact for Palacký University (3rd party), Best practices workgroup leader",
+                        cs: "ELIXIR-CONVERGE: Connect and align ELIXIR Nodes to deliver sustainable FAIR life-science data management services, 871075, European Commission-H2020-EU.1.4, responsible contact for Palacký University (3rd party), Best practices workgroup leader"
+                    }
+                },
+                {
+                    period: "2016 – 2026",
+                    title: {
+                        en: "MŠMT LM2015047+LM2018131+LM2023055: Czech National Infrastructure for Biological Data (ELIXIR CZ) – co-investigator for Palacký University Olomouc",
+                        cs: "2016 – 2026: MŠMT LM2015047+LM2018131+LM2023055: Česká národní infrastruktura pro biologická data (ELIXIR CZ) – spoluřešitel za Univerzitu Palackého v Olomouci"
+                    }
+                },
+                {
+                    period: "2017 – 2019",
+                    title: {
+                        en: "GAČR 17-21122S: MolMeDB - Validated predictions of interactions of low-molecular-weight compounds with biological membranes – principal investigator",
+                        cs: "2017-2019: GAČR 17-21122S: MolMeDB - Ověřené predikce interakcí nízkomolekulárních látek s biologickým membránami – hlavní řešitel"
+                    }
+                }
+            ],
+            awards: [
+                {
+                    en: "Dean's Award for publishing activities, Faculty of Science UP Olomouc (2010-2013, 2019-2022, 2024-2025)",
+                    cs: "Cena děkana za publikační činnost, PřF UP Olomouc (2010-2013, 2019-2022, 2024-2025)"
+                },
+                {
+                    en: "Supervisor of the overall winner of the Dean's Award competition 2024",
+                    cs: "Vedoucí práce celkového vítěze soutěže O cenu děkana 2024"
+                },
+                {
+                    en: "RCPTM Award (2012)",
+                    cs: "Cena RCPTM (2012)"
+                }
+            ],
+            pedagogical: {
+                institutions: [
+                    {
+                        en: "Palacký University Olomouc, Faculty of Science (since 2010)",
+                        cs: "Univerzita Palackého v Olomouci, Přírodovědecká fakulta od roku 2010"
+                    },
+                    {
+                        en: "Charles University in Prague, Faculty of Science (since 2006)",
+                        cs: "Univerzita Karlova v Praze, Přírodovědecká fakulta od roku 2006"
+                    }
+                ],
+                details: {
+                    en: "Teaching in physical chemistry, bioinformatics, in silico drug design, and scientific communication (including the series of international workshops 'Advances in silico Drug Design' organized in Olomouc since 2016). Supervisor of high school, bachelor, master, and doctoral students.",
+                    cs: "v oblastech fyzikální chemie, bioinformatiky, in silico návrhu léčiv a vědecké komunikace (včetně série mezinárodních workshopů Advanced in silico Drug Design pořádané v Olomouci od roku 2016). Školitel středoškolských, bakalářských, magisterských i doktorských studentů."
+                }
+            },
+            outreach: [
+                {
+                    en: "One of the founding authors of the Correspondence Seminar Inspired by Chemical Topics (KSICHT, ksicht.natur.cuni.cz) for supplementary education of high school students in chemistry since 2001.",
+                    cs: "Jeden ze zakládajících autorů Korespondenčního Semináře Inspirovaného Chemickou Tematikou (KSICHT, ksicht.natur.cuni.cz) pro doplňkové vzdělávání středoškolských studentů v chemii od roku 2001."
+                },
+                {
+                    en: "Author of tasks for the Czech Chemical Olympiad (ChO) category B (2008) and category A (2012, 2014); regional secretary of ChO for the Olomouc Region (since 2012); member of the Board of ChO (2017-2018). Supervisor in theoretical chemistry for high school students in the Badatel/SOČ projects (since 2011).",
+                    cs: "Jeden z autorů úloh Chemické olympiády (ChO) kategorie B pro rok 2008, A pro rok 2012 a 2014, krajský tajemník ChO za Olomoucký kraj (od roku 2012), člen Předsednictva ChO (2017-2018). Školitel v oblasti teoretické chemie pro studenty středních škol v projektu Badatel/SOČ (od roku 2011)."
+                }
+            ],
+            memberships: [
+                {
+                    en: "Member of Panel 301, Czech Science Foundation (GAČR) (2021-2024)",
+                    cs: "Člen Panelu 301, GAČR (2021-2024)"
+                },
+                {
+                    en: "Deputy Director of ELIXIR-CZ infrastructure – representative of Palacký University in ELIXIR-CZ (since 2013)",
+                    cs: "Zástupce ředitele infrastruktury ELIXIR-CZ – zástupce UP v ELIXIR-CZ (od roku 2013)"
+                },
+                {
+                    en: "Representative of the Czech Republic in the European bioinformatics infrastructure ELIXIR (since 2016)",
+                    cs: "Zástupce ČR v evropské bioinformatické infrastruktuře ELIXIR (od roku 2016)"
+                },
+                {
+                    en: "Member of the Royal Society of Chemistry (since 2013, AMRSC since 2015), Czech Chemical Society (since 2019), Biophysical Society (2016-2018), American Association of Pharmaceutical Scientists (2022-2023)",
+                    cs: "Člen Royal Society of Chemistry – (od roku 2013, AMRSC od roku 2015), člen České společnosti chemické (od 2019), člen Biophysical Society (2016-2018), člen American Association of Pharmaceutical Scientists (2022-2023)"
+                }
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const renderTarget = document.getElementById('cv-render-target');
+            const formatButtons = document.querySelectorAll('.cv-format-btn[data-format]');
+            let currentFormat = 'full';
+            
+            // Get lang helper
+            function getLang() {
+                return document.documentElement.lang || 'en';
+            }
+
+            // Function to render publications list dynamically
+            function getPublicationsHTML(format) {
+                const lang = getLang();
+                let filtered = [...publicationsData];
+                
+                // Remove duplicates by DOI/ID
+                const seen = new Set();
+                filtered = filtered.filter(p => {
+                    const key = p.doi || p.id;
+                    if (!key) return true;
+                    if (seen.has(key)) return false;
+                    seen.add(key);
+                    return true;
+                });
+
+                if (format === 'onepage') {
+                    // Up to 5 most recent
+                    filtered.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+                    filtered = filtered.slice(0, 5);
+                } else if (format === 'twopage') {
+                    // Key/Selected ones from the last 10 years (2016-2026)
+                    filtered = filtered.filter(p => {
+                        const yr = parseInt(p.year);
+                        return yr >= 2016 && yr <= 2026 && p.category && p.category.includes('Selected');
+                    });
+                    // Slice to fit 2-pager nicely
+                    filtered = filtered.slice(0, 8);
+                }
+
+                if (filtered.length === 0) return '';
+
+                let html = `<ul class="cv-pub-list">`;
+                filtered.forEach(p => {
+                    const doiStr = p.doi ? ` DOI: <a href="https://doi.org/${p.doi}" target="_blank">${p.doi}</a>` : '';
+                    html += `
+                        <li class="cv-pub-item">
+                            <span class="cv-pub-title">${p.title}</span><br>
+                            <small>${p.authors}</small><br>
+                            <em>${p.journal || 'Preprint'}</em>, ${p.year}.${doiStr}
+                        </li>
+                    `;
+                });
+                html += `</ul>`;
+                return html;
+            }
+
+            // The main render engine
+            function renderCV() {
+                const lang = getLang();
+                let html = '';
+
+                if (currentFormat === 'europass') {
+                    // Standard European Europass structure
+                    html = `
+                        <div class="europass-layout">
+                            <div class="europass-header-logo">
+                                <img src="img/profile/Ja_2015_by_Jorge_Cham_PhD_Comics_AP-0074.jpg" alt="Photo" style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--color-primary); background: #fff;">
+                                <div>
+                                    <h1 style="font-size: 2.2rem; margin: 0;">${cvData.personal.name}</h1>
+                                    <p style="color: var(--color-primary); font-weight: 600; margin: 4px 0 0 0;">
+                                        ${lang === 'cs' ? 'Curriculum Vitae' : 'Curriculum Vitae'}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="europass-row">
+                                <div class="europass-left">${lang === 'cs' ? 'OSOBNÍ ÚDAJE' : 'PERSONAL INFORMATION'}</div>
+                                <div class="europass-right">
+                                    <p><strong>${lang === 'cs' ? 'Adresa:' : 'Address:'}</strong> ${cvData.personal.address[lang]}</p>
+                                    <p><strong>${lang === 'cs' ? 'Email:' : 'Email:'}</strong> <a href="mailto:${cvData.personal.email}">${cvData.personal.email}</a></p>
+                                    <p><strong>${lang === 'cs' ? 'Telefon:' : 'Phone:'}</strong> ${cvData.personal.phone}</p>
+                                    <p><strong>ORCID:</strong> <a href="${cvData.personal.orcid}" target="_blank">${cvData.personal.orcidId}</a></p>
+                                </div>
+                            </div>
+
+                            <div class="europass-row">
+                                <div class="europass-left">${lang === 'cs' ? 'ZAMĚSTNÁNÍ' : 'WORK EXPERIENCE'}</div>
+                                <div class="europass-right cv-timeline">
+                                    ${cvData.employment.map(e => `
+                                        <div class="timeline-item">
+                                            <div class="timeline-year">${e.period[lang]}</div>
+                                            <div class="timeline-content">${e.position[lang]}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+
+                            <div class="europass-row">
+                                <div class="europass-left">${lang === 'cs' ? 'VZDĚLÁNÍ' : 'EDUCATION AND TRAINING'}</div>
+                                <div class="europass-right cv-timeline">
+                                    ${cvData.education.map(ed => `
+                                        <div class="timeline-item">
+                                            <div class="timeline-year">${ed.year}</div>
+                                            <div class="timeline-content">${ed[lang]}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+
+                            <div class="europass-row">
+                                <div class="europass-left">${lang === 'cs' ? 'VĚDECKÁ SPECIALIZACE' : 'RESEARCH FIELD'}</div>
+                                <div class="europass-right">
+                                    <p>${cvData.specialization[lang]}</p>
+                                </div>
+                            </div>
+
+                            <div class="europass-row">
+                                <div class="europass-left">${lang === 'cs' ? 'VYBRANÉ PUBLIKACE' : 'KEY PUBLICATIONS'}</div>
+                                <div class="europass-right">
+                                    ${getPublicationsHTML('twopage')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // Full, 1-page, and 2-page Standard layouts
+                    const isOnePage = currentFormat === 'onepage';
+                    const isTwoPage = currentFormat === 'twopage';
+                    
+                    html = `
+                        <div class="standard-layout">
+                            <div style="text-align: center; margin-bottom: 32px; border-bottom: 2px solid var(--border-color); padding-bottom: 24px;">
+                                <h1 style="font-size: 2.5rem; margin-bottom: 8px;">${cvData.personal.name}</h1>
+                                <p style="margin-bottom: 8px;"><strong>${cvData.personal.address[lang]}</strong></p>
+                                <p style="margin-bottom: 0;">
+                                    Email: <a href="mailto:${cvData.personal.email}">${cvData.personal.email}</a> | 
+                                    ${lang === 'cs' ? 'Tel:' : 'Phone:'} ${cvData.personal.phone} | 
+                                    ORCID: <a href="${cvData.personal.orcid}" target="_blank">${cvData.personal.orcidId}</a>
+                                </p>
+                            </div>
+
+                            <div class="cv-section-title">${lang === 'cs' ? 'Vzdělání' : 'Education'}</div>
+                            <div class="cv-timeline">
+                                ${(isOnePage ? cvData.education.slice(0, 3) : cvData.education).map(ed => `
+                                    <div class="timeline-item">
+                                        <div class="timeline-year">${ed.year}</div>
+                                        <div class="timeline-content">${ed[lang]}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+
+                            <div class="cv-section-title">${lang === 'cs' ? 'Zaměstnání' : 'Employment History'}</div>
+                            <div class="cv-timeline">
+                                ${(isOnePage ? cvData.employment.slice(0, 3) : cvData.employment).map(e => `
+                                    <div class="timeline-item">
+                                        <div class="timeline-year">${e.period[lang]}</div>
+                                        <div class="timeline-content">${e.position[lang]}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+
+                            <div class="cv-section-title">${lang === 'cs' ? 'Vědecká Specializace' : 'Scientific Specialization'}</div>
+                            <p>${cvData.specialization[lang]}</p>
+
+                            ${!isOnePage ? `
+                                <div class="cv-section-title">${lang === 'cs' ? 'Zahraniční Stáže' : 'Foreign Internships'}</div>
+                                <div class="cv-timeline">
+                                    ${cvData.internships.map(i => `
+                                        <div class="timeline-item">
+                                            <div class="timeline-year">${i.year}</div>
+                                            <div class="timeline-content">${i.details[lang]}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+
+                            <div class="cv-section-title">${lang === 'cs' ? 'Vědecké Výstupy' : 'Scientific Outputs'}</div>
+                            <p><strong>${cvData.summaryStats[lang]}</strong></p>
+
+                            <div class="cv-section-title">
+                                ${isOnePage ? (lang === 'cs' ? 'Nedávné Publikace (Výběr)' : 'Recent Publications (Selection)') : (lang === 'cs' ? 'Vybrané Publikace' : 'Key Publications')}
+                            </div>
+                            ${getPublicationsHTML(currentFormat)}
+
+                            ${!isOnePage ? `
+                                <div class="page-break"></div>
+                                <div class="cv-section-title">${lang === 'cs' ? 'Vybrané Granty a Projekty' : 'Selected Grants & Projects'}</div>
+                                <div class="cv-timeline">
+                                    ${cvData.grants.map(g => `
+                                        <div class="timeline-item">
+                                            <div class="timeline-year">${g.period}</div>
+                                            <div class="timeline-content">${g.title[lang]}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+
+                                <div class="cv-section-title">${lang === 'cs' ? 'Členství v Učených Společnostech' : 'Memberships & Professional Services'}</div>
+                                <ul style="padding-left: 20px; margin-bottom: 24px;">
+                                    ${cvData.memberships.map(m => `<li style="margin-bottom: 8px;">${m[lang]}</li>`).join('')}
+                                </ul>
+
+                                <div class="cv-section-title">${lang === 'cs' ? 'Pedagogická Činnost' : 'Teaching Activities'}</div>
+                                <ul style="padding-left: 20px; margin-bottom: 16px;">
+                                    ${cvData.pedagogical.institutions.map(inst => `<li>${inst[lang]}</li>`).join('')}
+                                </ul>
+                                <p>${cvData.pedagogical.details[lang]}</p>
+                            ` : ''}
+                        </div>
+                    `;
+                }
+
+                renderTarget.innerHTML = html;
+            }
+
+            // Set up format switches
+            formatButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    formatButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFormat = btn.getAttribute('data-format');
+                    renderCV();
+                });
+            });
+
+            // Re-render when language is switched
+            const langBtn = document.getElementById('lang-toggle');
+            if (langBtn) {
+                langBtn.addEventListener('click', () => {
+                    setTimeout(renderCV, 50); // Small timeout to ensure DOM language attribute has updated
+                });
+            }
+
+            // Initial render
+            renderCV();
+        });
+    </script>
 </body>
 </html>
-<h1>prof. RNDr. Karel Berka, Ph.D.</h1>
-<p>OSOBNÍ ÚDAJE:</p>
-<p>Kontaktní adresa:		Horní Hejčínská 51/6, Olomouc, Česká Republika, 779 00</p>
-<p>Email:				karel.berka@upol.cz</p>
-<p>Telefon:			(+420) 58 563 4769</p>
-<p>Narozen:			19.6.1982 v Opavě</p>
-<p>ORCID			https://orcid.org/0000-0001-9472-2589</p>
-<p>Vzdělání:</p>
-<p>2025	profesor Biomedicinální chemie a strukturní biologie, Masarykova U Brno</p>
-<p>2016	docent Fyzikální chemie, Přírodovědecká fakulta U Palackého v Olomouci</p>
-<p>Habilitační práce: „Interakce malých molekul s biologickými membránami“</p>
-<p>2009	Ph.D. Modelování chemických vlastností nano- a biomateriálů, Přírodovědecká fakulta U Karlovy v Praze, ve spolupráci s Ústavem organické chemie a biochemie AV ČR.</p>
-<p>Disertační práce: “Side-chain Side-chain Interactions in Proteins.”</p>
-<p>2008	RNDr. Fyzikální chemie, Přírodovědecká fakulta UK v Praze</p>
-<p>2001-2006	Mgr. Fyzikální chemie, Přírodovědecká fakulta UK v Praze</p>
-<p>Diplomová práce: “Modelling of ligand-binding site structure of the human MT2 melatonin receptor”</p>
-<p>ZAMĚSTNÁNÍ:</p>
-<p>2025 – doposud:	Profesor, Katedra fyzikální chemie, Přírodovědecká fakulta, UP v Olomouci</p>
-<p>2018 – 2025:	Docent, Katedra fyzikální chemie, Přírodovědecká fakulta, UP v Olomouci</p>
-<p>2010 – 2018:	Vědecký pracovník (Junior Researcher), Regionální centrum pokročilých technologií a materiálů (RCPTM) UP v Olomouci.</p>
-<p>2010 – 2018:	Odborný asistent, Katedra fyzikální chemie, Přírodovědecká fakulta, UP v Olomouci.</p>
-<p>Dříve:	Ústav organické chemie a biochemie AV ČR, Fyziologický ústav AV ČR.</p>
-<p>VĚDECKÁ SPECIALIZACE:</p>
-<p>Interakce malých molekul s biologickými membránami (molmedb.upol.cz, MD, QM, QSAR), in silico návrh léčiv (molekulární dokování, chemoinformatika), liposomální transport léčiv, strukturní bioinformatika (ELIXIR-CZ).</p>
-<p>ZAHRANIČNÍ stáže:</p>
-<p>2018			Uppsala Universitet, Uppsala, Švédsko, skupina prof. Ch. Bergström
-6x od 2010 do 2016	Université de Limoges, Limoges, Francie, skupina dr. P. Trouillase
-2009 		 	POSTECH, Pohang, Jižní Korea, skupina prof. Kwang S. Kima
-5x od 2008 do 2015	EBI-EMBL, Hinxton, Velká Británie, skupina prof. J. Thorntona
-2005 			Erasmus na LBPA, ENS Cachan, Paříž, Francie, skupina prof. A. Lewit-Bentley</p>
-<p>PUBLIKACE, KONFERENCE:</p>
-<p>112+ recenzovaných vědeckých článků s impakt faktorem (dle WOS)	
-5300+ citací, 5123 bez sebecitací (15.3.2026), Hirschův index: 36	
-85+ příspěvků na konferencích, 50+ přednášek.</p>
-<p>Vybrané GRANTY, PROJEKTY:</p>
-<p>2026 – 2028	ELIXIR IMPACT: Swiss-Czech Partnership for the Integration of Molecular, Pathogenic, and Clinical Data with Artificial Intelligence Technologies (co-PI, WP1 lead)</p>
-<p>2024 – 2026	GAČR 24-11986S, Liposomal probes into colligative drug permeability, co-PI</p>
-<p>2021 – 2024	AURORA-RI: Aurora Alliance - Research and Innovation for Societal Impact, 101035804, European Commision-H2020-EU.5, WP3 co-lead</p>
-<p>2021 – 2023	ELIXIR-CONVERGE: Connect and align ELIXIR Nodes to deliver sustainable FAIR life-science data management services, 871075, European Commision-H2020-EU.1.4, responsible contact for Palacký University (3rd party), Best practices workgroup leader</p>
-<p>2016 – 2026: MŠMT LM2015047+LM2018131+LM2023055: Česká národní infrastruktura pro biologická data (ELIXIR CZ) – spoluřešitel za Univerzitu Palackého v Olomouci</p>
-<p>2017-2019: 	GAČR 17-21122S: MolMeDB - Ověřené predikce interakcí nízkomolekulárních látek s biologickým membránami – hlavní řešitel</p>
-<p>Ocenění a ÚSPĚCHY:</p>
-<p>Cena RCPTM (2012), Cena děkana za publikační činnost, PřF UP Olomouc (2010-2013,2019-2022, 2024-2025), Vedoucí práce celkového vítěze soutěže O cenu děkana 2024.</p>
-<p>PEDAGOGICKÁ ČINNOST</p>
-<p>Univerzita Palackého v Olomouci, Přírodovědecká fakulta od roku 2010</p>
-<p>Univerzita Karlova v Praze, Přírodovědecká fakulta od roku 2006</p>
-<p>v oblastech fyzikální chemie, bioinformatiky, in silico návrhu léčiv a vědecké komunikace 	
-(včetně série mezinárodních workshopů Advanced in silico Drug Design pořádané v Olomouci od roku 2016)</p>
-<p>Školitel středoškolských, bakalářských, magisterských i doktorských studentů.</p>
-<p>Doplňkové vzdělávání středoškolských studentů</p>
-<p>Jeden ze zakládajících autorů Korespondenčního Semináře Inspirovaného Chemickou Tematikou (KSICHT, ksicht.natur.cuni.cz) pro doplňkové vzdělávání středoškolských studentů v chemii od roku 2001.</p>
-<p>Jeden z autorů úloh Chemické olympiády (ChO) kategorie B pro rok 2008, A pro rok 2012 a 2014, krajský tajemník ChO za Olomoucký kraj (od roku 2012), člen Předsednictva ChO (2017-2018). Školitel v oblasti teoretické chemie pro studenty středních škol v projektu Badatel/SOČ (od roku 2011).</p>
-<p>ČLENSTVÍ V UČENÝCH SPOLEČNOSTECH, OSTATNÍ:</p>
-<p>Člen Panelu 301, GAČR (2021-2024)</p>
-<p>Zástupce ředitele infrastruktury ELIXIR-CZ – zástupce UP v ELIXIR-CZ (od roku 2013)</p>
-<p>Zástupce ČR v evropské bioinformatické infrastruktuře ELIXIR (od roku 2016)</p>
-<p>Člen Royal Society of Chemistry – (od roku 2013, AMRSC od roku 2015), člen České společnosti chemické (od 2019), člen Biophysical Society (2016-2018), člen American Association of Pharmaceutical Scientists (2022-2023)</p>
-<p>V Olomouci, 5. dubna 2026					prof. RNDr. Karel Berka, Ph.D.</p>
-<p>Knihy</p>
-<p>Berka K, Bazgier V: Racionální návrh léčiv pomocí in silico metod. Univerzita Palackého v Olomouci, Olomouc 2015. ISBN 978-80-244-4544-1</p>
-<p>Koča J, Svobodová Vařeková R, Pravda L, Berka K, Geidl S, Sehnal D, Otyepka M: Structural Bioinformatics Tools for Drug Design: Extraction of Biologically Relevant Information from Structural Databases. SpringerBriefs in Biochemistry and Molecular Biology, Springer, Cham 2016. ISBN 978-3-319-47387-1</p>
-<p>Kapitoly v knihách</p>
-<p>Špačková A, Bazgier V, Raček T, Sehnal D, Svobodová R, Berka K*: Analysis and Visualization of Protein Channels, Tunnels and Pores with Moleonline & ChannelsDB 2.0. In: Lisacek, F. (eds) Protein Bioinformatics. Methods in Molecular Biology, vol 2836. Humana, New York, NY. https://doi.org/10.1007/978-1-0716-4007-4_12</p>
-<p>Sehnal D, Svobodová R, Berka K, Pravda L, Midlik A, Koča J: Visualization and Analysis of Protein Structures with LiteMol Suite. In: Gáspári Z. (eds) Structural Bioinformatics. Methods in Molecular Biology, vol 2112. Human Press 2020, New York, NY. https://doi.org/10.1007/978-1-0716-0270-6_1</p>
-<p>Midlik A, Hutařová Vařeková I, Hutař J, Moturu TR, Navrátilová, V, Koča J, Berka K, Svobodová Vařeková R: Automated Family-Wide Annotation of Secondary Structure Elements In: Kister A. (eds) Protein Supersecondary Structures. Methods in Molecular Biology, vol 1958. Humana Press 2019, New York, NY. https://doi.org/10.1007/978-1-4939-9161-7_3</p>
-<p>Anzenbacherová E, Berka K, Otyepka M, Anzenbacher P: Structural properties of CYP2D6: Requirements for substrates and inhibitors. in CYP2D6: Genetics, Pharmacology and Clinical Relevance, ed. Baumann P, Future Medicine, 2014, Pages 68-78, ISBN: 978-178084464-0, doi: 10.2217/9781780844626</p>
-<p>Výzkumné zprávy</p>
-<p>Berka K, Bazgier V, Storchmannová K: Computational services for permeability and molecular docking calculations, Univerzita Palackého v Olomouci, 2024. RIV/61989592:15310/24:73627967</p>
-<p>Berka K, Paloncýová M, Otyepka M: Skin Partitioning Prediction of Drug-like Compounds, Univerzita Palackého v Olomouci, 2015. RIV/61989592:15310/15:33156088</p>
-<p>Berka K, Paloncýová M, Sovová Ž, Jurečka P, Otyepka M: Molecular Modelling of Skin Barrier. Univerzita Palackého v Olomouci, 2014. RIV/61989592:15310/14:33151860</p>
-<p>Berka K, Paloncýová M, Otyepka M: Permeation through lipid membranes. Univerzita Palackého v Olomouci, 2013. RIV/61989592:15310/13:33147834</p>
-<p>Berka K, Paloncýová M, Otyepka M: Small Molecules Penetration Through Membranes. Univerzita Palackého v Olomouci, 2012. RIV/61989592:15310/12:33146896</p>
-<p>PREPRINTY</p>
-<p>Martinát D, Juračka J, Galgonek J, Berka K: MolMeDB RDF: transforming a relational database about biological membranes to the RDF format to increase interoperability. ChemRxiv 2026, https://doi.org/10.26434/chemrxiv.15000866/v1</p>
-<p>Terézia Slanináková, Adrián Rošinec, Jakub Čillík, Aleš Křenek, Katarína Grešová, Jana Porubská, Eva Maršálková, Jaroslav Oľha, David Procházka, Lukáš Hejtmánek, Vlastislav Dohnal, Karel Berka, Radka Svobodová, Matej Antol: AlphaFind v2: Similarity Search in AlphaFold DB and TED Domains across Structural Contexts-data. bioRxiv 2026, https://doi.org/10.64898/2026.03.10.710735</p>
-<p>PubliKACE (OD 2004)</p>
-<p>2025</p>
-<p>Raček T, Veľký D, Bučeková G, Schindler O, Hutařová Vařeková I, Špačková A, Bazgier V, Berka K*, Svobodová R*: MOLEonline: a web-based tool for analysing channels, tunnels, and pores (2025 update). Bioinformatics 41(9), btaf486, 2025. DOI:10.1093/bioinformatics/btaf486</p>
-<p>Rošinec A, Slanináková T, Pavlík T, Randiak R, Svoboda T, Raček T, Bučeková G, Schindler O, Antol M, Křenek A, Berka K, Svobodová R: Gromacs MetaDump: a tool for extracting GROMACS simulation metadata. J Cheminform. 17(1), 160, 2025. DOI:10.1186/s13321-025-01082-5</p>
-<p>Schindler O, Svoboda T, Rošinec A, Raček T, Bučeková G, Tichý D, Berka K, Svobodová R: PDBCharges: Quantum-Mechanical Partial Atomic Charges for PDB Structures. Nucleic Acids Res., 53(W1), W457–W462, 2025.</p>
-<p>Storchmannová K, Balouch M, Juračka J, Štěpánek F, Berka K*: Meta-Analysis of Permeability Literature Data Shows Possibilities and Limitations of Popular Methods. Mol. Pharm., 22(3), 1293-1304, 2025.</p>
-<p>Špačková A, Kadášová N, Hutařová Vařeková I, Berka K*: Pathogenicity patterns in cytochrome P450 family. Bioinform. Adv. 5(1), vbaf231, 2025. DOI:10.1093/bioadv/vbaf231</p>
-<p>Šúri T, Pfeiferová L, Bezdíček M, Svatoň J, Hampl V, Berka K, Jiřincová H, Lengerová M, Kolísko M, Nagy A, Tachezy R, Czech COVID-19 Genomics Consortium, Kolář M, Pačes J: Developing molecular surveillance of SARS-CoV-2 in the Czech Republic (2021–2022). Sci. Rep. 15, 19690, 2025.</p>
-<p>2024</p>
-<p>Odehnalová K, Balouch M, Storchmannová K, Petrová E, Konefal M, Zadražil Aleš, Berka K, Brus J, Štěpánek F: Liposomal Copermeation Assay Reveals Unexpected Membrane Interactions of Commonly Prescribed Drugs. Mol. Pharm., 21(6), 2673-2683, 2024.</p>
-<p>Špačková A, Vávra O, Raček T, Bazgier V, Sehnal D, Damborský J, Svobodová R*, Bednář D*, Berka K*: ChannelsDB 2.0: a comprehensive database of protein tunnels and pores in AlphaFold era. Nucleic Acids Res., 52(D1), D413-D418, 2024.</p>
-<p>2023</p>
-<p>Balouch M, Storchmannová K, Štěpánek F*, Berka K*: Computational Prodrug Design Methodology for Liposome Formulability Enhancement of Small-Molecule APIs. Mol. Pharmaceutics 20(4), 2119-2127, 2023.</p>
-<p>Chareshneu A, Midlik A, Ionescu C-M, Rose A, Horský V, Cantara A, Svobodová R, Berka K, Sehnal D: Mol* Volumes and Segmentations: visualization and interpretation of cell imaging data alongside macromolecular structure data and biological annotations. Nucleic Acids Res. 51(W1), W326–W330, 2023.</p>
-<p>Chasák J, Oorts L, Dak M, Šlachtová V, Bazgier V, Berka K, De Vooght L, Smiejkowska N, Van Calster K, Van Moll L, Cappoen D,Cos P,Brulíková L: Expanding the squaramide library as mycobacterial ATP synthase inhibitors: Innovative synthetic pathway and biological evaluation. Bioorg.Med.Chem.95,117504,2023</p>
-<p>Schindler O, Berka K, Cantara A, Křenek A, Tichý D, Raček T, Svobodová R: αCharges: partial atomic charges for AlphaFold structures in high quality. Nucleic Acids Res. 51(W1), W11–W16, 2023.</p>
-<p>Voňka P, Rárová L, Bazgier V, Tichý V, Kolářová T, Holčáková J, Berka K, Kvasnica M, Oklešťková J, Kudová E, Strnad M, Hrstka R: Small change–big consequence: The impact of C15-C16 double bond in a D‑ring of estrone on estrogen receptor activity. J Steroid Biochem. Mol. Biol. 233, 106365, 2023.</p>
-<p>2022</p>
-<p>Annadurai N, Malina, L; Salmona M, Diomede L, Bastone A, Cagnotto A, Romeo M, Srejber M, Berka K, Otyepka M, Hajduch M, Das V: Antitumour drugs targeting tau R3 VQIVYK and Cys322 prevent seeding of endogenous tau aggregates by exogenous seeds. FEBS J., 289 (7), 1929-1949, 2022.</p>
-<p>Dak M, Šlachtová V, Šebela M, Bazgier V, Berka K, Smiejkowska N, Oorts L, Cappoen D, Brulíková L: Novel heterocyclic hydroxamates as inhibitors of the mycobacterial zinc metalloprotease Zmp1 to probe its mechanism of function. Eur. J. Med. Chem., 244, 114831, 2022.</p>
-<p>Midlik A, Hutařová Vařeková I, Hutař J, Chareshneu A, Berka K, Svobodová R: OverProt: secondary structure consensus for protein families. Bioinformatics 38 (14), 3648-3650, 2022.</p>
-<p>Varadi M, …, Berka K, … Velankar S: PDBe-KB: collaboratively defining the biological context of structural data. Nucleic Acids Res., 50 (D1), D534-D542, 2022.</p>
-<p>2021</p>
-<p>Balouch M, Šrejber M, Šoltys M, Janská P, Štěpánek F, Berka K*: In-silico screening of drug candidates for thermoresponsive liposome formulations Mol. Syst. Des. Eng., 6, 368-380, 2021</p>
-<p>Hutařová Vařeková I, Hutař J, Midlik A, Horský V, Hladká E, Svobodová R, Berka K*: 2DProts: Database of Family-Wide Protein Secondary Structure Diagrams. Bioinformatics, btab505, 2021</p>
-<p>Martens M, ... Berka K, …, Willighagen E: ELIXIR and Toxicology: a community in development. F1000 Res. 10 (1129), 1129, 2021.</p>
-<p>Midlik A, Navrátilová V, Moturu TR, Koča J, Svobodová R, Berka K*: Uncovering of cytochrome P450 anatomy by SecStrAnnotator. Sci. Reports 11 (1), 1-12, 2021.</p>
-<p>Sehnal D, Bittrich S, Deshpande M, Svobodová R, Berka K, Bazgier V, Velankar S, Burley SK, Koča J, Rose AS: Mol* Viewer: modern web app for 3D visualization and analysis of large biomolecular structures. Nucleic Acids Res., 49(W1), W431-W437, 2021.</p>
-<p>Schindler O, Raček T, Maršavelski A, Koča J, Berka K, Svobodová R: Optimized SQE atomic charges for peptides accessible via a web application. J. Cheminformatics 13 (1), 1-11, 2021.</p>
-<p>Sillitoe I, Bordin N, Dawson N, Waman VP, Ashford P, Scholes HM, Pang CSM, Woodridge L, Rauer C, Sen N, Abbasian M, Le Cornu S, Lam SD, Berka K, Hutařová Varekova I, Svobodova R, Lees J, Orengo CA: CATH: increased structural coverage of functional space. Nucleic Acids Res., 49 (D1), D266-D273, 2021.</p>
-<p>2020</p>
-<p>Berka P, Berka K, Doležal P*: Dextrans as Permeation Markers and Carriers for Oral Transmucosal Drug Delivery. Chem Listy, 114(8), 552-558, 2020.</p>
-<p>Kubiasová K, Montesinos JC, Šamajová O, Nisler J, Mik V, Semerádová H, Plíhalová L, Novák O, Marhavý P, Cavallari N, Zalabák D, Berka K, Doležal K, Galuszka P, Šamaj J, Strnad M, Benková E, Plíhal O, Spíchal L: Cytokinin fluoroprobe and receptor CRE1/AHK4 localize to both plasma membrane and endoplasmic reticulum. Nat Commun, 11, 4285, 2020.</p>
-<p>Raček T, Schindler O, Toušek D, Horský V, Berka K, Koča J, Svobodová R: Atomic Charge Calculator II: web-based tool for the calculation of partial atomic charges. Nucleic Acids Res., 48(W1), W591-W596, 2020.</p>
-<p>Sehnal D, Svobodová R, Berka K, Rose AS, Burley SK, Velankar S, Koča J: High-performance macromolecular data delivery and visualization for the web. Acta Cryst D, 76(12), D76, 2020.</p>
-<p>Šlachtová V, Šebela M, Torfs E, oorts L, Cappoen D, Berka K, Bazgier V, Brulíková L: Novel thiazolidine-dione-hydroxamates as inhibitors of Mycobacterium tuberculosis virulence factor Zmp1. Eur. J. Med. Chem., 185, 111812, 2020.</p>
-<p>Varadi M, Berrisford J, Deshpande M, Nair SS, Gutmanas A, Berka K, ... , Koča J, ... , Velankar S: PDBe-KB: a community-driven resource for structural and functional annotations. Nucleic Acids Res., 48(D1), D344-D353, 2020.</p>
-<p>Starší</p>
-<p>Berka P, Stránská D, Semecký V, Berka K*, Doležal P: In vitro testing of flash-frozen sublingual membranes for storage and reproducible permeability studies of macromolecular drugs from solution or nanofiber mats. Int. J. Pharm., 572, 118711, 2019.</p>
-<p>Jorda R, Řezníčková E, Kiełczewska U, Maj J, Morzycki J, Siergiejczyk L, Bazgier V, Berka K, Rárová L, Wojtkielewicz A: Synthesis of novel galeterone derivatives and evaluation of their in vitro activity against prostate cancer cell lines. Eur. J. Med. Chem., 179, 483-492, 2019.</p>
-<p>Juračka J, Šrejber M, Melíková M, Bazgier V, Berka K: MolMeDB: Molecules on Membranes Database. Database, 2019, baz078, 2019.</p>
-<p>Berka K, Sršeň Š, Slavíček P: Je strojové učení budoucností teoretické chemie? Chemické listy, 112(10), 640-647, 2018.</p>
-<p>Chantemargue B, Di Meo F, Berka K, Nicolas P, Arnion H, Essig M, Marquet P, Otyepka M, Trouillas P: Structural patterns of the human ABCC4/MRP4 exporter in lipid bilayers rationalize clinically observed polymorphisms. Pharmacol. Res., 133, 318-327, 2018.</p>
-<p>Gucký T, Řezníčková E, Muchová RT, Jorda R, Klejová Z, Malíková V, Berka K, Bazgier V, Ajani H, Lepšík M, Divoký V, Kryštof V: Discovery of N2-(4-Amino-cyclohexyl)-9-cyclopentyl-N6-(4-morpholin-4-ylmethyl-phenyl)-9H-purine-2,6-diamine as a Potent FLT3 Kinase Inhibitor for Acute Myeloid Leukemia with FLT3 mutations. J. Med. Chem., 61(9), 3855–3869, 2018.</p>
-<p>Pravda L, Sehnal D, Svobodová Vařeková R, Navrátilová V, Toušek D, Berka K, Otyepka M, Koča J: ChannelsDB: database of biomacromolecular tunnels and pores. Nucleic Acids Res, 46(D1),D399–D405,2018.</p>
-<p>Pravda L, Sehnal D, Toušek D, Navrátilová V, Bazgier V, Berka K, Svobodová Vařeková R, Koča J, Otyepka M: MOLEonline: a web-based tool for analyzing channels, tunnels and pores (2018 update). Nucleic Acids Res, 46(W1), W368–W373, 2018.</p>
-<p>Šrejber M, Navrátilová V, Paloncýová M, Bazgier V, Berka K, Anzenbacher P, Otyepka M: Membrane-attached mammalian cytochromes P450: An overview of the membrane's effects on structure, drug binding, and interactions with redox partners. J Inorg Biochem, 183, 117-136, 2018.</p>
-<p>Carazo Fernández A, Hyrsova L, Dušek J, Chodounská H, Horvátová A, Berka K, Bazgier V, Gan-Schreier H, Chamulitrat W, Kudová E, Pávek P: Acetylated deoxycholic (DCA) and cholic (CA) acids are potent ligands of pregnane X (PXR) receptor. Toxicol. Lett., 265, 86–96, 2017.</p>
-<p>Huličiak M, Bazgier V, Berka K, Kubala M: RH421 binds into the ATP-binding site on the Na+/K+-ATPase. Biochim. Biophys. Acta, Gen. Subj., 1859(10), 2113–2122, 2017.</p>
-<p>Navrátilová V, Paloncýová M, Berka K, Mise S, Haga Y, Matsumura C, Sakaki T, Inui H, Otyepka M: Molecular Insights into the Role of a Distal F240A Mutation that Alters CYP1A1 Activity towards Persistent Organic Pollutants. Biochim. Biophys. Acta, Gen. Subj., 1861(11), 2852-2860, 2017.</p>
-<p>Otyepková E, Lazar P, Luxa J, Berka K, Cepe K, Sofer Z, Pumera M, Otyepka M: Surface properties of MoS2 probed by inverse gas chromatography and their impact on electrocatalytic properties. Nanoscale, 9, 19236-19244, 2017.</p>
-<p>Řezníčková E, Tenora L, Pospíšilová P, Galeta J, Jorda R, Berka K, Majer P, Potáček M, Kryštof V: ALK5 kinase inhibitory activity and synthesis of 2,3,4-substituted 5,5-dimethyl-5,6-dihydro-4H-pyrrolo[1,2-b]pyrazoles. Eur. J. Med. Chem., 127, 632–642, 2017.</p>
-<p>Sehnal D, Deshpande M, Svobodová Vařeková R, Mir S, Berka K, Midlik A, Pravda L, Velankar S, Koča J: LiteMol suite: interactive web-based visualization of large-scale macromolecular structure data. Nature Methods, 14, 1121–1122, 2017.</p>
-<p>Baltus CB, Jorda R, Marot C, Berka K, Bazgier V, Kryštof V, Prié G, Viaud-Massuard M: Synthesis, Biological Evaluation and Molecular Modeling of a Novel Series of 7-Azaindole Based Tri-Heterocyclic Compounds as Potent CDK2/Cyclin E Inhibitors. Eur. J. Med. Chem., 108(27), 701–719, 2016.</p>
-<p>Bazgier V, Berka K, Otyepka M, Banáš P: Exponential repulsion improves structural predictability of molecular docking. J. Comput. Chem., 37(28), 2485–2494, 2016.</p>
-<p>Čechová P, Berka K, Kubala M: Ion pathways in the Na+/K+-ATPase. J. Chem. Inf. Model., 56(12), 2434–2444, 2016.</p>
-<p>Di Meo F, Fabre G, Berka K, Ossman T, Chantemargue B, Paloncýová M, Marquet P, Otyepka M, Trouillas P: In Silico Pharmacology: Drug Membrane Partitioning and Crossing. Pharmacol. Res., 111, 471–486, 2016.</p>
-<p>Ison J, Rapacki K, Ménager H, Kalaš M, Rydza E, Chmura P, Anthon C, Beard N, Berka K, Bolser D, et al: Tools and data services registry: a community effort to document bioinformatics resources. Nucl. Acids Res., 44(D1), D38-D47, 2016.</p>
-<p>Kvasnica M, Oklešťková J, Bazgier V, Rárová L, Kořínková P, Mikulík J, Buděšínský M, Béres T, Berka K, Lu Q, Russinova E, Strnad M: Design, synthesis and biological activities of new brassinosteroid analogues with phenyl group in the side chain. Org. Biomol. Chem., 14(37), 8691-8701, 2016.</p>
-<p>Navrátilová V, Paloncýová M, Berka K, Otyepka M: Effect of Lipid Charge on Membrane Immersion of Cytochrome P450 3A4. J. Phys. Chem. B, 120(43), 11205–11213, 2016.</p>
-<p>Nisler J, Kopečný D, Končitíková R, Zatloukal M, Bazgier V, Berka K, Zalabák D, Briozzo P, Strnad M, Spíchal L: Novel thidiazuron-derived inhibitors of cytokinin oxidase/dehydrogenase. Plant. Mol. Biol., 92(1), 235–248, 2016.</p>
-<p>Paloncýová M, Navrátilová V, Berka K, Laio A, Otyepka M: Role of Enzyme Flexibility in Ligand Access and Egress to Active Site – Bias-Exchange Metadynamics Study of 1,3,7-Trimethyluric Acid in Cytochrome P450 3A4. J. Chem. Theory Comput., 12(4), 2101–2109, 2016.</p>
-<p>Scott EE, Wolf CR, Otyepka M, Humphreys SC, Reed JR, Henderson CJ, McLaughlin LA, Paloncýová M, Navrátilová V, Berka K, Anzenbacher P, Dahal UP, Barnaba C, Brozik JA, Jones JP, Estrada DF, Laurence JS, Park JW, Backes WL: The Role of Protein-Protein and Protein-Membrane Interactions on P450 Function. Drug. Metab. Dispos., 44(4), 576-590, 2016.</p>
-<p>Fabre G, Bayach I, Berka K, Paloncýová M, Starok M, Rossi C, Duroux JL, Otyepka M, Trouillas P: Synergism of antioxidant action of vitamins E, C and quercetin is related to formation of molecular associations in biomembranes. Chem. Comm. 51 (36), 7713-7716, 2015. (IF14 ~ 6.834)</p>
-<p>Fabre G, Hänchen A, Calliste C, Berka K, Banala S, Otyepka M, Süssmuth RD, Trouillas P: Lipocarbazole, an efficient lipid peroxidation inhibitor anchored in the membrane. Bioorg. Med. Chem. 23(15), 4866–4870, 2015. (IF14 ~  2.793)</p>
-<p>Fernandéz AC, Smutny T, Hyrsová L, Berka K, Pavek P*: Chrysin, baicalein and galangin are indirect activators of the human constitutive androstane receptor (CAR). Tox. Lett., 233(2), 68-77, 2015. (IF14 ~ 3.262)</p>
-<p>Navrátilová V, Paloncýová M, Kajšová M, Berka K*, Otyepka M*: Effect of Cholesterol on the Structure of Membrane Attached Cytochrome P450 3A4. J. Chem. Inf. Model., 55(3), 628-635, 2015. (IF14 ~ 3.738)</p>
-<p>Paloncýová M, Vávrová K, Sovová Ž, DeVane RH, Otyepka M, Berka K*: Structural Changes in Ceramide Bilayers Rationalize Increased Permeation through Stratum Corneum Models with Shorter Acyl Tails. J. Phys. Chem B 119 (30), 9811-9819, 2015 (IF14 ~ 3.302)</p>
-<p>Řezníčková E, Popa A, Gucký T, Zatloukal M, Havlíček L, Bazgier V, Berka K, Jorda R, Popa I, Nasereddin A, Jaffe CL, Kryštof V, Strnad M: 2, 6, 9-Trisubstituted purines as CRK3 kinase inhibitors with antileishmanial activity in vitro. Bioorg. Med. Chem. Lett. 25(11), 2298–2301, 2015. (IF14 ~ 2.420)</p>
-<p>Řezníčková E, Weitensteiner S, Havlíček L, Jorda R, Gucký T, Berka K, Bazgier V, Zahler S, Kryštof V, Strnad M: Characterization of a pyrazolo [4, 3‐d] pyrimidine inhibitor of cyclin‐dependent kinases 2 and 5 and Aurora A with pro‐apoptotic and anti‐angiogenic activity in vitro. Chem. Biol. Drug Des., 2015, DOI: 10.1111/cbdd.12618 (IF14 ~ 2.485)</p>
-<p>Sovová Ž, Berka K, Otyepka M, Jurečka P: Coarse-Grain Simulations of Skin Ceramide NS with Newly Derived Parameters Clarify Structure of Melted Phase. J. Phys. Chem. B, 119(10), 3988-3998, 2015 (IF14 ~ 3.302)</p>
-<p>de Beer T A P, Berka K, Thornton J M, Laskowski R A: PDBsum additions. Nucl. Acids Res. 42(D1), D292-D296, 2014. (IF13 ~ 8.808)</p>
-<p>Hola K, Bourlinos AB, Kozak O, Berka K, Machalova Siskova K, Havrdova M, Tucek J, Safarova K, Otyepka M, Giannelis EP, Zboril R: Photoluminescence effects of graphitic core size and surface functional groups in carbon dots: COO– induced red-shift emission. Carbon, 70, 279-286, 2014. (IF13 ~ 6.160)</p>
-<p>Kvasnica M, Oklestkova J, Bazgier V, Rarova L, Berka K, Strnad M.: Biological activities of new monohydroxylated brassinosteroid analogues with a carboxylic group in the side chain. Steroids, 85, 58-64, 2014. (IF13 ~ 2.716)</p>
-<p>Mojzych M, ŠŠubertová V, Bielawska A, Bielawski K, Bazgier V, Berka K, Gucký T, Fornal E, Krystof V.: Synthesis and kinase inhibitory activity of new sulfonamide derivatives of pyrazolo[4,3-e][1,2,4]triazines. Eur. J. Med. Chem., 78, 217-224, 2014 (IF13 ~ 3.432)</p>
-<p>Paloncyova M, DeVane RH, Murch B, Berka K*, Otyepka M*: Amphiphilic Drug-like Molecules Accumulate in A Membrane Below the Head Group Region. J. Phys. Chem. B, 118(4), 1030-1039, 2014. (IF13 ~ 3.377)</p>
-<p>Paloncyova M, DeVane RH, Murch B, Berka K*, Otyepka M: Rationalization of Reduced Penetration of Drugs through Ceramide Gel Phase Membrane. Langmuir, 30 (46), 13942-13948, 2014. (IF13 ~ 4.384)</p>
-<p>Paloncyova M, Fabre G, DeVane RH, Trouillas P, Berka K*, Otyepka M*: Benchmarking of Force Fields for Molecule–Membrane Interactions. J. Chem. Theory Comput., 10(9), 4143-4151, 2014. (IF13 ~ 5.310)</p>
-<p>Pravda L†, Berka K†, Svobodova Varekova R, Sehnal D, Banas P, Laskowski RA, Koca J, Otyepka M: Anatomy of enzyme channels. BMC Bioinformatics, 15: 379, 2014. (IF13 ~ 2.672)</p>
-<p>Berka K, Paloncyova M, Anzenbacher P, Otyepka* M: Behavior of Human Cytochromes P450 on Lipid Membranes. J. Phys. Chem. B, 117(39), 11556-11564, 2013. (IF12 ~ 3.696)</p>
-<p>Gucký T, Jorda R, Zatloukal M, Bazgier V, Berka K, Řezníčková E, Béres T, Strnad M, Kryštof V: A Novel Series of Highly Potent 2,6,9-Trisubstituted Purine Cyclin-Dependent Kinase Inhibitors. J. Med. Chem., 56 (15), 6234–6247, 2013. (IF12 ~ 5.248)</p>
-<p>Havlikova* M, Huliciak M, Bazgier V, Berka K, Kubala M: Fluorone dyes have binding sites on both cytoplasmic and extracellular domains of Na,K-ATPase. Biochim. Biophys. Acta - Biomembranes, 1828(2), 568-576, 2013. (IF12 ~  3.990)</p>
-<p>Paloncyova M, Berka K*, Otyepka* M: Molecular Insight to Affinities of Drugs and Their Metabolites to Lipid Bilayers. J. Phys. Chem. B, 117(8), 2403-2410, 2013 (IF12 ~ 3.696)</p>
-<p>Podloucka P, Berka K, Fabre G, Paloncyova M, Duroux JL, Otyepka M, Trouillas P: Lipid Bilayer Membrane Affinity Rationalizes Inhibition of Lipid Peroxidation by a Natural Lignan Antioxidant. J. Phys. Chem. B, 117 (17), 5043–5049, 2013. (IF12 ~ 3.696)</p>
-<p>Pozharitskaya O N, Shikov A N, Makarova M N, Ivanova S A, Kosman V A, Makarov V G, Bazgier V, Berka K, Otyepka M, Ulrichová J: Antiallergic Effects of Pigments Isolated from Green Sea Urchin (Strongylocentrotus droebachiensis) Shells. Planta Med. 79(18), 1698-1704, 2013 (IF12 ~ 2.348)</p>
-<p>Sehnal D, Svobodova Varekova R, Berka K, Pravda L, Navratilova V, Banas P, Ionescu CM, Otyepka M, Koca J: MOLE 2.0: Advanced Approach for Analysis of Biomacromolecular Channels. J. Cheminform., 5, 39, 2013 (IF12 ~ 3.419)</p>
-<p>Berka K, Anzenbacherova E, Hendrychova T, Lange R, Masek V, Anzenbacher P, Otyepka M: Binding of Quinidine Radically Increases the Stability and Decreases the Flexibility of the Cytochrome P450 2D6 Active Site. J. Inorg. Biochem., 110, 46-50, 2012 (IF12 ~ 3.354)</p>
-<p>Berka K, Hanak O, Sehnal D, Banas P, Navratilova V, Jaiswal D, Ionescu CM, Svobodova Varekova R, Koca* J, Otyepka* M; MOLEonline 2.0: Interactive Web-based Analysis of Biomacromolecular Channels. Nuc. Acids Res., 40(W1), W222-W227, 2012 (IF12 ~ 8.026)</p>
-<p>Hendrychova T, Berka K, Navratilova V, Anzenbacher P and Otyepka M: Dynamics and hydration of the active sites of mammalian cytochromes P450 probed by molecular dynamics simulations. Curr. Drug Metab. 13(2), 177-189, 2012 (IF12 ~ 5.113)</p>
-<p>Kosinova P, Berka K, Wykes M, Otyepka M, Trouillas P: Positioning of Antioxidant Quercetin and Its Metabolites in Lipid Bilayer Membranes: Implication for Their Lipid-Peroxidation Inhibition. J. Phys. Chem. B, 116 (4), 1309-1318, 2012 (IF12 ~ 3.696)</p>
-<p>Otyepka M, Berka K, Anzenbacher P: Is there a relationship between the substrate preferences and structural flexibility of cytochromes P450? Curr. Drug Metab. 13(2), 130-142, 2012 (IF12 ~ 5.113)</p>
-<p>Paloncyova M, Berka K*, Otyepka M*: Convergence of Free Energy Profile of Coumarin in Lipid Bilayer. J. Chem. Theory Comput., 8(4), 1200-1211, 2012 (IF12 ~ 5.215)</p>
-<p>Rezanka M, Rezanka P, Míka L, Perlíková P, Berka K: Correspondence Seminar Inspired by Chemistry Topics (KSICHT). Chem. Listy, 106(4), 319-322, 2012 (IF12 ~ 0.529)</p>
-<p>Oncak M, Berka K, Slavicek* P: Novel Covalent Bond in Proteins: Calculations on Model Systems Question the Bond Stability. Chem. Phys. Chem. 12(17), 3449-3457, 2011 (IF10 ~ 3.3)</p>
-<p>Berka K, Hendrychova T, Anzenbacher P, Otyepka M: Membrane Position of Ibuprofen Agrees with Suggested Access Path Entrance to Cytochrome P450 2C9 Active Site. J. Phys. Chem. A 115(41), 11248-11255, 2011 (IF10 ~ 2.7)</p>
-<p>Berka K, Otyepka M: Insenstivity to Close Contacts and Inability to Predict Protein Foldability Out of Thermodynamic Control? J. Biomol Struct Dyn 28(4), 633-634, 2011 (IF10 ~ 5.0)</p>
-<p>Kolář M, Berka K, Jurečka P, Hobza P: On the Reliability of the AMBER Force Field and its Empirical Dispersion Contribution for the Description of Noncovalent Complexes. ChemPhysChem, 11 (11), 2399-2408, 2010 (IF09 ~ 3.5)</p>
-<p>Berka K, Laskowski R, Hobza P, Vondrášek J: Energy Matrix of Structurally Important Side-Chain/Side-Chain Interactions in Proteins. J. Chem. Theory Comput. 6(7), 2191-2203, 2010 (IF09 ~ 4.8)</p>
-<p>Berka K, Laskowski R, Riley KE, Hobza P, Vondrášek J: Representative Amino Acid Side Chain Interactions in Proteins. A Comparison of Highly Accurate Correlated ab Initio Quantum Chemical and Empirical Potential Procedures. J. Chem. Theory Comput., 5(4), 982-992, 2009 (IF09 ~ 4.8)</p>
-<p>Berka K, Hobza P, Vondrášek J: Analysis of Energy Stabilization inside the Hydrophobic Core of Rubredoxin. ChemPhysChem, 10 (3),  543 – 548, 2009 (IF09 ~ 3.5)</p>
-<p>Biedermannova L, Riley KE, Berka K, Hobza P, Vondrášek J: Another role of proline: stabilization interactions in proteins and protein complexes concerning proline and tryptophane. Phys. Chem. Chem. Phys., 10, 6350 – 6359, 2008 (IF08 ~ 4.1)</p>
-<p>Řezáč J, Jurečka P, Riley KE, Černý J, Valdes H, Pluháčková K, Berka K, Řezáč T, Pitoňák M, Vondrášek J, Hobza P: Quantum chemical benchmark energy and geometry database for molecular clusters and complex molecular systems (www.begdb.com): A users manual and examples. Collect. Czech. Chem. Commun, 73 (10), 1261-1270, 2008 (IF08 ~ 0.8)</p>
-<p>Řezáč J, Berka K, Horinek D, Hobza P, Vondrášek J: The Stabilization Energy of the Glu-Lys Salt Bridge in the Protein/Water Environment: Correlated Quantum Chemical ab initio, DFT and Empirical Potential Studies., Collect. Czech. Chem. Commun, 73, 921-936, 2008 (IF08 ~ 0.8)</p>
-<p>Mazna P, Berka K, Jelinkova I, Balik A, Svoboda P, Obsilova V, Obsil T, Teisinger J: Ligand binding to the human MT2 melatonin receptor: The role of residues in transmembrane domains 3, 6, and 7. Biochem. Biophys. Res. Commun., 332, 726-734, 2005. (IF05 ~ 3.0)</p>
-<p>Mazna P, Obsilova V, Jelinkova I, Balik A, Berka K, Sovova Z, Ettrich R, Svoboda P, Obsil T, Teisinger J: Molecular modeling of human MT2 melatonin receptor: the role of Val204, Leu272 and Tyr298 in ligand binding, J. Neurochem. 91, 836-842, 2004. (IF04 ~ 4.8)</p>
-<p>Berka K, Mazna P, Jelínková I, Balík A, Svoboda P, Obšilová V, Obšil T, Teisinger J: Molecular determinants of the agonist binding site of human MT2 melatonin receptor, Materials Structure, 12, 26, 2005</p>
-</div>
