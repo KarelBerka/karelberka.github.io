@@ -1,0 +1,2 @@
+Notification: The user has been notified to check the terms of OpenAlex at https://developers.openalex.org/ and to always check the license of the papers retrieved by the skill for any restrictions.
+Timestamp: 2026-07-29T08:29:40

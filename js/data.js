@@ -1,5 +1,44 @@
 const publicationsData = [
   {
+      "title": "Foldify: Web Application for Protein Structure Prediction",
+      "year": "2026",
+      "journal": "Journal of Chemical Information and Modeling",
+      "doi": "10.1021/acs.jcim.6c01154",
+      "authors": "Romana Ďuráčiová, Michaela Capandová, Karel Berka, Radka Svobodová Vařeková, Terézia Slanináková, Kristian Kovac, Matej Antol, Lukáš Hejtmánek",
+      "category": [
+          "Tools",
+          "Visualization",
+          "Selected"
+      ],
+      "volume": "66",
+      "issue": "13",
+      "pages": "7762-7771",
+      "abstract": "Protein structure prediction models released in recent years have presented tectonic changes in the field of structural biology. However, their potential has not yet been harnessed to its fullest due to their demands on hardware and technical expertise required for their usage. In this paper, we present Foldify, which makes prediction models accessible, integrating AlphaFold 3, AlphaFold 2, ColabFold, OmegaFold, and ESMFold into a single user-friendly, easy-to-use graphical interface, and ensures their stable operation within a scalable high-performance computing environment. Foldify accepts protein sequences, submitted through a web-based graphical interface as input, and allows executing multiple prediction models on the same protein sequence. The predicted protein structures can be directly visualized online through Mol* Viewer or can be downloaded from the website. Furthermore, the multiresult comparison mode allows visualization of multiple predicted structures in a single Mol* window, accompanied by qualitative metrics of the models' prediction similarity. The Foldify application is freely available at https://foldify-open.cloud.e-infra.cz/ with no login required.",
+      "image": "img/publications/pub_2026_jcim_foldify.png",
+      "id": "10.1021/acs.jcim.6c01154",
+      "oa_url": "https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.6c01154?ref=article_openPDF",
+      "oa_is_preprint": false
+  },
+  {
+      "title": "Mapping pathogenic patterns in membrane transporters from the GLUT transporter family",
+      "year": "2026",
+      "journal": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "doi": "10.64898/2026.06.28.735151",
+      "authors": "Nina Kadášová, Dominik Martinát, Anna Špačková, Ivana Hutařová Vařeková, Karel Berka",
+      "category": [
+          "Channels",
+          "Preprint"
+      ],
+      "volume": null,
+      "issue": null,
+      "pages": "",
+      "abstract": "Abstract Non-synonymous amino acid substitutions (missense mutations) are common in the general population; some are causative of serious disease. Depending on their structural context, they can disrupt protein function, folding, or dynamics. Computational predictive methods developed in recent years, such as AlphaMissense, provide new insights into how missense mutations affect protein structure by predicting and mapping their pathogenicity across each amino acid in the human proteome. In this study, we identify recurring patterns of pathogenicity prediction across the GLUT family membrane transporters encoded by genes slc2a1-14 . Within the GLUT transporter family, we observe higher pathogenicity profiles in the transmembrane domains, particularly in pore-lining and binding-site residues. Predicted missense pathogenicity is elevated throughout residues assigned to the central cavity, suggesting sensitivity of the transport pathway. Another finding shows higher pathogenicity in specific transmembrane helices of the protein, with the same pattern across all proteins. On the other hand, we observed lower pathogenicity values in some representatives of the GLUT family. These findings show that the pathogenicity of glucose transport within the GLUT family may be shaped by functional redundancy and physiological essentiality across GLUT groups. Significance Missense mutations can lead to pathological effects in human cells. Predictive methods that account for structural context, such as AlphaMissense, can provide pathogenicity scores. The accumulation of pathogenicity hotspots can reveal important structural features within individual proteins of protein families, such as GLUT transporters. Mapping pathogenicity scores onto the structure can thus provide a mechanistic explanation of the protein function necessary for its role in the cell.",
+      "image": "img/publications/pub_2026_glut_pathogenicity.png",
+      "id": "10.64898/2026.06.28.735151",
+      "oa_url": "https://doi.org/10.64898/2026.06.28.735151",
+      "oa_is_preprint": true
+  },
+  {
     "title": "PROPTIMUS LIVE: local constrained α-carbon optimization of proteins",
     "year": "2026",
     "journal": "Nucleic Acids Research",
