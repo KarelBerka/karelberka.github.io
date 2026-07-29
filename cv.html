@@ -829,7 +829,45 @@
                     `;
                 }
 
-                renderTarget.innerHTML = html;
+                
+            renderTarget.innerHTML = html;
+
+            // Add Year filter support to CV publications
+            const pubListElem = renderTarget.querySelector('.cv-pub-list');
+            if (pubListElem) {
+                const pubFilterContainer = document.createElement('div');
+                pubFilterContainer.className = 'cv-year-filter-box';
+                pubFilterContainer.style.cssText = 'margin-bottom: 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: var(--bg-tertiary, #f8fafc); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color, #e2e8f0);';
+                pubFilterContainer.innerHTML = `
+                    <label for="cv-pub-year-select" style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">
+                        ${getLang() === 'cs' ? 'Filtrovat podle roku:' : 'Filter by Year:'}
+                    </label>
+                    <select id="cv-pub-year-select" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer;">
+                        <option value="all">${getLang() === 'cs' ? 'Všechny roky' : 'All Years'}</option>
+                        ${Array.from(new Set(publicationsData.map(p => p.year).filter(Boolean))).sort().reverse().map(y => `<option value="${y}">${y}</option>`).join('')}
+                    </select>
+                `;
+                pubListElem.parentNode.insertBefore(pubFilterContainer, pubListElem);
+            }
+
+            // Re-render publications on year select change
+            document.addEventListener('change', (e) => {
+                if (e.target && e.target.id === 'cv-pub-year-select') {
+                    const selectedYear = e.target.value;
+                    const listElem = document.querySelector('.cv-pub-list');
+                    if (listElem) {
+                        const items = listElem.querySelectorAll('.cv-pub-item');
+                        items.forEach(item => {
+                            const text = item.textContent;
+                            if (selectedYear === 'all' || text.includes(` ${selectedYear}.`) || text.includes(` (${selectedYear})`) || text.includes(` ${selectedYear},`)) {
+                                item.style.display = '';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    }
+                }
+            });
             }
 
             // Set up format switches

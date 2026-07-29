@@ -68,7 +68,8 @@
                     <p id="pd-authors" class="pd-authors">Authors</p>
                     <p id="pd-journal" class="pd-journal">Journal</p>
                     
-                    <div class="pd-actions" style="margin-top: 2rem;">
+                    <div class="pd-actions" style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 10px;">
+                        <a id="btn-web" href="#" target="_blank" rel="noopener" class="btn btn-primary hidden" style="background: linear-gradient(135deg, #0ea5e9, #0284c7); color: #fff; font-weight: 600;">Web App / Website 🌐</a>
                         <a id="btn-official" href="#" target="_blank" rel="noopener" class="btn btn-primary hidden">Official Publication</a>
                         <a id="btn-oa" href="#" target="_blank" rel="noopener" class="btn btn-secondary hidden">Read Open Access</a>
                         <a id="btn-preprint" href="#" class="btn btn-secondary hidden">Preprint</a>
@@ -146,6 +147,12 @@
             }
 
             // Buttons
+                        const btnWeb = document.getElementById('btn-web');
+            if (pub.web) {
+                btnWeb.href = pub.web;
+                btnWeb.classList.remove('hidden');
+            }
+
             const btnOfficial = document.getElementById('btn-official');
             if (pub.doi) {
                 btnOfficial.href = 'https://doi.org/' + pub.doi;

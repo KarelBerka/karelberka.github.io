@@ -340,11 +340,20 @@ function initPublicationsFilter() {
     const pubCards = document.querySelectorAll('.pub-card');
     const loadMoreBtn = document.getElementById('load-more-pubs');
 
-    let currentFilter = 'selected';
+        let currentFilter = 'selected';
+    let currentYearFilter = 'all';
     let searchQuery = '';
     let visibleLimit = 10;
 
-    // Apply Filter & Search Combined
+    const yearSelect = document.getElementById('pub-year-select');
+    if (yearSelect) {
+        yearSelect.addEventListener('change', (e) => {
+            currentYearFilter = e.target.value;
+            visibleLimit = 10;
+            applyFilterAndSearch();
+        });
+    }
+
     function applyFilterAndSearch() {
         let visibleCount = 0;
         let totalMatched = 0;
@@ -352,12 +361,14 @@ function initPublicationsFilter() {
         pubCards.forEach(card => {
             const cardCategory = card.getAttribute('data-category');
             const cardCategories = cardCategory ? cardCategory.split(' ') : [];
+            const cardYear = card.getAttribute('data-year') || '';
             const title = card.querySelector('.pub-title').textContent.toLowerCase();
             const authors = card.querySelector('.pub-authors').textContent.toLowerCase();
             const journal = card.querySelector('.pub-journal').textContent.toLowerCase();
             
             // Check tags match
             const matchesFilter = (currentFilter === 'all' || cardCategories.includes(currentFilter));
+            const matchesYear = (currentYearFilter === 'all' || cardYear === currentYearFilter);
             
             // Check search text match
             const matchesSearch = !searchQuery || 
@@ -365,7 +376,7 @@ function initPublicationsFilter() {
                                   authors.includes(searchQuery) || 
                                   journal.includes(searchQuery);
 
-            if (matchesFilter && matchesSearch) {
+            if (matchesFilter && matchesYear && matchesSearch) {
                 totalMatched++;
                 if (visibleCount < visibleLimit) {
                     card.style.display = 'flex';

@@ -480,14 +480,43 @@
                     <div class="divider"></div>
                 </div>
 
-                <div class="pub-controls">
-
+                <div class="pub-controls" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: space-between; margin-bottom: 20px;">
                     <div class="search-box">
-                        <input type="text" id="pub-search" placeholder="Search publications..." aria-label="Search publications">
+                        <input type="text" id="pub-search" placeholder="Search publications..." aria-label="Search publications" data-placeholder-en="Search publications..." data-placeholder-cs="Hledat publikace...">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="11" cy="11" r="8"></circle>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
+                    </div>
+                    <div class="year-filter-wrapper" style="display: flex; align-items: center; gap: 10px;">
+                        <label for="pub-year-select" style="font-weight: 600; font-size: 0.95rem; color: var(--text-secondary);">
+                            <span class="lang-en">Year:</span>
+                            <span class="lang-cs" style="display: none;">Rok:</span>
+                        </label>
+                        <select id="pub-year-select" class="pub-year-select" style="padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary); font-size: 0.95rem; font-weight: 500; cursor: pointer; box-shadow: var(--shadow-sm);">
+                            <option value="all">All Years / Všechny roky</option>
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                            <option value="2011">2011</option>
+                            <option value="2010">2010</option>
+                            <option value="2009">2009</option>
+                            <option value="2008">2008</option>
+                            <option value="2005">2005</option>
+                            <option value="2004">2004</option>
+                        </select>
                     </div>
                 </div>
 
@@ -514,7 +543,7 @@
 
                 <ol class="publications-list">
                     <!-- Publication -->
-                    <li class="pub-card" data-category="alphafoldology visualization" onclick="window.location.href='publication.html?id=10.1093/nar/gkag511'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2026" data-category="alphafoldology visualization" onclick="window.location.href='publication.html?id=10.1093/nar/gkag511'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2026_NucleicAcidsResearch_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -526,12 +555,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://proptimus.ceitec.cz/live" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkag511" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkag511" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools visualization channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkag379'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2026" data-category="tools visualization channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkag379'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2026_NucleicAcidsResearch_UnknownAuthor_2.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -543,12 +573,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://acc.biodata.ceitec.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkag379" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkag379" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="other" onclick="window.location.href='publication.html?id=10.26434/chemrxiv.15001700/v1'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2026" data-category="other" onclick="window.location.href='publication.html?id=10.26434/chemrxiv.15001700/v1'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2026_NoJournal_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -565,7 +596,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes channels" onclick="window.location.href='publication.html?id=10.1039/D6CP00146G'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2026" data-category="tools membranes channels" onclick="window.location.href='publication.html?id=10.1039/D6CP00146G'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2026_PhysicalChemistryChemicalPhysics_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -582,7 +613,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="channels databases selected tools visualization" onclick="window.location.href='publication.html?id=10.1093/bioinformatics/btaf486'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2025" data-category="channels databases selected tools visualization" onclick="window.location.href='publication.html?id=10.1093/bioinformatics/btaf486'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2025_Bioinformatics_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -594,13 +625,14 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://moleonline.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/bioinformatics/btaf486" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/bioinformatics/btaf486" onclick="event.stopPropagation();">Copy DOI</button>
                             <a href="https://github.com/sb-ncbr/MOLE" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">GitHub</a>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases tools visualization" onclick="window.location.href='publication.html?id=10.1093/nar/gkaf401'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2025" data-category="databases tools visualization" onclick="window.location.href='publication.html?id=10.1093/nar/gkaf401'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2025_NucleicAcidsResearch_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -612,12 +644,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://charges.chemi.muni.cz/" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkaf401" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkaf401" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="channels" onclick="window.location.href='publication.html?id=10.1038/s41598-025-01074-3'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2025" data-category="channels" onclick="window.location.href='publication.html?id=10.1038/s41598-025-01074-3'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2025_ScientificReports_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -634,7 +667,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools channels" onclick="window.location.href='publication.html?id=10.1186/s13321-025-01082-5'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2025" data-category="tools channels" onclick="window.location.href='publication.html?id=10.1186/s13321-025-01082-5'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2025_JournalofCheminformatics_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -646,12 +679,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://gmd.ceitec.cz/" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1186/s13321-025-01082-5" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1186/s13321-025-01082-5" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools drug-design channels" onclick="window.location.href='publication.html?id=10.1093/bioadv/vbaf231'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2025" data-category="tools drug-design channels" onclick="window.location.href='publication.html?id=10.1093/bioadv/vbaf231'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2025_BIOINFORMATICSADVANCES_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -668,7 +702,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases membranes selected" onclick="window.location.href='publication.html?id=10.1093/database/baz078'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2019" data-category="databases membranes selected" onclick="window.location.href='publication.html?id=10.1093/database/baz078'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2025_UniversityofOxfordUKFAIRsharing_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -680,11 +714,12 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://molmedb.chem.upol.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://github.com/MolMeDB/MolMeDB" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">GitHub</a>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design channels databases membranes selected" onclick="window.location.href='publication.html?id=10.26434/chemrxiv-2024-ndc8k-v2'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2024" data-category="drug-design channels databases membranes selected" onclick="window.location.href='publication.html?id=10.26434/chemrxiv-2024-ndc8k-v2'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2024_NoJournal_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -701,7 +736,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/acs.molpharmaceut.3c00766'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2024" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/acs.molpharmaceut.3c00766'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2024_MolecularPharmaceutics_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -718,7 +753,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="channels databases selected tools alphafoldology" onclick="window.location.href='publication.html?id=10.1093/nar/gkad1012'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2024" data-category="channels databases selected tools alphafoldology" onclick="window.location.href='publication.html?id=10.1093/nar/gkad1012'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2024_NucleicAcidsResearch_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -730,13 +765,14 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://channelsdb.biodata.ceitec.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkad1012" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkad1012" onclick="event.stopPropagation();">Copy DOI</button>
                             <a href="https://github.com/sb-ncbr/channelsdb" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">GitHub</a>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases channels visualization selected" onclick="window.location.href='publication.html?id=10.1007/978-1-0716-4007-4_12'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2024" data-category="databases channels visualization selected" onclick="window.location.href='publication.html?id=10.1007/978-1-0716-4007-4_12'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2024_ProteinBioinformatics_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -748,13 +784,14 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://moleonline.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1007/978-1-0716-4007-4_12" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1007/978-1-0716-4007-4_12" onclick="event.stopPropagation();">Copy DOI</button>
                             <a href="https://github.com/sb-ncbr/channelsdb" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">GitHub</a>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases" onclick="window.location.href='publication.html?id=pub_2024_UniversityofOxfordUKFAIRsharing_UnknownAuthor'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2024" data-category="databases" onclick="window.location.href='publication.html?id=pub_2024_UniversityofOxfordUKFAIRsharing_UnknownAuthor'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2024_UniversityofOxfordUKFAIRsharing_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -766,10 +803,11 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://validatordb.ceitec.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases channels selected" onclick="window.location.href='publication.html?id=10.1093/nar/gkad1012'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2024" data-category="databases channels selected" onclick="window.location.href='publication.html?id=10.1093/nar/gkad1012'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2023_NoJournal_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -781,11 +819,12 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://channelsdb.biodata.ceitec.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://github.com/sb-ncbr/channelsdb" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">GitHub</a>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/acs.molpharmaceut.2c01078'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2023" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/acs.molpharmaceut.2c01078'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2023_MOLECULARPHARMACEUTICS_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -802,7 +841,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.bmc.2023.117504'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2023" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.bmc.2023.117504'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2023_BioorganicandMedicinalChemistry_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -819,7 +858,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools visualization channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkad411'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2023" data-category="tools visualization channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkad411'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2023_NUCLEICACIDSRESEARCH_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -831,12 +870,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://molstarvolseg.ncbr.muni.cz/" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkad411" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkad411" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="channels" onclick="window.location.href='publication.html?id=10.1016/j.jsbmb.2023.106365'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2023" data-category="channels" onclick="window.location.href='publication.html?id=10.1016/j.jsbmb.2023.106365'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2023_JOURNALOFSTEROIDBIOCHEMISTRYANDMOLECULARBIOLOGY_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -853,7 +893,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools alphafoldology visualization channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkad349'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2023" data-category="tools alphafoldology visualization channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkad349'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2023_NUCLEICACIDSRESEARCH_UnknownAuthor_2.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -865,12 +905,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://alphacharges.ncbr.muni.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkad349" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkad349" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1111/febs.16270'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2022" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1111/febs.16270'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2022_FEBSJournal_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -887,7 +928,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.ejmech.2022.114831'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2022" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.ejmech.2022.114831'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2022_EUROPEANJOURNALOFMEDICINALCHEMISTRY_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -904,7 +945,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="visualization" onclick="window.location.href='publication.html?id=10.1093/bioinformatics/btac384'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2022" data-category="visualization" onclick="window.location.href='publication.html?id=10.1093/bioinformatics/btac384'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2022_BIOINFORMATICS_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -916,12 +957,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://overprot.ncbr.muni.cz.Supplementary" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/bioinformatics/btac384" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/bioinformatics/btac384" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases tools channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkab988'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2022" data-category="databases tools channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkab988'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2022_NUCLEICACIDSRESEARCH_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -933,12 +975,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://pdbe-kb.org" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkab988" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkab988" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.12688/f1000research.74502.1'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2021" data-category="drug-design" onclick="window.location.href='publication.html?id=10.12688/f1000research.74502.1'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2021_NoJournal_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -955,7 +998,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases tools visualization" onclick="window.location.href='publication.html?id=10.1093/bioinformatics/btab505'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2021" data-category="databases tools visualization" onclick="window.location.href='publication.html?id=10.1093/bioinformatics/btab505'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2021_BIOINFORMATICS_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -967,12 +1010,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://2dprots.icm.edu.pl/" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/bioinformatics/btab505" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/bioinformatics/btab505" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools drug-design" onclick="window.location.href='publication.html?id=10.1093/nar/gkaa1079'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2021" data-category="tools drug-design" onclick="window.location.href='publication.html?id=10.1093/nar/gkaa1079'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2021_NUCLEICACIDSRESEARCH_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -984,12 +1028,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://www.cathdb.info" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkaa1079" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkaa1079" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1039/D0ME00160K'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2021" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1039/D0ME00160K'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2021_MolecularSystemsDesignEngineering_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1006,7 +1051,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases tools visualization channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkab314'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2021" data-category="databases tools visualization channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkab314'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2021_NUCLEICACIDSRESEARCH_UnknownAuthor_2.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1018,12 +1063,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://molstar.org/" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkab314" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkab314" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools channels" onclick="window.location.href='publication.html?id=10.1186/s13321-021-00528-w'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2021" data-category="tools channels" onclick="window.location.href='publication.html?id=10.1186/s13321-021-00528-w'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2021_JournalofCheminformatics_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1035,12 +1081,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://acc2.ncbr.muni.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1186/s13321-021-00528-w" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1186/s13321-021-00528-w" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools drug-design" onclick="window.location.href='publication.html?id=10.1038/S41598-021-91494-8'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2021" data-category="tools drug-design" onclick="window.location.href='publication.html?id=10.1038/S41598-021-91494-8'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2021_ScientificReports_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1052,12 +1099,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://secstrannotator.ceitec.cz/" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1038/S41598-021-91494-8" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1038/S41598-021-91494-8" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes" onclick="window.location.href='publication.html?id=10.1101/744177'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2020" data-category="drug-design membranes" onclick="window.location.href='publication.html?id=10.1101/744177'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2020_NatureCommunications_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1074,7 +1122,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools visualization channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkaa367'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2020" data-category="tools visualization channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkaa367'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2020_NucleicAcidsResearch_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1086,12 +1134,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://acc2.ncbr.muni.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkaa367" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkaa367" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes" onclick="window.location.href='publication.html?id=pub_2020_CHEMICKELISTY_UnknownAuthor'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2020" data-category="drug-design membranes" onclick="window.location.href='publication.html?id=pub_2020_CHEMICKELISTY_UnknownAuthor'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2020_CHEMICKELISTY_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1106,7 +1155,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools visualization channels" onclick="window.location.href='publication.html?id=10.1107/S2059798320014515'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2020" data-category="tools visualization channels" onclick="window.location.href='publication.html?id=10.1107/S2059798320014515'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2020_ActaCrystallographicaSectionDStructuralBiology_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1123,7 +1172,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="membranes databases channels selected" onclick="window.location.href='publication.html?id=10.1093/database/baz078'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2019" data-category="membranes databases channels selected" onclick="window.location.href='publication.html?id=10.1093/database/baz078'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2020_NoJournal_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1135,11 +1184,12 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://molmedb.chem.upol.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://github.com/MolMeDB/MolMeDB" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">GitHub</a>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.ejmech.2019.111812'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2020" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.ejmech.2019.111812'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2020_EUROPEANJOURNALOFMEDICINALCHEMISTRY_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1156,7 +1206,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases tools channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkz853'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2020" data-category="databases tools channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkz853'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2020_NUCLEICACIDSRESEARCH_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1168,12 +1218,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://pdbe-kb.org" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkz853" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkz853" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="visualization channels" onclick="window.location.href='publication.html?id=10.1007/978-1-0716-0270-6_1'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2020" data-category="visualization channels" onclick="window.location.href='publication.html?id=10.1007/978-1-0716-0270-6_1'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2020_MethodsinMolecularBiology_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1190,7 +1241,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1016/J.IJPHARM.2019.118711'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2019" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1016/J.IJPHARM.2019.118711'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2019_InternationalJournalofPharmaceutics_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1207,7 +1258,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design channels databases membranes selected tools" onclick="window.location.href='publication.html?id=10.1093/database/baz078'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2019" data-category="drug-design channels databases membranes selected tools" onclick="window.location.href='publication.html?id=10.1093/database/baz078'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2019_Database_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1219,13 +1270,14 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://molmedb.chem.upol.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/database/baz078" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/database/baz078" onclick="event.stopPropagation();">Copy DOI</button>
                             <a href="https://github.com/MolMeDB/MolMeDB" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">GitHub</a>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="channels" onclick="window.location.href='publication.html?id=10.1007/978-1-4939-9161-7_3'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2019" data-category="channels" onclick="window.location.href='publication.html?id=10.1007/978-1-4939-9161-7_3'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2019_MethodsinmolecularbiologyCliftonNJ_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1242,7 +1294,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.ejmech.2019.06.040'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2019" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.ejmech.2019.06.040'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2019_EUROPEANJOURNALOFMEDICINALCHEMISTRY_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1259,7 +1311,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="education" onclick="window.location.href='publication.html?id=pub_2019_NoJournal_UnknownAuthor'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2019" data-category="education" onclick="window.location.href='publication.html?id=pub_2019_NoJournal_UnknownAuthor'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2019_NoJournal_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1271,10 +1323,11 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://pokusnice.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkx868'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2018" data-category="databases channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkx868'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2018_NUCLEICACIDSRESEARCH_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1286,13 +1339,14 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://channelsdb.biodata.ceitec.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkx868" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkx868" onclick="event.stopPropagation();">Copy DOI</button>
                             <a href="https://github.com/sb-ncbr/channelsdb" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">GitHub</a>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases tools channels selected" onclick="window.location.href='publication.html?id=10.1016/J.BPJ.2017.11.1912'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2018" data-category="databases tools channels selected" onclick="window.location.href='publication.html?id=10.1016/J.BPJ.2017.11.1912'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2018_BiophysicalJournal_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1304,13 +1358,14 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://moleonline.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1016/J.BPJ.2017.11.1912" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1016/J.BPJ.2017.11.1912" onclick="event.stopPropagation();">Copy DOI</button>
                             <a href="https://github.com/sb-ncbr/channelsdb" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">GitHub</a>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1021/acs.jmedchem.7b01529'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2018" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1021/acs.jmedchem.7b01529'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2018_JOURNALOFMEDICINALCHEMISTRY_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1327,7 +1382,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="visualization channels" onclick="window.location.href='publication.html?id=10.1016/J.BPJ.2017.11.308'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2018" data-category="visualization channels" onclick="window.location.href='publication.html?id=10.1016/J.BPJ.2017.11.308'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2018_BiophysicalJournal_UnknownAuthor_2.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1344,7 +1399,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="other" onclick="window.location.href='publication.html?id=pub_2018_ChemickeListy_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2018" data-category="other" onclick="window.location.href='publication.html?id=pub_2018_ChemickeListy_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2018_ChemickeListy_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1359,7 +1414,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="channels databases membranes selected tools visualization" onclick="window.location.href='publication.html?id=10.1093/nar/gky309'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2018" data-category="channels databases membranes selected tools visualization" onclick="window.location.href='publication.html?id=10.1093/nar/gky309'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2018_NUCLEICACIDSRESEARCH_Pravda.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1371,12 +1426,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://moleonline.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gky309" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gky309" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1016/j.jinorgbio.2018.03.002'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2018" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1016/j.jinorgbio.2018.03.002'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2018_JOURNALOFINORGANICBIOCHEMISTRY_rejber.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1393,7 +1449,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="visualization" onclick="window.location.href='publication.html?id=pub_2018_FEBSOpenBio_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2018" data-category="visualization" onclick="window.location.href='publication.html?id=pub_2018_FEBSOpenBio_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2018_FEBSOpenBio_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1408,7 +1464,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="visualization" onclick="window.location.href='publication.html?id=10.1016/J.BPJ.2017.11.307'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2018" data-category="visualization" onclick="window.location.href='publication.html?id=10.1016/J.BPJ.2017.11.307'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2018_BiophysicalJournal_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1425,7 +1481,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1016/j.phrs.2018.02.029'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2018" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1016/j.phrs.2018.02.029'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2018_PHARMACOLOGICALRESEARCH_Chantemargue.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1442,7 +1498,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1016/j.ejmech.2017.01.018'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2017" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1016/j.ejmech.2017.01.018'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2017_EuropeanJournalofMedicinalChemistry_ezn.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1459,7 +1515,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.toxlet.2016.11.013'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2017" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.toxlet.2016.11.013'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2017_ToxicologyLetters_Carazo.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1476,7 +1532,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="visualization channels" onclick="window.location.href='publication.html?id=10.1038/nmeth.4499'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2017" data-category="visualization channels" onclick="window.location.href='publication.html?id=10.1038/nmeth.4499'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2017_NatureMethods_Sehnal.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1493,7 +1549,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1016/j.bbagen.2017.08.002'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2017" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1016/j.bbagen.2017.08.002'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2017_BiochimicaetBiophysicaActaGeneralSubjects_Navr.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1510,7 +1566,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes channels" onclick="window.location.href='publication.html?id=10.1016/j.bbamem.2017.07.016'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2017" data-category="tools membranes channels" onclick="window.location.href='publication.html?id=10.1016/j.bbamem.2017.07.016'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2017_BiochimicaetBiophysicaActaBiomembranes_Huli.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1527,7 +1583,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="channels" onclick="window.location.href='publication.html?id=10.1016/J.BPJ.2016.11.984'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2017" data-category="channels" onclick="window.location.href='publication.html?id=10.1016/J.BPJ.2016.11.984'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2017_BiophysicalJournal_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1544,7 +1600,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases tools drug-design channels" onclick="window.location.href='publication.html?id=10.1007/978-3-319-47388-8'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2017" data-category="databases tools drug-design channels" onclick="window.location.href='publication.html?id=10.1007/978-3-319-47388-8'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2017_NoJournal_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1561,7 +1617,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools" onclick="window.location.href='publication.html?id=10.1039/c7nr07342a'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2017" data-category="tools" onclick="window.location.href='publication.html?id=10.1039/c7nr07342a'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2017_Nanoscale_Otyepkov.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1578,7 +1634,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/J.NBT.2016.06.1292'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2016" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/J.NBT.2016.06.1292'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2016_NewBiotechnology_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1595,7 +1651,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1039/c6ob01479h'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2016" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1039/c6ob01479h'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2016_OrganicBiomolecularChemistry_Kvasnica.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1612,7 +1668,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1021/acs.jpcb.6b10108'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2016" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1021/acs.jpcb.6b10108'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2016_JournalofPhysicalChemistryB_Navr.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1629,7 +1685,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools drug-design channels" onclick="window.location.href='publication.html?id=10.1002/jcc.24473'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2016" data-category="tools drug-design channels" onclick="window.location.href='publication.html?id=10.1002/jcc.24473'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2016_JournalofComputationalChemistry_Bazgier.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1646,7 +1702,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1016/j.phrs.2016.06.030'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2016" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1016/j.phrs.2016.06.030'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2016_PharmacologicalResearch_Di.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1663,7 +1719,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes channels" onclick="window.location.href='publication.html?id=10.1021/acs.jcim.6b00353'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2016" data-category="tools membranes channels" onclick="window.location.href='publication.html?id=10.1021/acs.jcim.6b00353'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2016_JournalofChemicalInformationandModeling_echov.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1680,7 +1736,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1007/s11103-016-0509-0'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2016" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1007/s11103-016-0509-0'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2016_PlantMolecularBiology_Nisler.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1697,7 +1753,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1021/acs.jctc.6b00075'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2016" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1021/acs.jctc.6b00075'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2016_JournalofChemicalTheoryandComputation_Palonc.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1714,7 +1770,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools drug-design channels" onclick="window.location.href='publication.html?id=10.1016/j.ejmech.2015.12.023'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2016" data-category="tools drug-design channels" onclick="window.location.href='publication.html?id=10.1016/j.ejmech.2015.12.023'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2016_EuropeanJournalofMedicinalChemistry_Baltus.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1731,7 +1787,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1124/dmd.115.068569'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2016" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1124/dmd.115.068569'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2016_DrugMetabolismandDisposition_Scott.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1748,7 +1804,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1016/j.bmcl.2015.04.030'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2015" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1016/j.bmcl.2015.04.030'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2015_BioorganicMedicinalChemistryLetters_ezn.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1765,7 +1821,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools drug-design" onclick="window.location.href='publication.html?id=10.1111/cbdd.12618'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2015" data-category="tools drug-design" onclick="window.location.href='publication.html?id=10.1111/cbdd.12618'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2015_ChemicalBiologyandDrugDesign_ezn.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1782,7 +1838,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.toxlet.2015.01.013'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2015" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.toxlet.2015.01.013'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2015_ToxicologyLetters_Carazo.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1799,7 +1855,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="membranes" onclick="window.location.href='publication.html?id=10.1021/jp5092366'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2015" data-category="membranes" onclick="window.location.href='publication.html?id=10.1021/jp5092366'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2015_JournalofPhysicalChemistryB_Sovov.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1816,7 +1872,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools drug-design" onclick="window.location.href='publication.html?id=pub_2015_ProteinScience_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2015" data-category="tools drug-design" onclick="window.location.href='publication.html?id=pub_2015_ProteinScience_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2015_ProteinScience_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1831,7 +1887,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1021/ci500645k'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2015" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1021/ci500645k'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2015_JournalofChemicalInformationandModeling_Navr.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1848,7 +1904,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes" onclick="window.location.href='publication.html?id=pub_2015_ProteinScience_Karel_2'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2015" data-category="drug-design membranes" onclick="window.location.href='publication.html?id=pub_2015_ProteinScience_Karel_2'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2015_ProteinScience_Karel_2.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1863,7 +1919,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1016/j.bmc.2015.05.031'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2015" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1016/j.bmc.2015.05.031'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2015_BioorganicMedicinalChemistry_Fabre.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1880,7 +1936,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1021/acs.jpcb.5b05522'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2015" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1021/acs.jpcb.5b05522'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2015_JournalofPhysicalChemistryB_Palonc.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1897,7 +1953,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="membranes channels" onclick="window.location.href='publication.html?id=10.1039/c5cc00636h'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2015" data-category="membranes channels" onclick="window.location.href='publication.html?id=10.1039/c5cc00636h'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2015_ChemicalCommunications_Fabre.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1914,7 +1970,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases tools" onclick="window.location.href='publication.html?id=10.1093/nar/gkv1116'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2015" data-category="databases tools" onclick="window.location.href='publication.html?id=10.1093/nar/gkv1116'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2015_NucleicAcidsResearch_Ison.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1926,12 +1982,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://bio.tools" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkv1116" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkv1116" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/jp4112052'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2014" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/jp4112052'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2014_JournalofPhysicalChemistryB_Palonc.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1948,7 +2005,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools channels" onclick="window.location.href='publication.html?id=10.1186/s12859-014-0379-x'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2014" data-category="tools channels" onclick="window.location.href='publication.html?id=10.1186/s12859-014-0379-x'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2014_BMCBioinformatics_Pravda.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1965,7 +2022,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1021/ct500419b'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2014" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1021/ct500419b'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2014_JournalofChemicalTheoryandComputation_Palonc.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1982,7 +2039,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.steroids.2014.04.007'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2014" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.steroids.2014.04.007'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2014_Steroids_Kvasnica.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -1999,7 +2056,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="visualization channels" onclick="window.location.href='publication.html?id=pub_2014_ActaCrystallographicaSectionAFoundationsandAdvances_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2014" data-category="visualization channels" onclick="window.location.href='publication.html?id=pub_2014_ActaCrystallographicaSectionAFoundationsandAdvances_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2014_ActaCrystallographicaSectionAFoundationsandAdvances_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2014,7 +2071,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkt940'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2014" data-category="tools channels" onclick="window.location.href='publication.html?id=10.1093/nar/gkt940'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2014_NucleicAcidsResearch_de.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2026,12 +2083,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="http://www.ebi.ac.uk/pdbsum" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gkt940" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gkt940" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="other" onclick="window.location.href='publication.html?id=10.1016/j.carbon.2014.01.008'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2014" data-category="other" onclick="window.location.href='publication.html?id=10.1016/j.carbon.2014.01.008'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2014_Carbon_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2048,7 +2106,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/la503289v'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2014" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/la503289v'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2014_LangmuirtheACSjournalofsurfacesandcolloids_Palonc.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2065,7 +2123,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools drug-design" onclick="window.location.href='publication.html?id=10.2217/fmeb2013.13.91'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2014" data-category="tools drug-design" onclick="window.location.href='publication.html?id=10.2217/fmeb2013.13.91'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2014_CYP2D6GeneticsPharmacologyandClinicalRelevance_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2082,7 +2140,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.ejmech.2014.03.054'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2014" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1016/j.ejmech.2014.03.054'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2014_EuropeanJournalofMedicinalChemistry_Mojzych.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2099,7 +2157,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1021/jm4006884'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2013" data-category="drug-design" onclick="window.location.href='publication.html?id=10.1021/jm4006884'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2013_JournalofMedicinalChemistry_Guck.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2116,7 +2174,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1055/s-0033-1351098'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2013" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1055/s-0033-1351098'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2013_PlantaMedica_Pozharitskaya.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2133,7 +2191,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/jp4059559'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2013" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/jp4059559'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2013_JournalofPhysicalChemistryB_Berka.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2150,7 +2208,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="other" onclick="window.location.href='publication.html?id=pub_2013_TheFEBSJournal_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2013" data-category="other" onclick="window.location.href='publication.html?id=pub_2013_TheFEBSJournal_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2013_TheFEBSJournal_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2165,7 +2223,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes channels" onclick="window.location.href='publication.html?id=10.1016/j.bbamem.2012.10.029'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2013" data-category="tools membranes channels" onclick="window.location.href='publication.html?id=10.1016/j.bbamem.2012.10.029'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2013_BiochimicaetBiophysicaActaBiomembranes_Havl.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2182,7 +2240,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes" onclick="window.location.href='publication.html?id=10.1021/jp3127829'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2013" data-category="drug-design membranes" onclick="window.location.href='publication.html?id=10.1021/jp3127829'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2013_JournalofPhysicalChemistryB_Podlouck.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2199,7 +2257,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools drug-design channels" onclick="window.location.href='publication.html?id=10.1186/1758-2946-5-39'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2013" data-category="tools drug-design channels" onclick="window.location.href='publication.html?id=10.1186/1758-2946-5-39'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2013_JournalofCheminformatics_Sehnal.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2211,12 +2269,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="http://mole.chemi.muni.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1186/1758-2946-5-39" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1186/1758-2946-5-39" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/jp311802x'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2013" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/jp311802x'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2013_JournalofPhysicalChemistryB_Palonc.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2233,7 +2292,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1016/j.jinorgbio.2012.02.010'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2012" data-category="drug-design channels" onclick="window.location.href='publication.html?id=10.1016/j.jinorgbio.2012.02.010'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2012_JournalofInorganicBiochemistry_Berka.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2250,7 +2309,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1021/ct2009208'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2012" data-category="tools membranes drug-design channels" onclick="window.location.href='publication.html?id=10.1021/ct2009208'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2012_JournalofChemicalTheoryandComputation_Palonc.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2267,7 +2326,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design channels" onclick="window.location.href='publication.html?id=pub_2012_CurrentDrugMetabolism_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2012" data-category="drug-design channels" onclick="window.location.href='publication.html?id=pub_2012_CurrentDrugMetabolism_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2012_CurrentDrugMetabolism_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2282,7 +2341,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools drug-design channels" onclick="window.location.href='publication.html?id=10.2174/138920012798918372'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2012" data-category="tools drug-design channels" onclick="window.location.href='publication.html?id=10.2174/138920012798918372'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2012_CurrentDrugMetabolism_Otyepka.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2299,7 +2358,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="channels selected" onclick="window.location.href='publication.html?id=10.1093/nar/gks363'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2012" data-category="channels selected" onclick="window.location.href='publication.html?id=10.1093/nar/gks363'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2012_NucleicAcidsResearch_Berka.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2311,12 +2370,13 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://moleonline.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                             <a href="https://doi.org/10.1093/nar/gks363" target="_blank" rel="noopener" class="btn-pub" onclick="event.stopPropagation();">DOI Link</a>
                             <button class="btn-pub-copy" data-doi="10.1093/nar/gks363" onclick="event.stopPropagation();">Copy DOI</button>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools membranes channels" onclick="window.location.href='publication.html?id=10.1021/jp208731g'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2012" data-category="tools membranes channels" onclick="window.location.href='publication.html?id=10.1021/jp208731g'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2012_JournalofPhysicalChemistryB_Ko.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2333,7 +2393,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="education" onclick="window.location.href='publication.html?id=pub_2012_Chemicklisty_UnknownAuthor'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2012" data-category="education" onclick="window.location.href='publication.html?id=pub_2012_Chemicklisty_UnknownAuthor'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2012_Chemicklisty_UnknownAuthor.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2345,10 +2405,11 @@
                             </div>
                         </div>
                         <div class="pub-links">
+                            <a href="https://ksicht.natur.cuni.cz" target="_blank" rel="noopener" class="btn-pub btn-web" onclick="event.stopPropagation();">Web App 🌐</a>
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="channels" onclick="window.location.href='publication.html?id=pub_2011_JournalofBiomolecularStructureDynamics_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2011" data-category="channels" onclick="window.location.href='publication.html?id=pub_2011_JournalofBiomolecularStructureDynamics_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2011_JournalofBiomolecularStructureDynamics_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2363,7 +2424,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/jp204488j'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2011" data-category="drug-design membranes channels" onclick="window.location.href='publication.html?id=10.1021/jp204488j'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2011_JournalofPhysicalChemistryA_Berka.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2380,7 +2441,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools" onclick="window.location.href='publication.html?id=10.1002/cphc.201100664'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2011" data-category="tools" onclick="window.location.href='publication.html?id=10.1002/cphc.201100664'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2011_ChemPhysChem_On.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2397,7 +2458,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools" onclick="window.location.href='publication.html?id=pub_2010_JournalofChemicalTheoryandComputation_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2010" data-category="tools" onclick="window.location.href='publication.html?id=pub_2010_JournalofChemicalTheoryandComputation_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2010_JournalofChemicalTheoryandComputation_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2412,7 +2473,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="other" onclick="window.location.href='publication.html?id=pub_2010_ChemPhysChem_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2010" data-category="other" onclick="window.location.href='publication.html?id=pub_2010_ChemPhysChem_Karel'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2010_ChemPhysChem_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2427,7 +2488,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools channels" onclick="window.location.href='publication.html?id=10.1021/ct800508v'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2009" data-category="tools channels" onclick="window.location.href='publication.html?id=10.1021/ct800508v'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2009_JournalofChemicalTheoryandComputation_Berka.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2444,7 +2505,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools" onclick="window.location.href='publication.html?id=10.1002/cphc.200800401'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2009" data-category="tools" onclick="window.location.href='publication.html?id=10.1002/cphc.200800401'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2009_ChemPhysChem_Berka.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2461,7 +2522,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="other" onclick="window.location.href='publication.html?id=10.1135/CCCC20080921'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2008" data-category="other" onclick="window.location.href='publication.html?id=10.1135/CCCC20080921'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2008_CollectionofCzechoslovakChemicalCommunications_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2478,7 +2539,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="tools" onclick="window.location.href='publication.html?id=10.1039/b805087b'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2008" data-category="tools" onclick="window.location.href='publication.html?id=10.1039/b805087b'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2008_PhysicalChemistryChemicalPhysics_Biedermannova.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2495,7 +2556,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="databases channels" onclick="window.location.href='publication.html?id=10.1135/cccc20081261'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2008" data-category="databases channels" onclick="window.location.href='publication.html?id=10.1135/cccc20081261'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2008_CollectionofCzechoslovakChemicalCommunications_Karel_2.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2512,7 +2573,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="membranes" onclick="window.location.href='publication.html?id=10.1016/j.bbrc.2005.05.017'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2005" data-category="membranes" onclick="window.location.href='publication.html?id=10.1016/j.bbrc.2005.05.017'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2005_NoJournal_Mazna.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2529,7 +2590,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="membranes channels" onclick="window.location.href='publication.html?id=10.1111/j.1471-4159.2004.02758.x'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2004" data-category="membranes channels" onclick="window.location.href='publication.html?id=10.1111/j.1471-4159.2004.02758.x'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2004_NoJournal_Mazna.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">
@@ -2546,7 +2607,7 @@
                         </div>
                     </li>
                     <!-- Publication -->
-                    <li class="pub-card" data-category="channels" onclick="window.location.href='publication.html?id=10.1111/J.1471-4159.2004.02965.X'" style="cursor: pointer;" tabindex="0" title="Click to view details">
+                    <li class="pub-card" data-year="2004" data-category="channels" onclick="window.location.href='publication.html?id=10.1111/J.1471-4159.2004.02965.X'" style="cursor: pointer;" tabindex="0" title="Click to view details">
                         <div class="pub-type">Article</div>
                         <img src="img/publications/pub_2004_JournalofNeurochemistry_Karel.png" alt="Thumbnail" class="pub-thumbnail">
                         <div class="pub-body">

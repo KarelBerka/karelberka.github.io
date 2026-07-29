@@ -1,42 +1,43 @@
 const publicationsData = [
   {
-      "title": "Foldify: Web Application for Protein Structure Prediction",
-      "year": "2026",
-      "journal": "Journal of Chemical Information and Modeling",
-      "doi": "10.1021/acs.jcim.6c01154",
-      "authors": "Romana Ďuráčiová, Michaela Capandová, Karel Berka, Radka Svobodová Vařeková, Terézia Slanináková, Kristian Kovac, Matej Antol, Lukáš Hejtmánek",
-      "category": [
-          "Tools",
-          "Visualization",
-          "Selected"
-      ],
-      "volume": "66",
-      "issue": "13",
-      "pages": "7762-7771",
-      "abstract": "Protein structure prediction models released in recent years have presented tectonic changes in the field of structural biology. However, their potential has not yet been harnessed to its fullest due to their demands on hardware and technical expertise required for their usage. In this paper, we present Foldify, which makes prediction models accessible, integrating AlphaFold 3, AlphaFold 2, ColabFold, OmegaFold, and ESMFold into a single user-friendly, easy-to-use graphical interface, and ensures their stable operation within a scalable high-performance computing environment. Foldify accepts protein sequences, submitted through a web-based graphical interface as input, and allows executing multiple prediction models on the same protein sequence. The predicted protein structures can be directly visualized online through Mol* Viewer or can be downloaded from the website. Furthermore, the multiresult comparison mode allows visualization of multiple predicted structures in a single Mol* window, accompanied by qualitative metrics of the models' prediction similarity. The Foldify application is freely available at https://foldify-open.cloud.e-infra.cz/ with no login required.",
-      "image": "img/publications/pub_2026_jcim_foldify.png",
-      "id": "10.1021/acs.jcim.6c01154",
-      "oa_url": "https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.6c01154?ref=article_openPDF",
-      "oa_is_preprint": false
+    "title": "Foldify: Web Application for Protein Structure Prediction",
+    "year": "2026",
+    "journal": "Journal of Chemical Information and Modeling",
+    "doi": "10.1021/acs.jcim.6c01154",
+    "authors": "Romana Ďuráčiová, Michaela Capandová, Karel Berka, Radka Svobodová Vařeková, Terézia Slanináková, Kristian Kovac, Matej Antol, Lukáš Hejtmánek",
+    "category": [
+      "Tools",
+      "Visualization",
+      "Selected"
+    ],
+    "volume": "66",
+    "issue": "13",
+    "pages": "7762-7771",
+    "abstract": "Protein structure prediction models released in recent years have presented tectonic changes in the field of structural biology. However, their potential has not yet been harnessed to its fullest due to their demands on hardware and technical expertise required for their usage. In this paper, we present Foldify, which makes prediction models accessible, integrating AlphaFold 3, AlphaFold 2, ColabFold, OmegaFold, and ESMFold into a single user-friendly, easy-to-use graphical interface, and ensures their stable operation within a scalable high-performance computing environment. Foldify accepts protein sequences, submitted through a web-based graphical interface as input, and allows executing multiple prediction models on the same protein sequence. The predicted protein structures can be directly visualized online through Mol* Viewer or can be downloaded from the website. Furthermore, the multiresult comparison mode allows visualization of multiple predicted structures in a single Mol* window, accompanied by qualitative metrics of the models' prediction similarity. The Foldify application is freely available at https://foldify-open.cloud.e-infra.cz/ with no login required.",
+    "image": "img/publications/pub_2026_jcim_foldify.png",
+    "id": "10.1021/acs.jcim.6c01154",
+    "oa_url": "https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.6c01154?ref=article_openPDF",
+    "oa_is_preprint": false,
+    "web": "https://foldify-open.cloud.e-infra.cz/"
   },
   {
-      "title": "Mapping pathogenic patterns in membrane transporters from the GLUT transporter family",
-      "year": "2026",
-      "journal": "bioRxiv (Cold Spring Harbor Laboratory)",
-      "doi": "10.64898/2026.06.28.735151",
-      "authors": "Nina Kadášová, Dominik Martinát, Anna Špačková, Ivana Hutařová Vařeková, Karel Berka",
-      "category": [
-          "Channels",
-          "Preprint"
-      ],
-      "volume": null,
-      "issue": null,
-      "pages": "",
-      "abstract": "Abstract Non-synonymous amino acid substitutions (missense mutations) are common in the general population; some are causative of serious disease. Depending on their structural context, they can disrupt protein function, folding, or dynamics. Computational predictive methods developed in recent years, such as AlphaMissense, provide new insights into how missense mutations affect protein structure by predicting and mapping their pathogenicity across each amino acid in the human proteome. In this study, we identify recurring patterns of pathogenicity prediction across the GLUT family membrane transporters encoded by genes slc2a1-14 . Within the GLUT transporter family, we observe higher pathogenicity profiles in the transmembrane domains, particularly in pore-lining and binding-site residues. Predicted missense pathogenicity is elevated throughout residues assigned to the central cavity, suggesting sensitivity of the transport pathway. Another finding shows higher pathogenicity in specific transmembrane helices of the protein, with the same pattern across all proteins. On the other hand, we observed lower pathogenicity values in some representatives of the GLUT family. These findings show that the pathogenicity of glucose transport within the GLUT family may be shaped by functional redundancy and physiological essentiality across GLUT groups. Significance Missense mutations can lead to pathological effects in human cells. Predictive methods that account for structural context, such as AlphaMissense, can provide pathogenicity scores. The accumulation of pathogenicity hotspots can reveal important structural features within individual proteins of protein families, such as GLUT transporters. Mapping pathogenicity scores onto the structure can thus provide a mechanistic explanation of the protein function necessary for its role in the cell.",
-      "image": "img/publications/pub_2026_glut_pathogenicity.png",
-      "id": "10.64898/2026.06.28.735151",
-      "oa_url": "https://doi.org/10.64898/2026.06.28.735151",
-      "oa_is_preprint": true
+    "title": "Mapping pathogenic patterns in membrane transporters from the GLUT transporter family",
+    "year": "2026",
+    "journal": "bioRxiv (Cold Spring Harbor Laboratory)",
+    "doi": "10.64898/2026.06.28.735151",
+    "authors": "Nina Kadášová, Dominik Martinát, Anna Špačková, Ivana Hutařová Vařeková, Karel Berka",
+    "category": [
+      "Channels",
+      "Preprint"
+    ],
+    "volume": null,
+    "issue": null,
+    "pages": "",
+    "abstract": "Abstract Non-synonymous amino acid substitutions (missense mutations) are common in the general population; some are causative of serious disease. Depending on their structural context, they can disrupt protein function, folding, or dynamics. Computational predictive methods developed in recent years, such as AlphaMissense, provide new insights into how missense mutations affect protein structure by predicting and mapping their pathogenicity across each amino acid in the human proteome. In this study, we identify recurring patterns of pathogenicity prediction across the GLUT family membrane transporters encoded by genes slc2a1-14 . Within the GLUT transporter family, we observe higher pathogenicity profiles in the transmembrane domains, particularly in pore-lining and binding-site residues. Predicted missense pathogenicity is elevated throughout residues assigned to the central cavity, suggesting sensitivity of the transport pathway. Another finding shows higher pathogenicity in specific transmembrane helices of the protein, with the same pattern across all proteins. On the other hand, we observed lower pathogenicity values in some representatives of the GLUT family. These findings show that the pathogenicity of glucose transport within the GLUT family may be shaped by functional redundancy and physiological essentiality across GLUT groups. Significance Missense mutations can lead to pathological effects in human cells. Predictive methods that account for structural context, such as AlphaMissense, can provide pathogenicity scores. The accumulation of pathogenicity hotspots can reveal important structural features within individual proteins of protein families, such as GLUT transporters. Mapping pathogenicity scores onto the structure can thus provide a mechanistic explanation of the protein function necessary for its role in the cell.",
+    "image": "img/publications/pub_2026_glut_pathogenicity.png",
+    "id": "10.64898/2026.06.28.735151",
+    "oa_url": "https://doi.org/10.64898/2026.06.28.735151",
+    "oa_is_preprint": true
   },
   {
     "title": "PROPTIMUS LIVE: local constrained α-carbon optimization of proteins",
@@ -55,7 +56,8 @@ const publicationsData = [
     "image": "img/publications/pub_2026_NucleicAcidsResearch_UnknownAuthor.png",
     "id": "10.1093/nar/gkag511",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://proptimus.ceitec.cz/live"
   },
   {
     "title": "Atomic Charge Calculator III: a modern platform for calculating partial atomic charges",
@@ -75,7 +77,8 @@ const publicationsData = [
     "image": "img/publications/pub_2026_NucleicAcidsResearch_UnknownAuthor_2.png",
     "id": "10.1093/nar/gkag379",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://acc.biodata.ceitec.cz"
   },
   {
     "title": "The impact of FDM infill parameters on tensile mechanical properties",
@@ -136,7 +139,8 @@ const publicationsData = [
     "image": "img/publications/pub_2025_Bioinformatics_UnknownAuthor.png",
     "id": "10.1093/bioinformatics/btaf486",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://moleonline.cz"
   },
   {
     "title": "PDBCharges: Quantum-Mechanical Partial Atomic Charges for PDB Structures",
@@ -156,7 +160,8 @@ const publicationsData = [
     "image": "img/publications/pub_2025_NucleicAcidsResearch_UnknownAuthor.png",
     "id": "10.1093/nar/gkaf401",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://charges.chemi.muni.cz/"
   },
   {
     "title": "Developing molecular surveillance of SARS-CoV-2 in the Czech Republic (2021-2022)",
@@ -193,7 +198,8 @@ const publicationsData = [
     "image": "img/publications/pub_2025_JournalofCheminformatics_UnknownAuthor.png",
     "id": "10.1186/s13321-025-01082-5",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://gmd.ceitec.cz/"
   },
   {
     "title": "Pathogenicity patterns in cytochrome P450 family",
@@ -231,7 +237,8 @@ const publicationsData = [
     "id": "pub_2025_UniversityofOxfordUKFAIRsharing_UnknownAuthor",
     "oa_url": null,
     "oa_is_preprint": false,
-    "github": "https://github.com/MolMeDB/MolMeDB"
+    "github": "https://github.com/MolMeDB/MolMeDB",
+    "web": "https://molmedb.chem.upol.cz"
   },
   {
     "title": "Meta-analysis of permeability literature data shows possibilities and limitations of popular methods",
@@ -296,7 +303,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "github": "https://github.com/sb-ncbr/channelsdb",
-    "preprint_id": "pub_2023_NoJournal_UnknownAuthor"
+    "preprint_id": "pub_2023_NoJournal_UnknownAuthor",
+    "web": "https://channelsdb.biodata.ceitec.cz"
   },
   {
     "title": "Analysis and Visualization of Protein Channels, Tunnels, and Pores with MOLEonline and ChannelsDB 2.0",
@@ -317,7 +325,8 @@ const publicationsData = [
     "id": "10.1007/978-1-0716-4007-4_12",
     "oa_url": null,
     "oa_is_preprint": false,
-    "github": "https://github.com/sb-ncbr/channelsdb"
+    "github": "https://github.com/sb-ncbr/channelsdb",
+    "web": "https://moleonline.cz"
   },
   {
     "title": "2024 Ownership and Maintenance of FAIRsharing record: ValidatorDB",
@@ -332,7 +341,8 @@ const publicationsData = [
     "image": "img/publications/pub_2024_UniversityofOxfordUKFAIRsharing_UnknownAuthor.png",
     "id": "pub_2024_UniversityofOxfordUKFAIRsharing_UnknownAuthor",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://validatordb.ceitec.cz"
   },
   {
     "title": "ChannelsDB 2.0",
@@ -349,7 +359,8 @@ const publicationsData = [
     "id": "pub_2023_NoJournal_UnknownAuthor",
     "oa_url": null,
     "oa_is_preprint": false,
-    "github": "https://github.com/sb-ncbr/channelsdb"
+    "github": "https://github.com/sb-ncbr/channelsdb",
+    "web": "https://channelsdb.biodata.ceitec.cz"
   },
   {
     "title": "Computational Prodrug Design Methodology for Liposome Formulability Enhancement of Small-Molecule APIs",
@@ -405,7 +416,8 @@ const publicationsData = [
     "image": "img/publications/pub_2023_NUCLEICACIDSRESEARCH_UnknownAuthor.png",
     "id": "10.1093/nar/gkad411",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://molstarvolseg.ncbr.muni.cz/"
   },
   {
     "title": "Small change – big consequence: The impact of C15-C16 double bond in a D‑ring of estrone on estrogen receptor activity",
@@ -443,7 +455,8 @@ const publicationsData = [
     "image": "img/publications/pub_2023_NUCLEICACIDSRESEARCH_UnknownAuthor_2.png",
     "id": "10.1093/nar/gkad349",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://alphacharges.ncbr.muni.cz"
   },
   {
     "title": "Antitumour drugs targeting tau R3 VQIVYK and Cys322 prevent seeding of endogenous tau aggregates by exogenous seeds",
@@ -496,7 +509,8 @@ const publicationsData = [
     "image": "img/publications/pub_2022_BIOINFORMATICS_UnknownAuthor.png",
     "id": "10.1093/bioinformatics/btac384",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://overprot.ncbr.muni.cz.Supplementary"
   },
   {
     "title": "PDBe-KB: collaboratively defining the biological context of structural data",
@@ -516,7 +530,8 @@ const publicationsData = [
     "image": "img/publications/pub_2022_NUCLEICACIDSRESEARCH_UnknownAuthor.png",
     "id": "10.1093/nar/gkab988",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://pdbe-kb.org"
   },
   {
     "title": "ELIXIR and Toxicology: a community in development",
@@ -554,7 +569,8 @@ const publicationsData = [
     "image": "img/publications/pub_2021_BIOINFORMATICS_UnknownAuthor.png",
     "id": "10.1093/bioinformatics/btab505",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://2dprots.icm.edu.pl/"
   },
   {
     "title": "CATH: increased structural coverage of functional space",
@@ -573,7 +589,8 @@ const publicationsData = [
     "image": "img/publications/pub_2021_NUCLEICACIDSRESEARCH_UnknownAuthor.png",
     "id": "10.1093/nar/gkaa1079",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://www.cathdb.info"
   },
   {
     "title": "In silico screening of drug candidates for thermoresponsive liposome formulations",
@@ -614,7 +631,8 @@ const publicationsData = [
     "image": "img/publications/pub_2021_NUCLEICACIDSRESEARCH_UnknownAuthor_2.png",
     "id": "10.1093/nar/gkab314",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://molstar.org/"
   },
   {
     "title": "Optimized SQE atomic charges for peptides accessible via a web application",
@@ -633,7 +651,8 @@ const publicationsData = [
     "image": "img/publications/pub_2021_JournalofCheminformatics_UnknownAuthor.png",
     "id": "10.1186/s13321-021-00528-w",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://acc2.ncbr.muni.cz"
   },
   {
     "title": "Uncovering of cytochrome P450 anatomy by SecStrAnnotator",
@@ -652,7 +671,8 @@ const publicationsData = [
     "image": "img/publications/pub_2021_ScientificReports_UnknownAuthor.png",
     "id": "10.1038/S41598-021-91494-8",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://secstrannotator.ceitec.cz/"
   },
   {
     "title": "Cytokinin fluoroprobe and receptor CRE1/AHK4 localize to both plasma membrane and endoplasmic reticulum",
@@ -691,7 +711,8 @@ const publicationsData = [
     "image": "img/publications/pub_2020_NucleicAcidsResearch_UnknownAuthor.png",
     "id": "10.1093/nar/gkaa367",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://acc2.ncbr.muni.cz"
   },
   {
     "title": "Dextrans as Permeation Markers and Carriers for Oral Transmucosal Drug Delivery",
@@ -744,7 +765,8 @@ const publicationsData = [
     "id": "pub_2020_NoJournal_UnknownAuthor",
     "oa_url": null,
     "oa_is_preprint": false,
-    "github": "https://github.com/MolMeDB/MolMeDB"
+    "github": "https://github.com/MolMeDB/MolMeDB",
+    "web": "https://molmedb.chem.upol.cz"
   },
   {
     "title": "Novel thiazolidinedione-hydroxamates as inhibitors of Mycobacterium tuberculosis virulence factor Zmp1",
@@ -781,7 +803,8 @@ const publicationsData = [
     "image": "img/publications/pub_2020_NUCLEICACIDSRESEARCH_UnknownAuthor.png",
     "id": "10.1093/nar/gkz853",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://pdbe-kb.org"
   },
   {
     "title": "Visualization and Analysis of Protein Structures with LiteMol Suite",
@@ -844,7 +867,8 @@ const publicationsData = [
     "oa_is_preprint": false,
     "github": "https://github.com/MolMeDB/MolMeDB",
     "preprint_id": "pub_2020_NoJournal_UnknownAuthor",
-    "fairsharing_id": "pub_2025_UniversityofOxfordUKFAIRsharing_UnknownAuthor"
+    "fairsharing_id": "pub_2025_UniversityofOxfordUKFAIRsharing_UnknownAuthor",
+    "web": "https://molmedb.chem.upol.cz"
   },
   {
     "title": "Automated Family-Wide Annotation of Secondary Structure Elements.",
@@ -893,7 +917,8 @@ const publicationsData = [
     "image": "img/publications/pub_2019_NoJournal_UnknownAuthor.png",
     "id": "pub_2019_NoJournal_UnknownAuthor",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://pokusnice.cz"
   },
   {
     "title": "ChannelsDB: database of biomacromolecular tunnels and pores",
@@ -912,7 +937,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkx868",
     "oa_url": null,
     "oa_is_preprint": false,
-    "github": "https://github.com/sb-ncbr/channelsdb"
+    "github": "https://github.com/sb-ncbr/channelsdb",
+    "web": "https://channelsdb.biodata.ceitec.cz"
   },
   {
     "title": "Channelsdb and Moleonline - Database and Tool for Analysis of Biomacromolecular Tunnels and Pores",
@@ -933,7 +959,8 @@ const publicationsData = [
     "id": "10.1016/J.BPJ.2017.11.1912",
     "oa_url": null,
     "oa_is_preprint": false,
-    "github": "https://github.com/sb-ncbr/channelsdb"
+    "github": "https://github.com/sb-ncbr/channelsdb",
+    "web": "https://moleonline.cz"
   },
   {
     "title": "Discovery of N-2-(4-Amino-cyclohexyl)-9-cyclopentyl-N-6-(4-morpholin-4-ylmethyl-phenyl)-9H-purine-2,6-diamine as a Potent FLT3 Kinase Inhibitor for Acute Myeloid Leukemia with FLT3 Mutations",
@@ -1006,7 +1033,8 @@ const publicationsData = [
     "image": "img/publications/pub_2018_NUCLEICACIDSRESEARCH_Pravda.png",
     "id": "10.1093/nar/gky309",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://moleonline.cz"
   },
   {
     "title": "Membrane-attached mammalian cytochromes P450: An overview of the membrane's effects on structure, drug binding, and interactions with redox partners.",
@@ -1637,7 +1665,8 @@ const publicationsData = [
     "image": "img/publications/pub_2015_NucleicAcidsResearch_Ison.png",
     "id": "10.1093/nar/gkv1116",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://bio.tools"
   },
   {
     "title": "Amphiphilic drug-like molecules accumulate in a membrane below the head group region.",
@@ -1750,7 +1779,8 @@ const publicationsData = [
     "image": "img/publications/pub_2014_NucleicAcidsResearch_de.png",
     "id": "10.1093/nar/gkt940",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "http://www.ebi.ac.uk/pdbsum"
   },
   {
     "title": "Photoluminescence effects of graphitic core size and surface functional groups in carbon dots: COO- induced red-shift emission",
@@ -1956,7 +1986,8 @@ const publicationsData = [
     "image": "img/publications/pub_2013_JournalofCheminformatics_Sehnal.png",
     "id": "10.1186/1758-2946-5-39",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "http://mole.chemi.muni.cz"
   },
   {
     "title": "Molecular insight into affinities of drugs and their metabolites to lipid bilayers.",
@@ -2071,7 +2102,8 @@ const publicationsData = [
     "image": "img/publications/pub_2012_NucleicAcidsResearch_Berka.png",
     "id": "10.1093/nar/gks363",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://moleonline.cz"
   },
   {
     "title": "Positioning of antioxidant quercetin and its metabolites in lipid bilayer membranes: implication for their lipid-peroxidation inhibition.",
@@ -2106,7 +2138,8 @@ const publicationsData = [
     "image": "img/publications/pub_2012_Chemicklisty_UnknownAuthor.png",
     "id": "pub_2012_Chemicklisty_UnknownAuthor",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://ksicht.natur.cuni.cz"
   },
   {
     "title": "Insenstivity to Close Contacts and Inability to Predict Protein Foldability",
