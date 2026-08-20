@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollHeader();
     initMolecularCanvas();
     initPublicationsFilter();
+    initToolsSection();
     initCopyDOI();
     initContactForm();
 });
@@ -539,3 +540,92 @@ function initContactForm() {
 
 
 
+
+
+/* ==========================================================================
+   Tools & Software Repositories Dynamic Renderer
+   ========================================================================== */
+function initToolsSection() {
+    const grid = document.getElementById('tools-grid');
+    if (!grid || typeof toolsData === 'undefined') return;
+
+    let currentToolFilter = 'all';
+
+    function renderTools() {
+        const lang = document.documentElement.lang || 'en';
+        grid.innerHTML = '';
+
+        const filtered = toolsData.filter(tool => {
+            if (currentToolFilter === 'all') return true;
+            return tool.category && tool.category.includes(currentToolFilter);
+        });
+
+        filtered.forEach(tool => {
+            const card = document.createElement('div');
+            card.className = 'tool-card';
+
+            const descText = tool.description[lang] || tool.description['en'];
+            const categoryTags = (tool.category || []).map(cat => `<span class="tool-tag">${cat}</span>`).join('');
+            const langTags = (tool.languages || []).map(l => `<span class="tool-lang-tag">${l}</span>`).join('');
+
+            let webBtnHtml = '';
+            if (tool.web) {
+                webBtnHtml = `<a href="${tool.web}" target="_blank" rel="noopener" class="btn-tool btn-tool-web">Web App 🌐</a>`;
+            }
+
+            let githubBtnHtml = '';
+            if (tool.github) {
+                githubBtnHtml = `<a href="${tool.github}" target="_blank" rel="noopener" class="btn-tool btn-tool-github">GitHub 🐙</a>`;
+            }
+
+            let pubBtnHtml = '';
+            if (tool.doi) {
+                pubBtnHtml = `<a href="publication.html?id=${tool.doi}" class="btn-tool btn-tool-pub">${lang === 'cs' ? 'Publikace' : 'Paper'} 📄</a>`;
+            }
+
+            const orgBadge = tool.org ? `<span class="tool-org-badge">${tool.org}</span>` : '';
+
+            card.innerHTML = `
+                <div>
+                    <div class="tool-card-header">
+                        <h3 class="tool-card-title">${tool.name}</h3>
+                        ${orgBadge}
+                    </div>
+                    <div class="tool-tags">
+                        ${categoryTags}
+                        ${langTags}
+                    </div>
+                    <p class="tool-card-desc">${descText}</p>
+                </div>
+                <div class="tool-card-actions">
+                    ${webBtnHtml}
+                    ${githubBtnHtml}
+                    ${pubBtnHtml}
+                </div>
+            `;
+
+            grid.appendChild(card);
+        });
+    }
+
+    // Filter buttons listener
+    const filterButtons = document.querySelectorAll('.tool-filter-btn');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentToolFilter = btn.getAttribute('data-tool-filter');
+            renderTools();
+        });
+    });
+
+    // Re-render when language changes
+    const langToggleBtn = document.getElementById('lang-toggle');
+    if (langToggleBtn) {
+        langToggleBtn.addEventListener('click', () => {
+            setTimeout(renderTools, 50);
+        });
+    }
+
+    renderTools();
+}

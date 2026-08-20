@@ -172,7 +172,7 @@
                         <p class="lang-cs" style="display: none;">
                             ChemData Lab na Univerzitě Palackého v Olomouci propojuje chemickou datovou vědu s biologií a fyzikou. Vyvíjíme špičkové nástroje a databáze pro studium biomolekulárních systémů se zaměřením na:
                         </p>
-                        <ul class="custom-list" id="tools">
+                        <ul class="custom-list">
                             <li>
                                 <span class="lang-en"><strong>Biomacromolecular Channels</strong>: Analyzing tunnels, pores, and gates in proteins (developers of MOLEonline and ChannelsDB).</span>
                                 <span class="lang-cs" style="display: none;"><strong>Biomakromolekulární kanály</strong>: Analýza tunelů, pórů a hradel v proteinech (vývojáři MOLEonline a ChannelsDB).</span>
@@ -226,7 +226,45 @@
                     </div>
                 </div>
             </div>
+        
+        <!-- Scientific Tools & Software Repositories Section -->
+        <section id="tools" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="lang-en">Tools &amp; Software Repositories</span>
+                        <span class="lang-cs" style="display: none;">Softwarové nástroje a repozitáře</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        <span class="lang-en">Open-source software tools, web platforms, and databases developed for structural bioinformatics</span>
+                        <span class="lang-cs" style="display: none;">Otevřené softwarové nástroje, webové platformy a databáze vyvíjené pro strukturní bioinformatiku</span>
+                    </p>
+                    <div class="divider"></div>
+                </div>
+
+                <!-- Tools Category Filters -->
+                <div class="tools-filters" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 25px;">
+                    <button class="tool-filter-btn active" data-tool-filter="all">
+                        <span class="lang-en">All Tools</span>
+                        <span class="lang-cs" style="display: none;">Všechny nástroje</span>
+                    </button>
+                    <button class="tool-filter-btn" data-tool-filter="Channels">Channels</button>
+                    <button class="tool-filter-btn" data-tool-filter="Lipid Membranes">Lipid Membranes</button>
+                    <button class="tool-filter-btn" data-tool-filter="Tools">Computation</button>
+                    <button class="tool-filter-btn" data-tool-filter="Databases">Databases</button>
+                    <button class="tool-filter-btn" data-tool-filter="Alphafoldology">Alphafoldology</button>
+                    <button class="tool-filter-btn" data-tool-filter="Visualization">Visualization</button>
+                    <button class="tool-filter-btn" data-tool-filter="Education">Education</button>
+                </div>
+
+                <!-- Tools Grid Container -->
+                <div id="tools-grid" class="grid grid-3">
+                    <!-- Dynamic rendering by JS from toolsData -->
+                </div>
+            </div>
         </section>
+
+</section>
 
         <!-- Teaching Section -->
         <section id="teaching" class="section">

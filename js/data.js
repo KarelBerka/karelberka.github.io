@@ -2410,3 +2410,350 @@ const publicationsData = [
     "oa_is_preprint": false
   }
 ];
+
+
+// Scientific Tools & Software Repositories Data
+const toolsData = [
+  {
+    "id": "moleonline",
+    "name": "MOLEonline",
+    "description": {
+      "en": "Interactive web-based application and standalone tool for finding, analyzing, and visualizing biomacromolecular tunnels, channels, and pores.",
+      "cs": "Interaktivní webová aplikace a nástroj pro detekci, analýzu a vizualizaci biomakromolekulárních tunelů, kanálů a pórů."
+    },
+    "github": "https://github.com/sb-ncbr/MOLE",
+    "web": "https://moleonline.cz",
+    "category": [
+      "Channels",
+      "Tools",
+      "Visualization"
+    ],
+    "languages": [
+      "C++",
+      "TypeScript",
+      "C#"
+    ],
+    "doi": "10.1093/bioinformatics/btaf486",
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "channelsdb",
+    "name": "ChannelsDB 2.0",
+    "description": {
+      "en": "Comprehensive database of precomputed biomacromolecular tunnels and pores in experimental PDB structures and AlphaFold DB models.",
+      "cs": "Komplexní databáze předvypočítaných biomakromolekulárních tunelů a pórů v experimentálních i AlphaFold strukturách."
+    },
+    "github": "https://github.com/sb-ncbr/channelsdb",
+    "web": "https://channelsdb.biodata.ceitec.cz",
+    "category": [
+      "Channels",
+      "Databases",
+      "Alphafoldology"
+    ],
+    "languages": [
+      "Python",
+      "TypeScript",
+      "HTML"
+    ],
+    "doi": "10.1093/nar/gkad1012",
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "molmedb",
+    "name": "MolMeDB",
+    "description": {
+      "en": "Open database of small molecule interactions with phospholipid membranes, compound permeabilities, free energy profiles, and membrane positioning.",
+      "cs": "Otevřená databáze interakcí malých molekul s fosfolipidovými membránami, permeabilit sloučenin a profilů volné energie."
+    },
+    "github": "https://github.com/MolMeDB/MolMeDB",
+    "web": "https://molmedb.chem.upol.cz",
+    "category": [
+      "Lipid Membranes",
+      "Databases"
+    ],
+    "languages": [
+      "Ruby",
+      "JavaScript",
+      "Python"
+    ],
+    "doi": "10.1093/database/baz078",
+    "org": "MolMeDB"
+  },
+  {
+    "id": "acc3",
+    "name": "Atomic Charge Calculator III (ACC III)",
+    "description": {
+      "en": "Web platform and CLI engine for fast empirical calculation of partial atomic charges in small organic molecules and large biomolecules.",
+      "cs": "Webová platforma a CLI nástroj pro rychlý empirický výpočet parciálních atomových nábojů v malých molekulách i makromolekulách."
+    },
+    "github": "https://github.com/sb-ncbr",
+    "web": "https://acc.biodata.ceitec.cz",
+    "category": [
+      "Tools",
+      "Visualization"
+    ],
+    "languages": [
+      "C++",
+      "Python",
+      "TypeScript"
+    ],
+    "doi": "10.1093/nar/gkag379",
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "proptimus",
+    "name": "PROPTIMUS LIVE",
+    "description": {
+      "en": "Web application offering local constrained alpha-carbon optimization of protein structures powered by GFN-Force-Field.",
+      "cs": "Webová aplikace pro lokální optimalizaci α-uhlíků proteinových struktur s využitím GFN silového pole."
+    },
+    "github": "https://github.com/sb-ncbr",
+    "web": "https://proptimus.ceitec.cz/live",
+    "category": [
+      "Tools",
+      "Alphafoldology"
+    ],
+    "languages": [
+      "Python",
+      "TypeScript"
+    ],
+    "doi": "10.1093/nar/gkag511",
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "foldify",
+    "name": "Foldify",
+    "description": {
+      "en": "Web application unifying AlphaFold 3, AlphaFold 2, ColabFold, OmegaFold, and ESMFold into a single user-friendly interface for structure prediction.",
+      "cs": "Webová aplikace sjednocující AlphaFold 3, AlphaFold 2, ColabFold, OmegaFold a ESMFold do jednoho rozhraní pro predikci struktur."
+    },
+    "github": "https://github.com/sb-ncbr",
+    "web": "https://foldify-open.cloud.e-infra.cz/",
+    "category": [
+      "Tools",
+      "Alphafoldology",
+      "Visualization"
+    ],
+    "languages": [
+      "Python",
+      "TypeScript"
+    ],
+    "doi": "10.1021/acs.jcim.6c01154",
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "pdbcharges",
+    "name": "PDBCharges",
+    "description": {
+      "en": "Database of quantum-mechanical partial atomic charges calculated for protein structure models from the Protein Data Bank.",
+      "cs": "Databáze kvantově-mechanických parciálních atomových nábojů vypočítaných pro modely proteinových struktur z PDB."
+    },
+    "github": "https://github.com/sb-ncbr",
+    "web": "https://charges.chemi.muni.cz/",
+    "category": [
+      "Databases",
+      "Tools"
+    ],
+    "languages": [
+      "Python",
+      "JavaScript"
+    ],
+    "doi": "10.1093/nar/gkaf401",
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "gromacs-metadump",
+    "name": "Gromacs MetaDump",
+    "description": {
+      "en": "Command-line tool for extracting, inspecting, and managing structured metadata from GROMACS molecular dynamics simulation trajectory files.",
+      "cs": "Nástroj pro příkazový řádek určený k extrakci a inspekci strukturovaných metadat ze souborů trajektorií simulací GROMACS."
+    },
+    "github": "https://github.com/sb-ncbr",
+    "category": [
+      "Tools",
+      "Lipid Membranes"
+    ],
+    "languages": [
+      "Python",
+      "C++"
+    ],
+    "doi": "10.1186/s13321-025-01082-5",
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "2dprots",
+    "name": "2DProts",
+    "description": {
+      "en": "Database and web service generating family-wide protein secondary structure diagrams and interactive 2D structural representations.",
+      "cs": "Databáze a webová služba generující diagramy sekundární struktury v rámci proteinových rodin a interaktivní 2D reprezentace."
+    },
+    "github": "https://github.com/sb-ncbr",
+    "web": "https://2dprots.icm.edu.pl/",
+    "category": [
+      "Visualization",
+      "Tools"
+    ],
+    "languages": [
+      "Python",
+      "JavaScript"
+    ],
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "secstrannotator",
+    "name": "SecStrAnnotator",
+    "description": {
+      "en": "Annotation tool for automated identification and comparison of secondary structure elements and domain topology across protein families.",
+      "cs": "Anotační nástroj pro automatickou identifikaci a srovnání prvků sekundární struktury a doménové topologie napříč proteinovými rodinami."
+    },
+    "github": "https://github.com/sb-ncbr",
+    "web": "https://secstrannotator.ceitec.cz/",
+    "category": [
+      "Tools",
+      "Visualization"
+    ],
+    "languages": [
+      "C#",
+      "Python"
+    ],
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "pokusnice",
+    "name": "Pokusnice",
+    "description": {
+      "en": "Interactive web hub of chemistry experiments and educational resources designed for high school chemistry teaching and science outreach.",
+      "cs": "Interaktivní portál chemických pokusů a vzdělávacích materiálů určený pro výuku chemie na středních školách a popularizaci vědy."
+    },
+    "github": "https://github.com/KarelBerka",
+    "web": "https://pokusnice.cz",
+    "category": [
+      "Education"
+    ],
+    "languages": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "org": "KarelBerka"
+  },
+  {
+    "id": "alphafoldology",
+    "name": "Alphafoldology",
+    "description": {
+      "en": "Comprehensive catalog and resource ecosystem for structural biology machine learning tools in the AlphaFold era.",
+      "cs": "Komplexní katalog a ekosystém nástrojů strukturní biologie pro strojové učení v éře AlphaFold."
+    },
+    "github": "https://github.com/sb-ncbr/alphafoldology",
+    "web": "https://alphafoldology.org",
+    "category": [
+      "Alphafoldology",
+      "Tools",
+      "Databases"
+    ],
+    "languages": [
+      "Python",
+      "JavaScript"
+    ],
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "orbital-simulator",
+    "name": "Orbital Simulator",
+    "description": {
+      "en": "Interactive 3D visualization and simulation tool for exploring atomic and molecular orbital electron density shapes.",
+      "cs": "Interaktivní 3D vizualizační a simulační nástroj pro zkoumání tvarů a elektronových hustot atomových i molekulových orbitalů."
+    },
+    "github": "https://github.com/KarelBerka/orbital-simulator",
+    "web": "https://kfc.upol.cz/orbital",
+    "category": [
+      "Education",
+      "Visualization"
+    ],
+    "languages": [
+      "JavaScript",
+      "WebGL",
+      "HTML"
+    ],
+    "org": "KarelBerka"
+  },
+  {
+    "id": "trestni-dilemata",
+    "name": "Trestní dilemata",
+    "description": {
+      "en": "Interactive educational game and decision-making scenario simulator for law, ethics, and legal outreach.",
+      "cs": "Interaktivní vzdělávací hra a simulátor rozhodovacích scénářů pro etiku a právní osvětu."
+    },
+    "github": "https://github.com/KarelBerka/trestni-dilemata",
+    "web": "https://pokusnice.cz/dilemata",
+    "category": [
+      "Education"
+    ],
+    "languages": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "org": "KarelBerka"
+  },
+  {
+    "id": "academic-misconduct",
+    "name": "Academic Misconduct Dilemmas",
+    "description": {
+      "en": "Interactive ethical scenario simulator focusing on scientific integrity, publication ethics, and academic misconduct dilemmas.",
+      "cs": "Interaktivní simulátor etických scénářů zaměřený na vědeckou integritu, etiku publikování a akademická dilemata."
+    },
+    "github": "https://github.com/KarelBerka/academic-misconduct-dilemmas",
+    "web": "https://pokusnice.cz/misconduct",
+    "category": [
+      "Education"
+    ],
+    "languages": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "org": "KarelBerka"
+  },
+  {
+    "id": "3dpmol",
+    "name": "3DPMol*",
+    "description": {
+      "en": "3D printing export module and interactive web tool for converting biomacromolecular structures into 3D printable files via Mol* Viewer.",
+      "cs": "Modul pro 3D tisk a interaktivní webový nástroj pro převod biomakromolekulárních struktur na soubory pro 3D tisk v prostředí Mol* Viewer."
+    },
+    "github": "https://github.com/sb-ncbr/3dpmol",
+    "web": "https://3dpmol.ceitec.cz",
+    "category": [
+      "Visualization",
+      "Tools"
+    ],
+    "languages": [
+      "TypeScript",
+      "JavaScript"
+    ],
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "2d-permeability-simulator",
+    "name": "2D Permeability Simulator",
+    "description": {
+      "en": "Interactive 2D simulation tool for modeling small-molecule passive transport and diffusion kinetics across lipid membranes.",
+      "cs": "Interaktivní 2D simulační nástroj pro modelování pasivního transportu a difúzní kinetiky malých molekul přes fosfolipidové membrány."
+    },
+    "github": "https://github.com/KarelBerka/2d-permeability-simulator",
+    "web": "https://molmedb.chem.upol.cz/permeability",
+    "category": [
+      "Lipid Membranes",
+      "Education",
+      "Tools"
+    ],
+    "languages": [
+      "JavaScript",
+      "Canvas",
+      "HTML"
+    ],
+    "org": "KarelBerka"
+  }
+];
+
