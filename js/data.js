@@ -18,7 +18,8 @@ const publicationsData = [
     "id": "10.1021/acs.jcim.6c01154",
     "oa_url": "https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.6c01154?ref=article_openPDF",
     "oa_is_preprint": false,
-    "web": "https://foldify-open.cloud.e-infra.cz/"
+    "web": "https://foldify-open.cloud.e-infra.cz/",
+    "github": "https://github.com/sb-ncbr/foldify-open"
   },
   {
     "title": "Mapping pathogenic patterns in membrane transporters from the GLUT transporter family",
@@ -57,7 +58,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkag511",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://proptimus.ceitec.cz/live"
+    "web": "https://proptimus.ceitec.cz/live",
+    "github": "https://github.com/sb-ncbr/proptimus_live"
   },
   {
     "title": "Atomic Charge Calculator III: a modern platform for calculating partial atomic charges",
@@ -78,7 +80,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkag379",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://acc.biodata.ceitec.cz"
+    "web": "https://acc.biodata.ceitec.cz",
+    "github": "https://github.com/sb-ncbr/AtomicChargeCalculator"
   },
   {
     "title": "The impact of FDM infill parameters on tensile mechanical properties",
@@ -161,7 +164,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkaf401",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://charges.chemi.muni.cz/"
+    "web": "https://pdbcharges.biodata.ceitec.cz/",
+    "github": "https://github.com/sb-ncbr/PDBCharges_website"
   },
   {
     "title": "Developing molecular surveillance of SARS-CoV-2 in the Czech Republic (2021-2022)",
@@ -199,7 +203,8 @@ const publicationsData = [
     "id": "10.1186/s13321-025-01082-5",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://gmd.ceitec.cz/"
+    "web": "https://gmd.ceitec.cz",
+    "github": "https://github.com/sb-ncbr/gromacs-metadump"
   },
   {
     "title": "Pathogenicity patterns in cytochrome P450 family",
@@ -219,7 +224,8 @@ const publicationsData = [
     "image": "img/publications/pub_2025_BIOINFORMATICSADVANCES_UnknownAuthor.png",
     "id": "10.1093/bioadv/vbaf231",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "github": "https://github.com/annaspac/P450_pathogenicity_codes"
   },
   {
     "title": "2025 Ownership and Maintenance of FAIRsharing record: MolMeDB",
@@ -260,7 +266,9 @@ const publicationsData = [
     "image": "img/publications/pub_2024_NoJournal_UnknownAuthor.png",
     "id": "10.26434/chemrxiv-2024-ndc8k-v2",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://molmedb.chem.upol.cz",
+    "github": "https://github.com/MolMeDB/MolMeDB"
   },
   {
     "title": "Liposomal Copermeation Assay Reveals Unexpected Membrane Interactions of Commonly Prescribed Drugs",
@@ -417,7 +425,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkad411",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://molstarvolseg.ncbr.muni.cz/"
+    "web": "https://molstarvolseg.ncbr.muni.cz/",
+    "github": "https://github.com/molstar/volseg-viewer"
   },
   {
     "title": "Small change – big consequence: The impact of C15-C16 double bond in a D‑ring of estrone on estrogen receptor activity",
@@ -456,7 +465,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkad349",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://alphacharges.ncbr.muni.cz"
+    "web": "https://alphacharges.ncbr.muni.cz",
+    "github": "https://github.com/sb-ncbr/AlphaCharges"
   },
   {
     "title": "Antitumour drugs targeting tau R3 VQIVYK and Cys322 prevent seeding of endogenous tau aggregates by exogenous seeds",
@@ -510,7 +520,8 @@ const publicationsData = [
     "id": "10.1093/bioinformatics/btac384",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://overprot.ncbr.muni.cz.Supplementary"
+    "web": "https://overprot.ncbr.muni.cz/",
+    "github": "https://github.com/sb-ncbr/overprot"
   },
   {
     "title": "PDBe-KB: collaboratively defining the biological context of structural data",
@@ -570,7 +581,8 @@ const publicationsData = [
     "id": "10.1093/bioinformatics/btab505",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://2dprots.icm.edu.pl/"
+    "web": "https://2dprots.icm.edu.pl/",
+    "github": "https://gitlab.com/jhutar/2dprot"
   },
   {
     "title": "CATH: increased structural coverage of functional space",
@@ -632,7 +644,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkab314",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://molstar.org/"
+    "web": "https://molstar.org/",
+    "github": "https://github.com/molstar/molstar"
   },
   {
     "title": "Optimized SQE atomic charges for peptides accessible via a web application",
@@ -652,7 +665,8 @@ const publicationsData = [
     "id": "10.1186/s13321-021-00528-w",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://acc2.ncbr.muni.cz"
+    "web": "https://acc2.ncbr.muni.cz",
+    "github": "https://github.com/sb-ncbr/AtomicChargeCalculator"
   },
   {
     "title": "Uncovering of cytochrome P450 anatomy by SecStrAnnotator",
@@ -672,7 +686,8 @@ const publicationsData = [
     "id": "10.1038/S41598-021-91494-8",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://secstrannotator.ceitec.cz/"
+    "web": "https://secstrannotator.ceitec.cz/",
+    "github": "https://github.com/sb-ncbr/SecStrAnnotator2"
   },
   {
     "title": "Cytokinin fluoroprobe and receptor CRE1/AHK4 localize to both plasma membrane and endoplasmic reticulum",
@@ -712,7 +727,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkaa367",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://acc2.ncbr.muni.cz"
+    "web": "https://acc2.ncbr.muni.cz",
+    "github": "https://github.com/sb-ncbr/AtomicChargeCalculator"
   },
   {
     "title": "Dextrans as Permeation Markers and Carriers for Oral Transmucosal Drug Delivery",
@@ -822,7 +838,9 @@ const publicationsData = [
     "image": "img/publications/pub_2020_MethodsinMolecularBiology_UnknownAuthor.png",
     "id": "10.1007/978-1-0716-0270-6_1",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://www.litemol.org/",
+    "github": "https://github.com/dsehnal/LiteMol"
   },
   {
     "title": "In vitro testing of flash-frozen sublingual membranes for storage and reproducible permeability studies of macromolecular drugs from solution or nanofiber mats",
@@ -918,7 +936,8 @@ const publicationsData = [
     "id": "pub_2019_NoJournal_UnknownAuthor",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://pokusnice.cz"
+    "web": "https://pokusnice.cz",
+    "github": "https://github.com/KarelBerka"
   },
   {
     "title": "ChannelsDB: database of biomacromolecular tunnels and pores",
@@ -995,7 +1014,9 @@ const publicationsData = [
     "image": "img/publications/pub_2018_BiophysicalJournal_UnknownAuthor_2.png",
     "id": "10.1016/J.BPJ.2017.11.308",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://www.litemol.org/",
+    "github": "https://github.com/dsehnal/LiteMol"
   },
   {
     "title": "Is Machine Learning the Future of Theoretical Chemistry?",
@@ -1034,7 +1055,8 @@ const publicationsData = [
     "id": "10.1093/nar/gky309",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://moleonline.cz"
+    "web": "https://moleonline.cz",
+    "github": "https://github.com/sb-ncbr/MOLE"
   },
   {
     "title": "Membrane-attached mammalian cytochromes P450: An overview of the membrane's effects on structure, drug binding, and interactions with redox partners.",
@@ -1164,7 +1186,9 @@ const publicationsData = [
     "image": "img/publications/pub_2017_NatureMethods_Sehnal.png",
     "id": "10.1038/nmeth.4499",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://www.litemol.org/",
+    "github": "https://github.com/dsehnal/LiteMol"
   },
   {
     "title": "Molecular insights into the role of a distal F240A mutation that alters CYP1A1 activity towards persistent organic pollutants.",
@@ -1760,7 +1784,9 @@ const publicationsData = [
     "image": "img/publications/pub_2014_ActaCrystallographicaSectionAFoundationsandAdvances_Karel.png",
     "id": "pub_2014_ActaCrystallographicaSectionAFoundationsandAdvances_Karel",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "web": "https://www.litemol.org/",
+    "github": "https://github.com/dsehnal/LiteMol"
   },
   {
     "title": "PDBsum additions.",
@@ -1987,7 +2013,8 @@ const publicationsData = [
     "id": "10.1186/1758-2946-5-39",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "http://mole.chemi.muni.cz"
+    "web": "https://moleonline.cz",
+    "github": "https://github.com/sb-ncbr/MOLE"
   },
   {
     "title": "Molecular insight into affinities of drugs and their metabolites to lipid bilayers.",
@@ -2103,7 +2130,8 @@ const publicationsData = [
     "id": "10.1093/nar/gks363",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://moleonline.cz"
+    "web": "https://moleonline.cz",
+    "github": "https://github.com/sb-ncbr/MOLE"
   },
   {
     "title": "Positioning of antioxidant quercetin and its metabolites in lipid bilayer membranes: implication for their lipid-peroxidation inhibition.",
@@ -2411,7 +2439,6 @@ const publicationsData = [
   }
 ];
 
-
 // Scientific Tools & Software Repositories Data
 const toolsData = [
   {
@@ -2486,7 +2513,7 @@ const toolsData = [
       "en": "Web platform and CLI engine for fast empirical calculation of partial atomic charges in small organic molecules and large biomolecules.",
       "cs": "Webová platforma a CLI nástroj pro rychlý empirický výpočet parciálních atomových nábojů v malých molekulách i makromolekulách."
     },
-    "github": "https://github.com/sb-ncbr",
+    "github": "https://github.com/sb-ncbr/AtomicChargeCalculator",
     "web": "https://acc.biodata.ceitec.cz",
     "category": [
       "Tools",
@@ -2507,7 +2534,7 @@ const toolsData = [
       "en": "Web application offering local constrained alpha-carbon optimization of protein structures powered by GFN-Force-Field.",
       "cs": "Webová aplikace pro lokální optimalizaci α-uhlíků proteinových struktur s využitím GFN silového pole."
     },
-    "github": "https://github.com/sb-ncbr",
+    "github": "https://github.com/sb-ncbr/proptimus_live",
     "web": "https://proptimus.ceitec.cz/live",
     "category": [
       "Tools",
@@ -2527,7 +2554,7 @@ const toolsData = [
       "en": "Web application unifying AlphaFold 3, AlphaFold 2, ColabFold, OmegaFold, and ESMFold into a single user-friendly interface for structure prediction.",
       "cs": "Webová aplikace sjednocující AlphaFold 3, AlphaFold 2, ColabFold, OmegaFold a ESMFold do jednoho rozhraní pro predikci struktur."
     },
-    "github": "https://github.com/sb-ncbr",
+    "github": "https://github.com/sb-ncbr/foldify-open",
     "web": "https://foldify-open.cloud.e-infra.cz/",
     "category": [
       "Tools",
@@ -2548,8 +2575,8 @@ const toolsData = [
       "en": "Database of quantum-mechanical partial atomic charges calculated for protein structure models from the Protein Data Bank.",
       "cs": "Databáze kvantově-mechanických parciálních atomových nábojů vypočítaných pro modely proteinových struktur z PDB."
     },
-    "github": "https://github.com/sb-ncbr",
-    "web": "https://charges.chemi.muni.cz/",
+    "github": "https://github.com/sb-ncbr/PDBCharges_website",
+    "web": "https://pdbcharges.biodata.ceitec.cz/",
     "category": [
       "Databases",
       "Tools"
@@ -2568,7 +2595,7 @@ const toolsData = [
       "en": "Command-line tool for extracting, inspecting, and managing structured metadata from GROMACS molecular dynamics simulation trajectory files.",
       "cs": "Nástroj pro příkazový řádek určený k extrakci a inspekci strukturovaných metadat ze souborů trajektorií simulací GROMACS."
     },
-    "github": "https://github.com/sb-ncbr",
+    "github": "https://github.com/sb-ncbr/gromacs-metadump",
     "category": [
       "Tools",
       "Lipid Membranes"
@@ -2578,7 +2605,8 @@ const toolsData = [
       "C++"
     ],
     "doi": "10.1186/s13321-025-01082-5",
-    "org": "sb-ncbr"
+    "org": "sb-ncbr",
+    "web": "https://gmd.ceitec.cz"
   },
   {
     "id": "2dprots",
@@ -2587,7 +2615,7 @@ const toolsData = [
       "en": "Database and web service generating family-wide protein secondary structure diagrams and interactive 2D structural representations.",
       "cs": "Databáze a webová služba generující diagramy sekundární struktury v rámci proteinových rodin a interaktivní 2D reprezentace."
     },
-    "github": "https://github.com/sb-ncbr",
+    "github": "https://gitlab.com/jhutar/2dprot",
     "web": "https://2dprots.icm.edu.pl/",
     "category": [
       "Visualization",
@@ -2606,7 +2634,7 @@ const toolsData = [
       "en": "Annotation tool for automated identification and comparison of secondary structure elements and domain topology across protein families.",
       "cs": "Anotační nástroj pro automatickou identifikaci a srovnání prvků sekundární struktury a doménové topologie napříč proteinovými rodinami."
     },
-    "github": "https://github.com/sb-ncbr",
+    "github": "https://github.com/sb-ncbr/SecStrAnnotator2",
     "web": "https://secstrannotator.ceitec.cz/",
     "category": [
       "Tools",
@@ -2754,6 +2782,65 @@ const toolsData = [
       "HTML"
     ],
     "org": "KarelBerka"
+  },
+  {
+    "id": "alphacharges",
+    "name": "αCharges",
+    "description": {
+      "en": "Web platform for the automated calculation of partial atomic charges in AlphaFold-predicted structures.",
+      "cs": "Webová platforma pro automatický výpočet parciálních atomových nábojů ve strukturách predikovaných systémem AlphaFold."
+    },
+    "github": "https://github.com/sb-ncbr/AlphaCharges",
+    "web": "https://alphacharges.ncbr.muni.cz/",
+    "category": [
+      "Tools",
+      "Alphafoldology"
+    ],
+    "languages": [
+      "Python",
+      "TypeScript"
+    ],
+    "doi": "10.1093/nar/gkad349",
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "molstar",
+    "name": "Mol* Viewer",
+    "description": {
+      "en": "Modern open-source web application and comprehensive toolkit for fast 3D macromolecular structure visualization and analysis.",
+      "cs": "Moderní open-source webová aplikace a komplexní nástroj pro rychlou 3D vizualizaci a analýzu makromolekulárních struktur."
+    },
+    "github": "https://github.com/molstar/molstar",
+    "web": "https://molstar.org/",
+    "category": [
+      "Visualization",
+      "Tools"
+    ],
+    "languages": [
+      "TypeScript",
+      "WebGL"
+    ],
+    "doi": "10.1093/nar/gkab314",
+    "org": "Mol*"
+  },
+  {
+    "id": "overprot",
+    "name": "OverProt",
+    "description": {
+      "en": "Automated pipeline and web service creating secondary structure consensus diagrams for entire protein families.",
+      "cs": "Automatizovaný nástroj a webová služba generující konsensuální diagramy sekundární struktury pro celé proteinové rodiny."
+    },
+    "github": "https://github.com/sb-ncbr/overprot",
+    "web": "https://overprot.ncbr.muni.cz/",
+    "category": [
+      "Visualization",
+      "Tools"
+    ],
+    "languages": [
+      "Python",
+      "Rust"
+    ],
+    "doi": "10.1093/bioinformatics/btac384",
+    "org": "sb-ncbr"
   }
 ];
-
