@@ -22,6 +22,69 @@ const publicationsData = [
     "github": "https://github.com/sb-ncbr/foldify-open"
   },
   {
+    "title": "AlphaFind v2: similarity search in AlphaFold DB and TED domains across structural contexts",
+    "year": "2026",
+    "journal": "Nucleic Acids Research",
+    "doi": "10.1093/nar/gkag372",
+    "authors": "Terézia Slanináková, Adrián Rošinec, Jakub Čillík, Aleš Křenek, Katarina Gresova, Jana Porubská, Eva Maršálková, Jaroslav Olha, David Procházka, Lukáš Hejtmánek, Vlastislav Dohnal, Karel Berka, Radka Svobodová, Matej Antol",
+    "category": [
+      "Alphafoldology",
+      "Tools",
+      "Visualization",
+      "Selected"
+    ],
+    "volume": "54",
+    "issue": "W1",
+    "pages": "W206-W210",
+    "abstract": "The availability of large-scale protein structure collections enables structure-based analysis of their function and evolution beyond what is possible from sequence alone. However, applying three-dimensional structure comparison at scale remains computationally demanding and limits practical exploration of large experimental and predicted collections. This creates a need for fast, structure-based search methods that retain biological relevance while enabling large-scale exploration. In this paper, we present AlphaFind v2, an application for finding structurally similar proteins in the AlphaFold Database (https://alphafold.ebi.ac.uk/) of predicted structures. AlphaFind v2 uses fast pre-filtering via state-of-the-art protein embeddings that preserve structural information, followed by refinement with US-align. The application presents multiple complementary search modes, including (i) search over full protein chains, (ii) search aware of the AlphaFold pLDDT metric, restricting similarity computation to the most stable and structurally relevant regions, (iii) search over protein domains from the TED database (https://ted.cathdb.info/), and (iv) a multidomain search mode, combining multiple chain-level domain matches within a single score and alignment. The application accepts protein identifiers and returns similar proteins with metrics, rich metadata, and interactive superpositions. AlphaFind v2 additionally allows searching within an organism or CATH label and matches the proteins with experimental structures. AlphaFind v2 is accessible at https://alphafind.ics.muni.cz/.",
+    "image": "img/publications/pub_2026_nar_alphafind.png",
+    "id": "10.1093/nar/gkag372",
+    "oa_url": "https://doi.org/10.1093/nar/gkag372",
+    "oa_is_preprint": false,
+    "web": "https://alphafind.ics.muni.cz/",
+    "github": "https://github.com/Coda-Research-Group/AlphaFind"
+  },
+  {
+    "title": "MolMeDB RDF: transforming a relational database about biological membranes to the RDF format to increase interoperability",
+    "year": "2026",
+    "journal": "Journal of Cheminformatics",
+    "doi": "10.1186/s13321-026-01208-3",
+    "authors": "Dominik Martinát, Jakub Juračka, Jakub Galgonek, Karel Berka",
+    "category": [
+      "Lipid Membranes",
+      "Databases",
+      "Tools"
+    ],
+    "volume": "18",
+    "issue": "1",
+    "pages": "111",
+    "abstract": "Data on molecular behaviour within biological membrane models are pivotal for predictive pharmacology, particularly for modelling bioavailability and target engagement. MolMeDB provides a curated collection of such compound-membrane interaction data. To facilitate automated reasoning and data federation, we present a semantic transformation of MolMeDB into Resource Description Framework (RDF) format, exposed through a public SPARQL endpoint. The resulting schema incorporates community-standard ontologies—including those utilised by PubChem and ChEMBL—to maximise semantic interoperability and enable complex, cross-database federated queries.",
+    "image": "img/publications/pub_2026_jcheminf_molmedb_rdf.png",
+    "id": "10.1186/s13321-026-01208-3",
+    "oa_url": "https://doi.org/10.1186/s13321-026-01208-3",
+    "oa_is_preprint": false,
+    "web": "https://molmedb.chem.upol.cz/sparql",
+    "github": "https://github.com/DominikMartinat/rdf-mmdb"
+  },
+  {
+    "title": "C-terminal long-QT type 1 R562S-Kv7.1 variant, the first variant in helix C impairing β-adrenergic response of the slow delayed rectifier K+ channel",
+    "year": "2026",
+    "journal": "Europace",
+    "doi": "10.1093/europace/euag156",
+    "authors": "Martin Král, Olga Švecová, Roman Kula, Nina Kadášová, Jindřich Lněnička, Iva Synková, Dominika Traj, Larisa Chmelikova, Michal Pásek, Jan Hošek, Katarzyna Anna Radaszkiewicz, Irena Andršová, Pavel Vít, Karel Berka, Tomáš Novotný, Markéta Bébarová",
+    "category": [
+      "Channels"
+    ],
+    "volume": "28",
+    "issue": "7",
+    "pages": "euag156",
+    "abstract": "Kv7.1 variants, associated with long QT syndrome type 1 (LQT1) and altering the function of the slow delayed rectifier K+ (IKs) channel, may result in arrhythmias, especially during exercise. This study focused on complex analysis of the R562S-Kv7.1 variant located in helix C of the Kv7.1 C terminus, which was identified in four putatively unrelated families in the Czech Republic. The clinical and genetic investigation was followed by functional analysis (whole-cell patch clamp, confocal microscopy, computational simulations) and structural modelling. The genetic analysis suggested that R562S-Kv7.1 might be a founder LQT1 variant in Central Europe. Functional analysis of R562S channels demonstrated their preserved membrane localization, a significant decrease in IKs with a rightward shift of the voltage dependence of activation, and a lack of responsiveness to β-adrenergic stimulation related to a modified interaction of the modulatory KCNE1 subunit with Kv7.1. Mild ICa inhibition was suggested as a new treatment option.",
+    "image": "img/publications/pub_2026_europace_kv71.png",
+    "id": "10.1093/europace/euag156",
+    "oa_url": "https://doi.org/10.1093/europace/euag156",
+    "oa_is_preprint": false
+  },
+  {
     "title": "Mapping pathogenic patterns in membrane transporters from the GLUT transporter family",
     "year": "2026",
     "journal": "bioRxiv (Cold Spring Harbor Laboratory)",
@@ -207,6 +270,30 @@ const publicationsData = [
     "github": "https://github.com/sb-ncbr/gromacs-metadump"
   },
   {
+    "title": "Meta-Analysis of Permeability Literature Data Shows Possibilities and Limitations of Popular Methods",
+    "year": "2025",
+    "journal": "Molecular Pharmaceutics",
+    "doi": "10.1021/acs.molpharmaceut.4c00975",
+    "authors": "Kateřina Storchmannová, Martin Balouch, Jakub Juračka, František Štěpánek, Karel Berka",
+    "category": [
+      "Drug Design",
+      "Channels",
+      "Databases",
+      "Lipid Membranes",
+      "Selected"
+    ],
+    "volume": "22",
+    "issue": "3",
+    "pages": "1293-1304",
+    "abstract": "Permeability is an important molecular property in drug discovery, as it co-determines pharmacokinetics whenever a drug crosses the phospholipid bilayer, e.g., into the cell, in the gastrointestinal tract or across the blood-brain barrier. Many methods for the determination of permeability have been developed, including cell line assays, cell-free model systems like PAMPA mimicking, e.g., gastrointestinal epithelia or the skin, as well as the Black lipid membrane (BLM) and sub-micrometer liposomes. Furthermore, many in silico approaches have been developed for permeability prediction.  Meta-analysis of publicly available databases for permeability data (MolMeDB and ChEMBL) was performed to establish their usability. Firstly, experimental data can only be measured between thresholds for the lowest and highest permeation rate obtainable within physical boundaries. These thresholds vary strongly between methods. Secondly, computed data do not obey these thresholds but, on the other hand, can produce incorrect results. Thirdly, even for the same method and molecule, there is often a strong discrepancy between individual measured values. These differences are based not only on the statistics but also on the varying approaches and evaluation of the measured data. Thus, when working with in-house measured or published permeability data, we recommend to be cautious with their interpretation.",
+    "image": "img/publications/pub_2025_molpharm_permeability.png",
+    "id": "10.1021/acs.molpharmaceut.4c00975",
+    "oa_url": "https://pubs.acs.org/doi/10.1021/acs.molpharmaceut.4c00975",
+    "oa_is_preprint": false,
+    "web": "https://molmedb.chem.upol.cz",
+    "github": "https://github.com/MolMeDB/MolMeDB"
+  },
+  {
     "title": "Pathogenicity patterns in cytochrome P450 family",
     "year": "2025",
     "journal": "Bioinformatics Advances",
@@ -245,30 +332,6 @@ const publicationsData = [
     "oa_is_preprint": false,
     "github": "https://github.com/MolMeDB/MolMeDB",
     "web": "https://molmedb.chem.upol.cz"
-  },
-  {
-    "title": "Meta-analysis of permeability literature data shows possibilities and limitations of popular methods",
-    "year": "2024",
-    "journal": "",
-    "doi": "10.26434/chemrxiv-2024-ndc8k-v2",
-    "authors": "Kateřina Storchmannová, Martin Balouch, Jakub Juračka, František Štěpánek, Karel Berka",
-    "category": [
-      "Drug Design",
-      "Channels",
-      "Databases",
-      "Lipid Membranes",
-      "Selected"
-    ],
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "abstract": "Permeability is an important molecular property in drug discovery, as it co-determines pharmacokinetics whenever a drug crosses the phospholipid bilayer, e.g., into the cell, in the gastrointestinal tract or across the blood-brain barrier. Many methods for the determination of permeability have been developed, including cell line assays, cell-free model systems like PAMPA mimicking, e.g., gastrointestinal epithelia or the skin, as well as the Black lipid membrane (BLM) and sub-micrometer liposomes. Furthermore, many in silico approaches have been developed for permeability prediction.  Meta-analysis of publicly available databases for permeability data (MolMeDB and ChEMBL) was performed to establish their usability. Firstly, experimental data can only be measured between thresholds for the lowest and highest permeation rate obtainable within physical boundaries. These thresholds vary strongly between methods. Secondly, computed data do not obey these thresholds but, on the other hand, can produce incorrect results. Thirdly, even for the same method and molecule, there is often a strong discrepancy between individual measured values. These differences are based not only on the statistics but also on the varying approaches and evaluation of the measured data. Thus, when working with in-house measured or published permeability data, we recommend to be cautious with their interpretation.",
-    "image": "img/publications/pub_2024_NoJournal_UnknownAuthor.png",
-    "id": "10.26434/chemrxiv-2024-ndc8k-v2",
-    "oa_url": null,
-    "oa_is_preprint": false,
-    "web": "https://molmedb.chem.upol.cz",
-    "github": "https://github.com/MolMeDB/MolMeDB"
   },
   {
     "title": "Liposomal Copermeation Assay Reveals Unexpected Membrane Interactions of Commonly Prescribed Drugs",
@@ -693,19 +756,19 @@ const publicationsData = [
     "title": "Cytokinin fluoroprobe and receptor CRE1/AHK4 localize to both plasma membrane and endoplasmic reticulum",
     "year": "2020",
     "journal": "Nature Communications",
-    "doi": "10.1101/744177",
+    "doi": "10.1038/s41467-020-17949-0",
     "authors": "Karolina Kubiasová, Juan Carlos Montesinos, Olga Šamajová, Jaroslav Nisler, Václav Mik, Lucie Plíhalová, Ondřej Novák, Peter Marhavý, David Zalabák, Karel Berka, Karel Doležal, Petr Galuszka, Jozef Šamaj, Miroslav Strnad, Eva Benková, Ondřej Plíhal, Lukáš Spíchal",
     "category": [
       "Drug Design",
       "Lipid Membranes"
     ],
-    "volume": "",
+    "volume": "11",
     "issue": "",
-    "pages": "",
+    "pages": "4285",
     "abstract": "\n                  The plant hormone cytokinin regulates various cell and developmental processes, including cell division and differentiation, embryogenesis, activity of shoot and root apical meristems, formation of shoot and root lateral organs and others\n                  1\n                  . Cytokinins are perceived by a subfamily of sensor histidine kinases (HKs), which via a two-component phosphorelay cascade activate transcriptional responses in the nucleus. Based on the subcellular localization of cytokinin receptors in various transient expression systems, such as tobacco leaf epidermal cells, and membrane fractionation experiments of Arabidopsis and maize, the endoplasmic reticulum (ER) membrane has been proposed as a principal hormone perception site\n                  2–4\n                  . Intriguingly, recent study of the cytokinin transporter PUP14 has pointed out that the plasma membrane (PM)-mediated signalling might play an important role in establishment of cytokinin response gradients in various plant organs\n                  5\n                  . However, localization of cytokinin HK receptors to the PM, although initially suggested\n                  6\n                  , remains ambiguous. Here, by monitoring subcellular localizations of the fluorescently labelled natural cytokinin probe iP-NBD\n                  7\n                  and the cytokinin receptor ARABIDOPSIS HISTIDINE KINASE 4 (CRE1/AHK4) fused to GFP reporter, we show that pools of the ER-located cytokinin fluoroprobes and receptors can enter the secretory pathway and reach the PM. We demonstrate that in cells of the root apical meristem, CRE1/AHK4 localizes to the PM and the cell plate of dividing meristematic cells. Brefeldin A (BFA) experiments revealed vesicular recycling of the receptor and its accumulation in BFA compartments. Our results provide a new perspective on cytokinin signalling and the possibility of multiple sites of perception at PM and ER, which may determine specific outputs of cytokinin signalling.\n                ",
     "image": "img/publications/pub_2020_NatureCommunications_UnknownAuthor.png",
-    "id": "10.1101/744177",
-    "oa_url": null,
+    "id": "10.1038/s41467-020-17949-0",
+    "oa_url": "https://doi.org/10.1038/s41467-020-17949-0",
     "oa_is_preprint": false
   },
   {
@@ -2442,6 +2505,49 @@ const publicationsData = [
 // Scientific Tools & Software Repositories Data
 const toolsData = [
   {
+    "id": "alphafind",
+    "name": "AlphaFind v2",
+    "description": {
+      "en": "Fast similarity search in AlphaFold DB and TED domains using structural embeddings and US-align refinement across structural contexts.",
+      "cs": "Rychlé vyhledávání strukturní podobnosti v databázi AlphaFold a doménách TED pomocí strukturních embeddingů a US-align zarovnání."
+    },
+    "github": "https://github.com/Coda-Research-Group/AlphaFind",
+    "web": "https://alphafind.ics.muni.cz/",
+    "category": [
+      "Alphafoldology",
+      "Tools",
+      "Visualization",
+      "Databases"
+    ],
+    "languages": [
+      "Python",
+      "TypeScript"
+    ],
+    "doi": "10.1093/nar/gkag372",
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "molmedb-rdf",
+    "name": "MolMeDB RDF",
+    "description": {
+      "en": "Semantic transformation of MolMeDB into RDF format with public SPARQL endpoint and cross-database federation with ChEMBL and PubChem.",
+      "cs": "Sémantická transformace databáze MolMeDB do formátu RDF s veřejným SPARQL endpointem pro federované dotazování s ChEMBL a PubChem."
+    },
+    "github": "https://github.com/DominikMartinat/rdf-mmdb",
+    "web": "https://molmedb.chem.upol.cz/sparql",
+    "category": [
+      "Lipid Membranes",
+      "Databases",
+      "Tools"
+    ],
+    "languages": [
+      "Python",
+      "SPARQL"
+    ],
+    "doi": "10.1186/s13321-026-01208-3",
+    "org": "MolMeDB"
+  },
+  {
     "id": "moleonline",
     "name": "MOLEonline",
     "description": {
@@ -2672,8 +2778,8 @@ const toolsData = [
       "en": "Comprehensive catalog and resource ecosystem for structural biology machine learning tools in the AlphaFold era.",
       "cs": "Komplexní katalog a ekosystém nástrojů strukturní biologie pro strojové učení v éře AlphaFold."
     },
-    "github": "https://github.com/sb-ncbr/alphafoldology",
-    "web": "https://alphafoldology.org",
+    "github": "https://github.com/KarelBerka/Alphafoldology",
+    "web": "https://karelberka.github.io/Alphafoldology/",
     "category": [
       "Alphafoldology",
       "Tools",
@@ -2683,7 +2789,7 @@ const toolsData = [
       "Python",
       "JavaScript"
     ],
-    "org": "sb-ncbr"
+    "org": "KarelBerka"
   },
   {
     "id": "orbital-simulator",
@@ -2693,7 +2799,7 @@ const toolsData = [
       "cs": "Interaktivní 3D vizualizační a simulační nástroj pro zkoumání tvarů a elektronových hustot atomových i molekulových orbitalů."
     },
     "github": "https://github.com/KarelBerka/orbital-simulator",
-    "web": "https://kfc.upol.cz/orbital",
+    "web": "https://karelberka.github.io/orbital-simulator/",
     "category": [
       "Education",
       "Visualization"
@@ -2713,7 +2819,7 @@ const toolsData = [
       "cs": "Interaktivní vzdělávací hra a simulátor rozhodovacích scénářů pro etiku a právní osvětu."
     },
     "github": "https://github.com/KarelBerka/trestni-dilemata",
-    "web": "https://pokusnice.cz/dilemata",
+    "web": "https://karelberka.github.io/trestni-dilemata/",
     "category": [
       "Education"
     ],
@@ -2732,7 +2838,7 @@ const toolsData = [
       "cs": "Interaktivní simulátor etických scénářů zaměřený na vědeckou integritu, etiku publikování a akademická dilemata."
     },
     "github": "https://github.com/KarelBerka/academic-misconduct-dilemmas",
-    "web": "https://pokusnice.cz/misconduct",
+    "web": "https://karelberka.github.io/academic-misconduct-dilemmas/",
     "category": [
       "Education"
     ],
@@ -2745,13 +2851,13 @@ const toolsData = [
   },
   {
     "id": "3dpmol",
-    "name": "3DPMol*",
+    "name": "3DP-Mol*",
     "description": {
       "en": "3D printing export module and interactive web tool for converting biomacromolecular structures into 3D printable files via Mol* Viewer.",
       "cs": "Modul pro 3D tisk a interaktivní webový nástroj pro převod biomakromolekulárních struktur na soubory pro 3D tisk v prostředí Mol* Viewer."
     },
-    "github": "https://github.com/sb-ncbr/3dpmol",
-    "web": "https://3dpmol.ceitec.cz",
+    "github": "https://github.com/KarelBerka/molstar-3dprint",
+    "web": "https://karelberka.github.io/molstar-3dprint/",
     "category": [
       "Visualization",
       "Tools"
@@ -2760,7 +2866,7 @@ const toolsData = [
       "TypeScript",
       "JavaScript"
     ],
-    "org": "sb-ncbr"
+    "org": "KarelBerka"
   },
   {
     "id": "2d-permeability-simulator",
@@ -2769,8 +2875,8 @@ const toolsData = [
       "en": "Interactive 2D simulation tool for modeling small-molecule passive transport and diffusion kinetics across lipid membranes.",
       "cs": "Interaktivní 2D simulační nástroj pro modelování pasivního transportu a difúzní kinetiky malých molekul přes fosfolipidové membrány."
     },
-    "github": "https://github.com/KarelBerka/2d-permeability-simulator",
-    "web": "https://molmedb.chem.upol.cz/permeability",
+    "github": "https://github.com/KarelBerka/2D-permeability-simulator",
+    "web": "https://karelberka.github.io/2D-permeability-simulator/",
     "category": [
       "Lipid Membranes",
       "Education",
@@ -2842,5 +2948,81 @@ const toolsData = [
     ],
     "doi": "10.1093/bioinformatics/btac384",
     "org": "sb-ncbr"
+  },
+  {
+    "id": "md-ontology-mapper",
+    "name": "MD Ontology Mapper",
+    "description": {
+      "en": "Interactive web application and ontology reference matrix for cross-mapping parameters and settings across 13 major MD and simulation packages.",
+      "cs": "Interaktivní webová aplikace a referenční ontologická matice pro mapování parametrů a nastavení napříč 13 simulačními balíky pro molekulovou dynamiku."
+    },
+    "github": "https://github.com/KarelBerka/MD-ontology-mapper",
+    "web": "https://karelberka.github.io/MD-ontology-mapper/",
+    "category": [
+      "Tools",
+      "Databases"
+    ],
+    "languages": [
+      "JavaScript",
+      "HTML"
+    ],
+    "org": "KarelBerka"
+  },
+  {
+    "id": "partial-charges-review",
+    "name": "Partial Charges Review",
+    "description": {
+      "en": "Interactive visual catalog and review of over 100+ empirical and quantum-mechanical partial atomic charge calculation methods.",
+      "cs": "Interaktivní vizuální katalog a přehled více než 100 empirických a kvantově-mechanických metod výpočtu parciálních atomových nábojů."
+    },
+    "github": "https://github.com/KarelBerka/partial-charges-review",
+    "web": "https://karelberka.github.io/partial-charges-review/",
+    "category": [
+      "Tools",
+      "Databases"
+    ],
+    "languages": [
+      "JavaScript",
+      "HTML"
+    ],
+    "org": "KarelBerka"
+  },
+  {
+    "id": "bio-dobble",
+    "name": "BioDobble Portal",
+    "description": {
+      "en": "Educational biochem card game portal featuring specialized editions: Amino Acids, Lipids, Glycans, and Nucleic Acids.",
+      "cs": "Vzdělávací biochemický portál karetních her Dobble se specializovanými edicemi pro aminokyseliny, lipidy, sacharidy a nukleové kyseliny."
+    },
+    "github": "https://github.com/KarelBerka/bio-dobble",
+    "web": "https://karelberka.github.io/bio-dobble/",
+    "category": [
+      "Education"
+    ],
+    "languages": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "org": "KarelBerka"
+  },
+  {
+    "id": "hadovka",
+    "name": "HADovka",
+    "description": {
+      "en": "Modern, customizable browser multiplayer Snake game supporting local play, touch controls, AI bots, map editor, and Cyber-Neon modes.",
+      "cs": "Moderní webová hra Had s podporou multiplayeru, dotykového ovládání, AI botů, integrovaného editoru map a Cyber-Neon grafiky."
+    },
+    "github": "https://github.com/KarelBerka/hadovka",
+    "web": "https://karelberka.github.io/hadovka/",
+    "category": [
+      "Education"
+    ],
+    "languages": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "org": "KarelBerka"
   }
 ];

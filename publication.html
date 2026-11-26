@@ -75,6 +75,10 @@
                         <a id="btn-preprint" href="#" class="btn btn-secondary hidden">Preprint</a>
                         <a id="btn-fairsharing" href="#" class="btn btn-secondary hidden">FAIRsharing Record</a>
                         <a id="btn-github" href="#" target="_blank" rel="noopener" class="btn btn-secondary hidden" style="background-color: #24292e; color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); font-weight: 600;">GitHub 🐙</a>
+                        <button id="btn-pd-cite" class="btn btn-secondary" style="font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                            <span class="lang-en">Cite Publication 📄</span>
+                            <span class="lang-cs" style="display: none;">Citovat publikaci 📄</span>
+                        </button>
                     </div>
                     
                     <div class="pd-abstract-container">
@@ -97,6 +101,7 @@
     <!-- Load Data and JS -->
     <script src="js/data.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/citation.js"></script>
     <script>
         // Publication Rendering Logic
         document.addEventListener('DOMContentLoaded', () => {

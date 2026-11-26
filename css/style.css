@@ -2338,3 +2338,341 @@ footer {
 
 /* Title sizing */
 .title-affix { font-size: 0.7em; font-weight: 500; opacity: 0.9; }
+
+/* ==========================================================================
+   Citation System Styles (Modal, Tabs, Code Preview, Download Actions)
+   ========================================================================== */
+
+/* Button inside card links */
+.btn-pub-cite {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background-color: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-pub-cite:hover {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(99, 102, 241, 0.12));
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+}
+
+/* Modal Overlay */
+.cite-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
+}
+
+.cite-modal-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    display: none;
+}
+
+/* Modal Box */
+.cite-modal-box {
+    background: var(--bg-base);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius, 16px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    width: 100%;
+    max-width: 680px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: citeModalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes citeModalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Modal Header */
+.cite-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-surface);
+}
+
+.cite-modal-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cite-modal-icon {
+    font-size: 1.3rem;
+}
+
+.cite-modal-title {
+    font-family: var(--font-heading, inherit);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.cite-modal-close {
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all var(--transition-fast);
+}
+
+.cite-modal-close:hover {
+    color: var(--text-primary);
+    background: var(--bg-surface-alt);
+}
+
+/* Publication Summary Box */
+.cite-pub-summary {
+    padding: 16px 24px;
+    background: var(--bg-surface-alt);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cite-pub-badges {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.cite-badge-year {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.cite-badge-journal {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--border-color);
+    color: var(--text-secondary);
+    max-width: 380px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cite-summary-title {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.cite-summary-authors {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Format Tabs */
+.cite-formats-tabs {
+    display: flex;
+    gap: 6px;
+    padding: 12px 24px 0 24px;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-surface);
+}
+
+.cite-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+.cite-tab-btn:hover {
+    color: var(--text-primary);
+    background: rgba(14, 165, 233, 0.05);
+}
+
+.cite-tab-btn.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.cite-tab-badge {
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+}
+
+.cite-tab-btn.active .cite-tab-badge {
+    background: var(--color-primary-light, rgba(14, 165, 233, 0.15));
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* Format Description */
+.cite-format-desc {
+    padding: 10px 24px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+    background: var(--bg-base);
+}
+
+/* Citation Content Wrapper */
+.cite-content-wrapper {
+    padding: 0 24px 16px 24px;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 160px;
+}
+
+.cite-code-output {
+    margin: 0;
+    padding: 16px;
+    border-radius: 8px;
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    user-select: all;
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.cite-code-output.is-code {
+    font-family: 'JetBrains Mono', Consolas, Monaco, 'Courier New', monospace;
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+/* Modal Footer */
+.cite-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.cite-actions-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-cite-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-cite-copy {
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.btn-cite-copy:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+.btn-cite-copy.copied {
+    background: #10b981 !important;
+    border-color: #10b981 !important;
+    color: #ffffff !important;
+}
+
+.btn-cite-download {
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    border: 1px solid #0284c7;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+}
+
+.btn-cite-download:hover {
+    background: linear-gradient(135deg, #0369a1, #075985);
+    border-color: #0369a1;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
+}
+
+.cite-footer-hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
