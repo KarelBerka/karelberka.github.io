@@ -1,5 +1,28 @@
 const publicationsData = [
   {
+    "title": "PDBe in 2027: integrating literature annotations, molecular dynamics data, and AI-ready access",
+    "year": "2026",
+    "journal": "Nucleic Acids Research",
+    "doi": "10.1093/nar/gkag1151",
+    "authors": "Marcelo Querino Lima Afonso, Melanie Vollmar, Adam Bellaiche, Preeti Choudhary, Sreenath Sasidharan Nair, Mihai Todor, Adam Midlik, Ivanna Pidruchna, Dare Kayode Lawal, Charlotte Cordery, Deborah Harrus, Ibrahim Roshan Kunnakkattu, Sri Devan Appasamy, Joseph Isaac Jack Ellaway, Cristian A Escobar, Grisell Díaz Leines, Balakumaran Balasubramaniyan, Urmila Pandharinath Paramval, Jeannie Austin, Razan Abbara, Daniel Beltrán Anadón, Karel Berka, Damián Bertoni, Philip C Biggin, Weslley Morellato Bueno, Genevieve L Evans, Romana Gaborova, Sudakshina Ganguly, Yonathan Goldtzvik, Adam Hospital, Maxim Ivanov Tsenkov, Charlotte I Lynch, Modesto Orozco, Nikos Pechlivanis, Linda X Phan, Tomáš Raček, David Sehnal, Antonio Marinho da Silva Neto, Anna Špačková, Phillip J Stansfeld, Radka Svobodová, Ahsan Tanweer, Friday Ojie Ehiguese, Jennifer R Fleming, Sameer Velankar",
+    "category": [
+      "Databases",
+      "Channels",
+      "Tools",
+      "Selected"
+    ],
+    "volume": "",
+    "issue": "",
+    "pages": "gkag1151",
+    "abstract": "The Protein Data Bank in Europe (PDBe; pdbe.org) provides open access to experimentally determined biomacromolecular structures and enriches these data with biological and functional context. Here, we describe recent developments that expand the information connected to PDB structures and introduce new ways for researchers and computational tools to access it. Literature integration has been extended to additional open-access publications, substantially increasing the availability of residue-level annotations mined from the scientific literature. Cross-links to molecular dynamics simulations in MDposit have been established, and simulation-derived residue-level annotations, including relative solvent accessibility and membrane-related properties, have been integrated into PDBe-KB (pdbekb.org). PDBe entry pages now expose additional experimental and sequence information, links to related resources, and extended PDB identifiers. Protein channel, tunnel, and pore analyses generated using MOLE have also been incorporated into our weekly release pipeline and made available for download. Improved API documentation facilitates the discovery of data fields and search parameters, while three Model Context Protocol servers facilitate agentic access to the PDBe APIs, Search, and the PDBe-KB knowledge graph. Together, these developments make structural data and its wider biological context easier to discover, interpret, and reuse through both conventional and agentic workflows.",
+    "image": "img/publications/pub_2026_nar_pdbe2027.png",
+    "id": "10.1093/nar/gkag1151",
+    "oa_url": "https://academic.oup.com/nar/advance-article-pdf/doi/10.1093/nar/gkag1151/73608358/gkag1151.pdf",
+    "oa_is_preprint": false,
+    "web": "https://pdbe.org/",
+    "recordType": "article"
+  },
+  {
     "title": "Foldify: Web Application for Protein Structure Prediction",
     "year": "2026",
     "journal": "Journal of Chemical Information and Modeling",
@@ -19,7 +42,8 @@ const publicationsData = [
     "oa_url": "https://pubs.acs.org/doi/pdf/10.1021/acs.jcim.6c01154?ref=article_openPDF",
     "oa_is_preprint": false,
     "web": "https://foldify-open.cloud.e-infra.cz/",
-    "github": "https://github.com/sb-ncbr/foldify-open"
+    "github": "https://github.com/sb-ncbr/foldify-open",
+    "recordType": "article"
   },
   {
     "title": "AlphaFind v2: similarity search in AlphaFold DB and TED domains across structural contexts",
@@ -42,7 +66,8 @@ const publicationsData = [
     "oa_url": "https://doi.org/10.1093/nar/gkag372",
     "oa_is_preprint": false,
     "web": "https://alphafind.ics.muni.cz/",
-    "github": "https://github.com/Coda-Research-Group/AlphaFind"
+    "github": "https://github.com/Coda-Research-Group/AlphaFind",
+    "recordType": "article"
   },
   {
     "title": "MolMeDB RDF: transforming a relational database about biological membranes to the RDF format to increase interoperability",
@@ -64,7 +89,8 @@ const publicationsData = [
     "oa_url": "https://doi.org/10.1186/s13321-026-01208-3",
     "oa_is_preprint": false,
     "web": "https://molmedb.chem.upol.cz/sparql",
-    "github": "https://github.com/DominikMartinat/rdf-mmdb"
+    "github": "https://github.com/DominikMartinat/rdf-mmdb",
+    "recordType": "article"
   },
   {
     "title": "C-terminal long-QT type 1 R562S-Kv7.1 variant, the first variant in helix C impairing β-adrenergic response of the slow delayed rectifier K+ channel",
@@ -82,7 +108,8 @@ const publicationsData = [
     "image": "img/publications/pub_2026_europace_kv71.png",
     "id": "10.1093/europace/euag156",
     "oa_url": "https://doi.org/10.1093/europace/euag156",
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Mapping pathogenic patterns in membrane transporters from the GLUT transporter family",
@@ -101,7 +128,8 @@ const publicationsData = [
     "image": "img/publications/pub_2026_glut_pathogenicity.png",
     "id": "10.64898/2026.06.28.735151",
     "oa_url": "https://doi.org/10.64898/2026.06.28.735151",
-    "oa_is_preprint": true
+    "oa_is_preprint": true,
+    "recordType": "preprint"
   },
   {
     "title": "PROPTIMUS LIVE: local constrained α-carbon optimization of proteins",
@@ -113,16 +141,17 @@ const publicationsData = [
       "Alphafoldology",
       "Visualization"
     ],
-    "volume": "",
-    "issue": "",
-    "pages": "",
+    "volume": "54",
+    "issue": "W1",
+    "pages": "W301-W305",
     "abstract": "Abstract\n                  High-quality protein structures are essential for a wide range of computational chemistry applications. While experimental methods and predictive algorithms provide high-accuracy positions of protein residues relative to one another, the local quality of these structures, including bond lengths, angles, and individual atom positions, often lacks the same level of precision. To address this, we developed PROPTIMUS LIVE, a web application offering local constrained α-carbon optimization of protein structures. PROPTIMUS LIVE is powered by the QM-accurate, physics-based GFN-Force-Field and accelerated using a divide-and-conquer approach, allowing typical optimizations to finish within minutes. Optimized structures can be visualized and investigated directly via the integrated Mol* Viewer. The service is freely available at https://proptimus.ceitec.cz/live with no login required, including for commercial use.",
     "image": "img/publications/pub_2026_NucleicAcidsResearch_UnknownAuthor.png",
     "id": "10.1093/nar/gkag511",
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://proptimus.ceitec.cz/live",
-    "github": "https://github.com/sb-ncbr/proptimus_live"
+    "github": "https://github.com/sb-ncbr/proptimus_live",
+    "recordType": "article"
   },
   {
     "title": "Atomic Charge Calculator III: a modern platform for calculating partial atomic charges",
@@ -135,21 +164,22 @@ const publicationsData = [
       "Visualization",
       "Channels"
     ],
-    "volume": "",
-    "issue": "",
-    "pages": "",
+    "volume": "54",
+    "issue": "W1",
+    "pages": "W211-W215",
     "abstract": "Abstract\n                  Partial atomic charges provide a simplified description of the molecular electrostatic distribution that governs interactions with the surrounding environment. Owing to their widespread use in computational chemistry, chemoinformatics, and bioinformatics, fast and reasonably accurate empirical approaches remain highly relevant. Here, we introduce Atomic Charge Calculator III (ACC III), a web application for computing partial atomic charges for diverse molecular systems, including small organic molecules and proteins. ACC III builds on previous releases and implements 20 widely used empirical charge calculation methods, including the state-of-the-art SQE+qp approach with updated parameters. The platform integrates the modern Mol* viewer for interactive visualization and supports embedding computed charges directly into mmCIF files using a formally defined extension, enabling distribution of results in a community-standard, FAIR structural format. In addition to the web interface, ACC III provides a programmatic API for automated workflows and an enhanced command-line version for local deployment. The service is freely available at https://acc.biodata.ceitec.cz, with no login required, including for commercial use.",
     "image": "img/publications/pub_2026_NucleicAcidsResearch_UnknownAuthor_2.png",
     "id": "10.1093/nar/gkag379",
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://acc.biodata.ceitec.cz",
-    "github": "https://github.com/sb-ncbr/AtomicChargeCalculator"
+    "github": "https://github.com/sb-ncbr/AtomicChargeCalculator",
+    "recordType": "article"
   },
   {
     "title": "The impact of FDM infill parameters on tensile mechanical properties",
     "year": "2026",
-    "journal": "",
+    "journal": "ChemRxiv",
     "doi": "10.26434/chemrxiv.15001700/v1",
     "authors": "Jan Urbánek, Karel Berka",
     "category": [
@@ -161,8 +191,9 @@ const publicationsData = [
     "abstract": "The mechanical properties of printed parts from additive manufacturing depend on the 3D printing method, the material used, and the specific parameters of the 3D printing process. While the method and material may not be easily switched, the printing parameters are relatively easy to adjust during the printing preparation process, known as slicing. This study investigates the influence of infill patterns and density on 3D printed parts using a Fused Deposition Modelling (FDM) printer with common white polylactic acid (PLA) filament, the most widely accessible 3D printing material today. Specimens with all 16 patterns offered by the software PrusaSlicer were tested, each with 15 or 16 infill densities ranging from 5% to 95% or 100%, as well as specimens without infill (0% density). This study aimed to measure and compare the tensile mechanical properties of FDM-printed parts with varying infill parameters. It was found that infill patterns and increasing infill density significantly affected the tensile strength of printed parts, and that the effect of increasing infill density varied across patterns.",
     "image": "img/publications/pub_2026_NoJournal_UnknownAuthor.png",
     "id": "10.26434/chemrxiv.15001700/v1",
-    "oa_url": null,
-    "oa_is_preprint": false
+    "oa_url": "https://doi.org/10.26434/chemrxiv.15001700/v1",
+    "oa_is_preprint": true,
+    "recordType": "preprint"
   },
   {
     "title": "Dense yet flexible: how ladderanes found in anammox bacteria impact phospholipid membrane structure and properties",
@@ -175,14 +206,15 @@ const publicationsData = [
       "Lipid Membranes",
       "Channels"
     ],
-    "volume": "",
-    "issue": "",
-    "pages": "",
+    "volume": "28",
+    "issue": "21",
+    "pages": "12730-12743",
     "abstract": "Membranes containing ladderane lipids and alcohols, found in anammox bacteria, have been studied by molecular dynamics simulations and found to maintain high fluidity at low temperatures without compromising structural integrity or molecular order.",
     "image": "img/publications/pub_2026_PhysicalChemistryChemicalPhysics_UnknownAuthor.png",
     "id": "10.1039/D6CP00146G",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "MOLEonline: a web-based tool for analysing channels, tunnels, and pores (2025 update)",
@@ -199,14 +231,16 @@ const publicationsData = [
     ],
     "volume": "41",
     "issue": "9",
-    "pages": "",
+    "pages": "btaf486",
     "abstract": "Abstract\n               \n                  Summary\n                  MOLEonline is an interactive, web-based tool designed to detect and analyse channels (pores and tunnels) within protein structures. The latest version of MOLEonline addresses the limitations of its predecessor by integrating the Mol* viewer for visualization and offering a streamlined, fully interactive user experience. The new features include colouring tunnels in the 3D viewer based on their physicochemical properties. A 2D representation of the protein structure and calculated tunnels is generated using 2DProts. Users can now store tunnels directly in the mmCIF file format, facilitating sharing via the community-standard FAIR format for structural data. In addition, the ability to store and load computation settings ensures the reproducibility of tunnel computation results. Integration with the ChannelsDB 2.0 database allows users to access precomputed tunnels.\n               \n               \n                  Availability and implementation\n                  The MOLEonline application is freely available at https://moleonline.cz with no login requirement, its source code is stored at GitHub under the MIT licence at https://github.com/sb-ncbr/moleonline-web, and archived at Figshare at https://doi.org/10.6084/m9.figshare.29816174.\n               ",
-    "github": "https://github.com/sb-ncbr/MOLE",
+    "github": "https://github.com/sb-ncbr/moleonline-web",
     "image": "img/publications/pub_2025_Bioinformatics_UnknownAuthor.png",
     "id": "10.1093/bioinformatics/btaf486",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://moleonline.cz"
+    "web": "https://moleonline.cz",
+    "github_backup": "https://github.com/sb-ncbr/MOLE",
+    "recordType": "article"
   },
   {
     "title": "PDBCharges: Quantum-Mechanical Partial Atomic Charges for PDB Structures",
@@ -228,7 +262,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://pdbcharges.biodata.ceitec.cz/",
-    "github": "https://github.com/sb-ncbr/PDBCharges_website"
+    "github": "https://github.com/sb-ncbr/PDBCharges_website",
+    "recordType": "article"
   },
   {
     "title": "Developing molecular surveillance of SARS-CoV-2 in the Czech Republic (2021-2022)",
@@ -241,12 +276,13 @@ const publicationsData = [
     ],
     "volume": "15",
     "issue": "1",
-    "pages": "",
+    "pages": "19690",
     "abstract": "Abstract\n                  Molecular surveillance was widely used during the COVID-19 pandemic to detect rapidly emerging variants and monitor the transmission of SARS-CoV-2 within communities. In 2021, the Czech COVID-19 Genomics Consortium (COG-CZ) was set up to coordinate a new SARS-CoV-2 molecular surveillance network. In the Czech Republic, molecular surveillance employed whole genome sequencing (WGS) and variant discrimination polymerase chain reaction (VD-PCR) on samples collected through passive, active and sentinel surveillance. All WGS data was uploaded to GISAID and the PANGO lineages used by GISAID were compared to the main variants determined by VD-PCR. To assess the effectiveness and reliability of the gathered data in adapting pandemic responses, the capabilities and turnaround times of the molecular surveillance methods are evaluated. VD-PCR results were available within 48 h of sample collection for 81.5% of cases during the Delta/Omicron transition. WGS enabled the detection of low-frequency novel variants in infection clusters. WGS surveillance showed there was community spread of AY.20.1, a variant that gained novel mutations within the Czech Republic. Molecular surveillance informed the implementation of public health measures; temporal comparisons of restrictions and outcomes are described. Further areas for improvement have been identified for monitoring and managing future pandemics.",
     "image": "img/publications/pub_2025_ScientificReports_UnknownAuthor.png",
     "id": "10.1038/s41598-025-01074-3",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Gromacs MetaDump: a tool for extracting GROMACS simulation metadata",
@@ -260,14 +296,15 @@ const publicationsData = [
     ],
     "volume": "17",
     "issue": "1",
-    "pages": "",
+    "pages": "160",
     "abstract": "\n                    Abstract\n                    \n                      The volume of molecular dynamics (MD) simulation data shared via public repositories is rapidly increasing; however, fragmentation across multiple independent repositories, each employing distinct dataset identifiers and metadata schemas, hinders the efficient exploration and reuse of these data. In this study, we present GROMACS MetaDump, a tool for automatic annotation of output files from GROMACS MD simulations producing human- and machine-readable metadata leveraging the native GROMACS metadata () output. The tool takes the run input simulation file () as the basis for the metadata output, optionally extending it with annotations from topology and structure files (, ). The tool is available as a web application (\n                      https://gmd.ceitec.cz/\n                      ), API service, and a command-line utility. By automating the metadata extraction process, GROMACS MetaDump aims to simplify and standardise the extraction of rich, structured metadata from GROMACS MD simulations, making it easier to share, discover, and reuse simulation data within the research community.\n                    \n                  \n                  \n                    Scientific contribution\n                    This work introduces GROMACS MetaDump, a software tool for the automatic extraction of metadata from molecular dynamics (MD) simulations performed with GROMACS. GROMACS MetaDump captures all extractable simulation parameters, such as software version, force field, water model, box geometry, temperature, etc., and returns them in a structured JSON or YAML file. As a result, GROMACS MetaDump supports the creation of unified metadata annotations of MD simulations, making datasets indexable and findable in line with the FAIR principles.\n                  ",
     "image": "img/publications/pub_2025_JournalofCheminformatics_UnknownAuthor.png",
     "id": "10.1186/s13321-025-01082-5",
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://gmd.ceitec.cz",
-    "github": "https://github.com/sb-ncbr/gromacs-metadump"
+    "github": "https://github.com/sb-ncbr/gromacs-metadump",
+    "recordType": "article"
   },
   {
     "title": "Meta-Analysis of Permeability Literature Data Shows Possibilities and Limitations of Popular Methods",
@@ -291,7 +328,8 @@ const publicationsData = [
     "oa_url": "https://pubs.acs.org/doi/10.1021/acs.molpharmaceut.4c00975",
     "oa_is_preprint": false,
     "web": "https://molmedb.chem.upol.cz",
-    "github": "https://github.com/MolMeDB/MolMeDB"
+    "github": "https://github.com/MolMeDB/How-Usable-Are-Published-Permeability-Data",
+    "recordType": "article"
   },
   {
     "title": "Pathogenicity patterns in cytochrome P450 family",
@@ -306,13 +344,14 @@ const publicationsData = [
     ],
     "volume": "5",
     "issue": "1",
-    "pages": "",
+    "pages": "vbaf231",
     "abstract": "Abstract\n               \n                  Motivation\n                  Cytochrome P450 proteins play a crucial role in human metabolism, ranging from hormone production to drug metabolism. While multiple commonly known variants have known effects on the individual cytochrome P450 protein performance, the pathogenicity information is usually experimentally limited to only a few mutations. Current pathogenicity prediction software enables the extension of the scope to virtually mutate all amino acids with all possible substitutional mutations. In this work, we do a comprehensive exploration that unveils pathogenicity patterns in the human cytochrome P450 family. Pathogenicity analysis was conducted across proteins using SIFT, AlphaMissense, and PrimateAI-3D algorithms.\n               \n               \n                  Results\n                  Our findings indicate a progressive increase in pathogenicity along protein tunnels—identified via MOLE—toward the cofactor binding site, underscoring the essential role of cofactor interactions in enzymatic function. Notably, the integrity of tunnels and cofactor environment emerges as a critical factor, with even single amino acid alterations potentially disrupting molecular guidance to active sites. These insights highlight the fundamental role of structural pathways in preserving cytochrome P450 functionality, with implications for understanding disease-associated variants and drug metabolism.\n               \n               \n                  Availability and implementation\n                  Data and source code can be found at https://github.com/annaspac/P450_pathogenicity_codes.\n               ",
     "image": "img/publications/pub_2025_BIOINFORMATICSADVANCES_UnknownAuthor.png",
     "id": "10.1093/bioadv/vbaf231",
     "oa_url": null,
     "oa_is_preprint": false,
-    "github": "https://github.com/annaspac/P450_pathogenicity_codes"
+    "github": "https://github.com/annaspac/P450_pathogenicity_codes",
+    "recordType": "article"
   },
   {
     "title": "2025 Ownership and Maintenance of FAIRsharing record: MolMeDB",
@@ -331,7 +370,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "github": "https://github.com/MolMeDB/MolMeDB",
-    "web": "https://molmedb.chem.upol.cz"
+    "web": "https://molmedb.chem.upol.cz",
+    "recordType": "fairsharing"
   },
   {
     "title": "Liposomal Copermeation Assay Reveals Unexpected Membrane Interactions of Commonly Prescribed Drugs",
@@ -350,7 +390,8 @@ const publicationsData = [
     "image": "img/publications/pub_2024_MolecularPharmaceutics_UnknownAuthor.png",
     "id": "10.1021/acs.molpharmaceut.3c00766",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "ChannelsDB 2.0: a comprehensive database of protein tunnels and pores in AlphaFold era",
@@ -375,7 +416,8 @@ const publicationsData = [
     "oa_is_preprint": false,
     "github": "https://github.com/sb-ncbr/channelsdb",
     "preprint_id": "pub_2023_NoJournal_UnknownAuthor",
-    "web": "https://channelsdb.biodata.ceitec.cz"
+    "web": "https://channelsdb.biodata.ceitec.cz",
+    "recordType": "article"
   },
   {
     "title": "Analysis and Visualization of Protein Channels, Tunnels, and Pores with MOLEonline and ChannelsDB 2.0",
@@ -397,7 +439,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "github": "https://github.com/sb-ncbr/channelsdb",
-    "web": "https://moleonline.cz"
+    "web": "https://moleonline.cz",
+    "recordType": "book"
   },
   {
     "title": "2024 Ownership and Maintenance of FAIRsharing record: ValidatorDB",
@@ -413,7 +456,8 @@ const publicationsData = [
     "id": "pub_2024_UniversityofOxfordUKFAIRsharing_UnknownAuthor",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://validatordb.ceitec.cz"
+    "web": "https://validatordb.ceitec.cz",
+    "recordType": "fairsharing"
   },
   {
     "title": "ChannelsDB 2.0",
@@ -431,7 +475,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "github": "https://github.com/sb-ncbr/channelsdb",
-    "web": "https://channelsdb.biodata.ceitec.cz"
+    "web": "https://channelsdb.biodata.ceitec.cz",
+    "recordType": "fairsharing"
   },
   {
     "title": "Computational Prodrug Design Methodology for Liposome Formulability Enhancement of Small-Molecule APIs",
@@ -450,7 +495,8 @@ const publicationsData = [
     "image": "img/publications/pub_2023_MOLECULARPHARMACEUTICS_UnknownAuthor.png",
     "id": "10.1021/acs.molpharmaceut.2c01078",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Expanding the squaramide library as mycobacterial ATP synthase inhibitors: innovative synthetic pathway and biological evaluation",
@@ -467,7 +513,8 @@ const publicationsData = [
     "image": "img/publications/pub_2023_BioorganicandMedicinalChemistry_UnknownAuthor.png",
     "id": "10.1016/j.bmc.2023.117504",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Mol* Volumes and Segmentations: visualization and interpretation of cell imaging data alongside macromolecular structure data and biological annotations",
@@ -489,7 +536,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://molstarvolseg.ncbr.muni.cz/",
-    "github": "https://github.com/molstar/volseg-viewer"
+    "github": "https://github.com/molstar/volseg-viewer",
+    "recordType": "article"
   },
   {
     "title": "Small change – big consequence: The impact of C15-C16 double bond in a D‑ring of estrone on estrogen receptor activity",
@@ -506,7 +554,8 @@ const publicationsData = [
     "image": "img/publications/pub_2023_JOURNALOFSTEROIDBIOCHEMISTRYANDMOLECULARBIOLOGY_UnknownAuthor.png",
     "id": "10.1016/j.jsbmb.2023.106365",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "αCharges: partial atomic charges for AlphaFold structures in high quality",
@@ -529,7 +578,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://alphacharges.ncbr.muni.cz",
-    "github": "https://github.com/sb-ncbr/AlphaCharges"
+    "github": "https://github.com/sb-ncbr/AlphaCharges",
+    "recordType": "article"
   },
   {
     "title": "Antitumour drugs targeting tau R3 VQIVYK and Cys322 prevent seeding of endogenous tau aggregates by exogenous seeds",
@@ -547,7 +597,8 @@ const publicationsData = [
     "image": "img/publications/pub_2022_FEBSJournal_UnknownAuthor.png",
     "id": "10.1111/febs.16270",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Novel heterocyclic hydroxamates as inhibitors of the mycobacterial zinc metalloprotease Zmp1 to probe its mechanism of function",
@@ -564,7 +615,8 @@ const publicationsData = [
     "image": "img/publications/pub_2022_EUROPEANJOURNALOFMEDICINALCHEMISTRY_UnknownAuthor.png",
     "id": "10.1016/j.ejmech.2022.114831",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "OverProt: secondary structure consensus for protein families",
@@ -584,7 +636,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://overprot.ncbr.muni.cz/",
-    "github": "https://github.com/sb-ncbr/overprot"
+    "github": "https://github.com/sb-ncbr/overprot",
+    "recordType": "article"
   },
   {
     "title": "PDBe-KB: collaboratively defining the biological context of structural data",
@@ -605,7 +658,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkab988",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://pdbe-kb.org"
+    "web": "https://pdbe-kb.org",
+    "recordType": "article"
   },
   {
     "title": "ELIXIR and Toxicology: a community in development",
@@ -623,7 +677,8 @@ const publicationsData = [
     "image": "img/publications/pub_2021_NoJournal_UnknownAuthor.png",
     "id": "10.12688/f1000research.74502.1",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "2DProts: database of family-wide protein secondary structure diagrams",
@@ -645,7 +700,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://2dprots.icm.edu.pl/",
-    "github": "https://gitlab.com/jhutar/2dprot"
+    "github": "https://gitlab.com/jhutar/2dprot",
+    "recordType": "article"
   },
   {
     "title": "CATH: increased structural coverage of functional space",
@@ -665,7 +721,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkaa1079",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://www.cathdb.info"
+    "web": "https://www.cathdb.info",
+    "recordType": "article"
   },
   {
     "title": "In silico screening of drug candidates for thermoresponsive liposome formulations",
@@ -685,7 +742,8 @@ const publicationsData = [
     "image": "img/publications/pub_2021_MolecularSystemsDesignEngineering_UnknownAuthor.png",
     "id": "10.1039/D0ME00160K",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Mol* Viewer: modern web app for 3D visualization and analysis of large biomolecular structures",
@@ -708,7 +766,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://molstar.org/",
-    "github": "https://github.com/molstar/molstar"
+    "github": "https://github.com/molstar/molstar",
+    "recordType": "article"
   },
   {
     "title": "Optimized SQE atomic charges for peptides accessible via a web application",
@@ -729,7 +788,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://acc2.ncbr.muni.cz",
-    "github": "https://github.com/sb-ncbr/AtomicChargeCalculator"
+    "github": "https://github.com/sb-ncbr/AtomicChargeCalculator",
+    "recordType": "article"
   },
   {
     "title": "Uncovering of cytochrome P450 anatomy by SecStrAnnotator",
@@ -750,7 +810,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://secstrannotator.ceitec.cz/",
-    "github": "https://github.com/sb-ncbr/SecStrAnnotator2"
+    "github": "https://github.com/sb-ncbr/SecStrAnnotator2",
+    "recordType": "article"
   },
   {
     "title": "Cytokinin fluoroprobe and receptor CRE1/AHK4 localize to both plasma membrane and endoplasmic reticulum",
@@ -769,7 +830,8 @@ const publicationsData = [
     "image": "img/publications/pub_2020_NatureCommunications_UnknownAuthor.png",
     "id": "10.1038/s41467-020-17949-0",
     "oa_url": "https://doi.org/10.1038/s41467-020-17949-0",
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Atomic Charge Calculator II: web-based tool for the calculation of partial atomic charges",
@@ -791,7 +853,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://acc2.ncbr.muni.cz",
-    "github": "https://github.com/sb-ncbr/AtomicChargeCalculator"
+    "github": "https://github.com/sb-ncbr/AtomicChargeCalculator",
+    "recordType": "article"
   },
   {
     "title": "Dextrans as Permeation Markers and Carriers for Oral Transmucosal Drug Delivery",
@@ -806,7 +869,8 @@ const publicationsData = [
     "image": "img/publications/pub_2020_CHEMICKELISTY_UnknownAuthor.png",
     "id": "pub_2020_CHEMICKELISTY_UnknownAuthor",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "High-performance macromolecular data delivery and visualization for the web",
@@ -826,7 +890,8 @@ const publicationsData = [
     "image": "img/publications/pub_2020_ActaCrystallographicaSectionDStructuralBiology_UnknownAuthor.png",
     "id": "10.1107/S2059798320014515",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Molmedb - database about interactions of molecules with membranes",
@@ -845,7 +910,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "github": "https://github.com/MolMeDB/MolMeDB",
-    "web": "https://molmedb.chem.upol.cz"
+    "web": "https://molmedb.chem.upol.cz",
+    "recordType": "fairsharing"
   },
   {
     "title": "Novel thiazolidinedione-hydroxamates as inhibitors of Mycobacterium tuberculosis virulence factor Zmp1",
@@ -862,7 +928,8 @@ const publicationsData = [
     "image": "img/publications/pub_2020_EUROPEANJOURNALOFMEDICINALCHEMISTRY_UnknownAuthor.png",
     "id": "10.1016/j.ejmech.2019.111812",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "PDBe-KB: a community-driven resource for structural and functional annotations",
@@ -883,7 +950,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkz853",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://pdbe-kb.org"
+    "web": "https://pdbe-kb.org",
+    "recordType": "article"
   },
   {
     "title": "Visualization and Analysis of Protein Structures with LiteMol Suite",
@@ -903,7 +971,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://www.litemol.org/",
-    "github": "https://github.com/dsehnal/LiteMol"
+    "github": "https://github.com/dsehnal/LiteMol",
+    "recordType": "book"
   },
   {
     "title": "In vitro testing of flash-frozen sublingual membranes for storage and reproducible permeability studies of macromolecular drugs from solution or nanofiber mats",
@@ -922,7 +991,8 @@ const publicationsData = [
     "image": "img/publications/pub_2019_InternationalJournalofPharmaceutics_UnknownAuthor.png",
     "id": "10.1016/J.IJPHARM.2019.118711",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "MolMeDB: Molecules on Membranes Database",
@@ -949,7 +1019,8 @@ const publicationsData = [
     "github": "https://github.com/MolMeDB/MolMeDB",
     "preprint_id": "pub_2020_NoJournal_UnknownAuthor",
     "fairsharing_id": "pub_2025_UniversityofOxfordUKFAIRsharing_UnknownAuthor",
-    "web": "https://molmedb.chem.upol.cz"
+    "web": "https://molmedb.chem.upol.cz",
+    "recordType": "article"
   },
   {
     "title": "Automated Family-Wide Annotation of Secondary Structure Elements.",
@@ -966,7 +1037,8 @@ const publicationsData = [
     "image": "img/publications/pub_2019_MethodsinmolecularbiologyCliftonNJ_UnknownAuthor.png",
     "id": "10.1007/978-1-4939-9161-7_3",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "book"
   },
   {
     "title": "Synthesis of novel galeterone derivatives and evaluation of their in vitro activity against prostate cancer cell lines",
@@ -983,7 +1055,8 @@ const publicationsData = [
     "image": "img/publications/pub_2019_EUROPEANJOURNALOFMEDICINALCHEMISTRY_UnknownAuthor.png",
     "id": "10.1016/j.ejmech.2019.06.040",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Pokusnice - hub chemických pokusů",
@@ -1000,7 +1073,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://pokusnice.cz",
-    "github": "https://github.com/KarelBerka"
+    "github": "https://github.com/KarelBerka",
+    "recordType": "fairsharing"
   },
   {
     "title": "ChannelsDB: database of biomacromolecular tunnels and pores",
@@ -1020,7 +1094,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "github": "https://github.com/sb-ncbr/channelsdb",
-    "web": "https://channelsdb.biodata.ceitec.cz"
+    "web": "https://channelsdb.biodata.ceitec.cz",
+    "recordType": "article"
   },
   {
     "title": "Channelsdb and Moleonline - Database and Tool for Analysis of Biomacromolecular Tunnels and Pores",
@@ -1042,7 +1117,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "github": "https://github.com/sb-ncbr/channelsdb",
-    "web": "https://moleonline.cz"
+    "web": "https://moleonline.cz",
+    "recordType": "article"
   },
   {
     "title": "Discovery of N-2-(4-Amino-cyclohexyl)-9-cyclopentyl-N-6-(4-morpholin-4-ylmethyl-phenyl)-9H-purine-2,6-diamine as a Potent FLT3 Kinase Inhibitor for Acute Myeloid Leukemia with FLT3 Mutations",
@@ -1059,7 +1135,8 @@ const publicationsData = [
     "image": "img/publications/pub_2018_JOURNALOFMEDICINALCHEMISTRY_UnknownAuthor.png",
     "id": "10.1021/acs.jmedchem.7b01529",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Interactive 3D Macromolecular Structure Data Mining with MolQL and Litemol Suite",
@@ -1079,7 +1156,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://www.litemol.org/",
-    "github": "https://github.com/dsehnal/LiteMol"
+    "github": "https://github.com/dsehnal/LiteMol",
+    "recordType": "article"
   },
   {
     "title": "Is Machine Learning the Future of Theoretical Chemistry?",
@@ -1094,7 +1172,8 @@ const publicationsData = [
     "image": "img/publications/pub_2018_ChemickeListy_Karel.png",
     "id": "pub_2018_ChemickeListy_Karel",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "MOLEonline: a web-based tool for analyzing channels, tunnels and pores (2018 update).",
@@ -1119,7 +1198,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://moleonline.cz",
-    "github": "https://github.com/sb-ncbr/MOLE"
+    "github": "https://github.com/sb-ncbr/MOLE",
+    "recordType": "article"
   },
   {
     "title": "Membrane-attached mammalian cytochromes P450: An overview of the membrane's effects on structure, drug binding, and interactions with redox partners.",
@@ -1139,7 +1219,8 @@ const publicationsData = [
     "image": "img/publications/pub_2018_JOURNALOFINORGANICBIOCHEMISTRY_rejber.png",
     "id": "10.1016/j.jinorgbio.2018.03.002",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Protein structures - a challenge of data delivery, visualization and annotation",
@@ -1154,7 +1235,8 @@ const publicationsData = [
     "image": "img/publications/pub_2018_FEBSOpenBio_Karel.png",
     "id": "pub_2018_FEBSOpenBio_Karel",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Secondary Structure Elements - Annotations and Schematic 2D Visualizations Stable for Individual Protein Families",
@@ -1172,7 +1254,8 @@ const publicationsData = [
     "image": "img/publications/pub_2018_BiophysicalJournal_Karel.png",
     "id": "10.1016/J.BPJ.2017.11.307",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Structural patterns of the human ABCC4/MRP4 exporter in lipid bilayers rationalize clinically observed polymorphisms.",
@@ -1193,7 +1276,8 @@ const publicationsData = [
     "image": "img/publications/pub_2018_PHARMACOLOGICALRESEARCH_Chantemargue.png",
     "id": "10.1016/j.phrs.2018.02.029",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "ALK5 kinase inhibitory activity and synthesis of 2,3,4-substituted 5,5-dimethyl-5,6-dihydro-4H-pyrrolo[1,2-b]pyrazoles.",
@@ -1212,7 +1296,8 @@ const publicationsData = [
     "image": "img/publications/pub_2017_EuropeanJournalofMedicinalChemistry_ezn.png",
     "id": "10.1016/j.ejmech.2017.01.018",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Acetylated deoxycholic (DCA) and cholic (CA) acids are potent ligands of pregnane X (PXR) receptor.",
@@ -1230,7 +1315,8 @@ const publicationsData = [
     "image": "img/publications/pub_2017_ToxicologyLetters_Carazo.png",
     "id": "10.1016/j.toxlet.2016.11.013",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "LiteMol suite: interactive web-based visualization of large-scale macromolecular structure data.",
@@ -1251,7 +1337,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://www.litemol.org/",
-    "github": "https://github.com/dsehnal/LiteMol"
+    "github": "https://github.com/dsehnal/LiteMol",
+    "recordType": "article"
   },
   {
     "title": "Molecular insights into the role of a distal F240A mutation that alters CYP1A1 activity towards persistent organic pollutants.",
@@ -1270,7 +1357,8 @@ const publicationsData = [
     "image": "img/publications/pub_2017_BiochimicaetBiophysicaActaGeneralSubjects_Navr.png",
     "id": "10.1016/j.bbagen.2017.08.002",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "RH421 binds into the ATP-binding site on the Na<sup>+</sup>/K<sup>+</sup>-ATPase.",
@@ -1290,7 +1378,8 @@ const publicationsData = [
     "image": "img/publications/pub_2017_BiochimicaetBiophysicaActaBiomembranes_Huli.png",
     "id": "10.1016/j.bbamem.2017.07.016",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Real-Time Interactive Visualisation of Large Macromolecular Assemblies and Molecular Machines at Atomic Resolution",
@@ -1308,7 +1397,8 @@ const publicationsData = [
     "image": "img/publications/pub_2017_BiophysicalJournal_Karel.png",
     "id": "10.1016/J.BPJ.2016.11.984",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Structural Bioinformatics Tools for Drug Design: Extraction of Biologically Relevant Information from Structural Databases",
@@ -1329,7 +1419,8 @@ const publicationsData = [
     "image": "img/publications/pub_2017_NoJournal_Karel.png",
     "id": "10.1007/978-3-319-47388-8",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "book"
   },
   {
     "title": "Surface properties of MoS<sub>2</sub> probed by inverse gas chromatography and their impact on electrocatalytic properties.",
@@ -1347,7 +1438,8 @@ const publicationsData = [
     "image": "img/publications/pub_2017_Nanoscale_Otyepkov.png",
     "id": "10.1039/c7nr07342a",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "<i>Arabidopsis</i> histidine kinase 4 cytokinin receptor - The object of interest in ligand-receptor study",
@@ -1365,7 +1457,8 @@ const publicationsData = [
     "image": "img/publications/pub_2016_NewBiotechnology_Karel.png",
     "id": "10.1016/J.NBT.2016.06.1292",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Design, synthesis and biological activities of new brassinosteroid analogues with a phenyl group in the side chain.",
@@ -1384,7 +1477,8 @@ const publicationsData = [
     "image": "img/publications/pub_2016_OrganicBiomolecularChemistry_Kvasnica.png",
     "id": "10.1039/c6ob01479h",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Effect of Lipid Charge on Membrane Immersion of Cytochrome P450 3A4.",
@@ -1405,7 +1499,8 @@ const publicationsData = [
     "image": "img/publications/pub_2016_JournalofPhysicalChemistryB_Navr.png",
     "id": "10.1021/acs.jpcb.6b10108",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Exponential repulsion improves structural predictability of molecular docking.",
@@ -1425,7 +1520,8 @@ const publicationsData = [
     "image": "img/publications/pub_2016_JournalofComputationalChemistry_Bazgier.png",
     "id": "10.1002/jcc.24473",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "In silico pharmacology: Drug membrane partitioning and crossing.",
@@ -1445,7 +1541,8 @@ const publicationsData = [
     "image": "img/publications/pub_2016_PharmacologicalResearch_Di.png",
     "id": "10.1016/j.phrs.2016.06.030",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Ion Pathways in the Na<sup>+</sup>/K<sup>+</sup>-ATPase.",
@@ -1465,7 +1562,8 @@ const publicationsData = [
     "image": "img/publications/pub_2016_JournalofChemicalInformationandModeling_echov.png",
     "id": "10.1021/acs.jcim.6b00353",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Novel thidiazuron-derived inhibitors of cytokinin oxidase/dehydrogenase.",
@@ -1484,7 +1582,8 @@ const publicationsData = [
     "image": "img/publications/pub_2016_PlantMolecularBiology_Nisler.png",
     "id": "10.1007/s11103-016-0509-0",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Role of Enzyme Flexibility in Ligand Access and Egress to Active Site: Bias-Exchange Metadynamics Study of 1,3,7-Trimethyluric Acid in Cytochrome P450 3A4.",
@@ -1505,7 +1604,8 @@ const publicationsData = [
     "image": "img/publications/pub_2016_JournalofChemicalTheoryandComputation_Palonc.png",
     "id": "10.1021/acs.jctc.6b00075",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Synthesis, biological evaluation and molecular modeling of a novel series of 7-azaindole based tri-heterocyclic compounds as potent CDK2/Cyclin E inhibitors.",
@@ -1525,7 +1625,8 @@ const publicationsData = [
     "image": "img/publications/pub_2016_EuropeanJournalofMedicinalChemistry_Baltus.png",
     "id": "10.1016/j.ejmech.2015.12.023",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "The Role of Protein-Protein and Protein-Membrane Interactions on P450 Function.",
@@ -1546,7 +1647,48 @@ const publicationsData = [
     "image": "img/publications/pub_2016_DrugMetabolismandDisposition_Scott.png",
     "id": "10.1124/dmd.115.068569",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
+  },
+  {
+    "title": "Detection of Channels",
+    "year": "2016",
+    "journal": "SpringerBriefs in Biochemistry and Molecular Biology",
+    "doi": "10.1007/978-3-319-47388-8_6",
+    "authors": "Jaroslav Koča, Radka Svobodová Vařeková, Lukáš Pravda, Karel Berka, Stanislav Geidl, David Sehnal, Michal Otyepka",
+    "abstract": "",
+    "category": [
+      "Channels"
+    ],
+    "volume": "",
+    "issue": "",
+    "pages": "59-69",
+    "image": "img/publications/pub__NoJournal_Karel.png",
+    "id": "10.1007/978-3-319-47388-8_6",
+    "oa_url": null,
+    "oa_is_preprint": false,
+    "recordType": "book"
+  },
+  {
+    "title": "Structural Bioinformatics Databases of General Use",
+    "year": "2016",
+    "journal": "SpringerBriefs in Biochemistry and Molecular Biology",
+    "doi": "10.1007/978-3-319-47388-8_3",
+    "authors": "Jaroslav Koča, Radka Svobodová Vařeková, Lukáš Pravda, Karel Berka, Stanislav Geidl, David Sehnal, Michal Otyepka",
+    "abstract": "",
+    "category": [
+      "Databases",
+      "Tools",
+      "Channels"
+    ],
+    "volume": "",
+    "issue": "",
+    "pages": "17-30",
+    "image": "img/publications/pub__NoJournal_Karel_2.png",
+    "id": "10.1007/978-3-319-47388-8_3",
+    "oa_url": null,
+    "oa_is_preprint": false,
+    "recordType": "book"
   },
   {
     "title": "2,6,9-Trisubstituted purines as CRK3 kinase inhibitors with antileishmanial activity in vitro.",
@@ -1565,7 +1707,8 @@ const publicationsData = [
     "image": "img/publications/pub_2015_BioorganicMedicinalChemistryLetters_ezn.png",
     "id": "10.1016/j.bmcl.2015.04.030",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Characterization of a Pyrazolo[4,3-d]pyrimidine Inhibitor of Cyclin-Dependent Kinases 2 and 5 and Aurora A With Pro-Apoptotic and Anti-Angiogenic Activity In Vitro.",
@@ -1584,7 +1727,8 @@ const publicationsData = [
     "image": "img/publications/pub_2015_ChemicalBiologyandDrugDesign_ezn.png",
     "id": "10.1111/cbdd.12618",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Chrysin, baicalein and galangin are indirect activators of the human constitutive androstane receptor (CAR).",
@@ -1602,7 +1746,8 @@ const publicationsData = [
     "image": "img/publications/pub_2015_ToxicologyLetters_Carazo.png",
     "id": "10.1016/j.toxlet.2015.01.013",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Coarse-grain simulations of skin ceramide NS with newly derived parameters clarify structure of melted phase.",
@@ -1620,7 +1765,8 @@ const publicationsData = [
     "image": "img/publications/pub_2015_JournalofPhysicalChemistryB_Sovov.png",
     "id": "10.1021/jp5092366",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Cytochrome P450 Oxidoreductase Simulations: Cofactors Movement and Structural Changes",
@@ -1636,7 +1782,8 @@ const publicationsData = [
     "image": "img/publications/pub_2015_ProteinScience_Karel.png",
     "id": "pub_2015_ProteinScience_Karel",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Effect of cholesterol on the structure of membrane-attached cytochrome P450 3A4.",
@@ -1657,7 +1804,8 @@ const publicationsData = [
     "image": "img/publications/pub_2015_JournalofChemicalInformationandModeling_Navr.png",
     "id": "10.1021/ci500645k",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Effect of Membrane Composition on the Structure of Membrane-Attached Cytochrome P450 3A4",
@@ -1673,7 +1821,8 @@ const publicationsData = [
     "image": "img/publications/pub_2015_ProteinScience_Karel_2.png",
     "id": "pub_2015_ProteinScience_Karel_2",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Lipocarbazole, an efficient lipid peroxidation inhibitor anchored in the membrane.",
@@ -1693,7 +1842,8 @@ const publicationsData = [
     "image": "img/publications/pub_2015_BioorganicMedicinalChemistry_Fabre.png",
     "id": "10.1016/j.bmc.2015.05.031",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Structural Changes in Ceramide Bilayers Rationalize Increased Permeation through Stratum Corneum Models with Shorter Acyl Tails.",
@@ -1714,7 +1864,8 @@ const publicationsData = [
     "image": "img/publications/pub_2015_JournalofPhysicalChemistryB_Palonc.png",
     "id": "10.1021/acs.jpcb.5b05522",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Synergism of antioxidant action of vitamins E, C and quercetin is related to formation of molecular associations in biomembranes.",
@@ -1733,7 +1884,8 @@ const publicationsData = [
     "image": "img/publications/pub_2015_ChemicalCommunications_Fabre.png",
     "id": "10.1039/c5cc00636h",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Tools and data services registry: a community effort to document bioinformatics resources.",
@@ -1753,7 +1905,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkv1116",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://bio.tools"
+    "web": "https://bio.tools",
+    "recordType": "article"
   },
   {
     "title": "Amphiphilic drug-like molecules accumulate in a membrane below the head group region.",
@@ -1773,7 +1926,8 @@ const publicationsData = [
     "image": "img/publications/pub_2014_JournalofPhysicalChemistryB_Palonc.png",
     "id": "10.1021/jp4112052",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Anatomy of enzyme channels.",
@@ -1792,7 +1946,8 @@ const publicationsData = [
     "image": "img/publications/pub_2014_BMCBioinformatics_Pravda.png",
     "id": "10.1186/s12859-014-0379-x",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Benchmarking of Force Fields for Molecule-Membrane Interactions.",
@@ -1813,7 +1968,8 @@ const publicationsData = [
     "image": "img/publications/pub_2014_JournalofChemicalTheoryandComputation_Palonc.png",
     "id": "10.1021/ct500419b",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Biological activities of new monohydroxylated brassinosteroid analogues with a carboxylic group in the side chain.",
@@ -1831,7 +1987,8 @@ const publicationsData = [
     "image": "img/publications/pub_2014_Steroids_Kvasnica.png",
     "id": "10.1016/j.steroids.2014.04.007",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "LiteMol: web-based 3D visualization of macromolecular structure data",
@@ -1849,7 +2006,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://www.litemol.org/",
-    "github": "https://github.com/dsehnal/LiteMol"
+    "github": "https://github.com/dsehnal/LiteMol",
+    "recordType": "article"
   },
   {
     "title": "PDBsum additions.",
@@ -1869,7 +2027,8 @@ const publicationsData = [
     "id": "10.1093/nar/gkt940",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "http://www.ebi.ac.uk/pdbsum"
+    "web": "http://www.ebi.ac.uk/pdbsum",
+    "recordType": "article"
   },
   {
     "title": "Photoluminescence effects of graphitic core size and surface functional groups in carbon dots: COO- induced red-shift emission",
@@ -1887,7 +2046,8 @@ const publicationsData = [
     "image": "img/publications/pub_2014_Carbon_Karel.png",
     "id": "10.1016/j.carbon.2014.01.008",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Rationalization of reduced penetration of drugs through ceramide gel phase membrane.",
@@ -1907,7 +2067,8 @@ const publicationsData = [
     "image": "img/publications/pub_2014_LangmuirtheACSjournalofsurfacesandcolloids_Palonc.png",
     "id": "10.1021/la503289v",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Structural properties of CYP2D6: Requirements for substrates and inhibitors",
@@ -1926,7 +2087,8 @@ const publicationsData = [
     "image": "img/publications/pub_2014_CYP2D6GeneticsPharmacologyandClinicalRelevance_Karel.png",
     "id": "10.2217/fmeb2013.13.91",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Synthesis and kinase inhibitory activity of new sulfonamide derivatives of pyrazolo[4,3-e][1,2,4]triazines.",
@@ -1944,7 +2106,8 @@ const publicationsData = [
     "image": "img/publications/pub_2014_EuropeanJournalofMedicinalChemistry_Mojzych.png",
     "id": "10.1016/j.ejmech.2014.03.054",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "A novel series of highly potent 2,6,9-trisubstituted purine cyclin-dependent kinase inhibitors.",
@@ -1962,7 +2125,8 @@ const publicationsData = [
     "image": "img/publications/pub_2013_JournalofMedicinalChemistry_Guck.png",
     "id": "10.1021/jm4006884",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Antiallergic effects of pigments isolated from green sea urchin (Strongylocentrotus droebachiensis) shells.",
@@ -1981,7 +2145,8 @@ const publicationsData = [
     "image": "img/publications/pub_2013_PlantaMedica_Pozharitskaya.png",
     "id": "10.1055/s-0033-1351098",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Behavior of human cytochromes P450 on lipid membranes.",
@@ -2001,7 +2166,8 @@ const publicationsData = [
     "image": "img/publications/pub_2013_JournalofPhysicalChemistryB_Berka.png",
     "id": "10.1021/jp4059559",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Fluorone dyes binding to extracellular and cytoplasmic domains of Na, K-ATPase",
@@ -2016,7 +2182,8 @@ const publicationsData = [
     "image": "img/publications/pub_2013_TheFEBSJournal_Karel.png",
     "id": "pub_2013_TheFEBSJournal_Karel",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Fluorone dyes have binding sites on both cytoplasmic and extracellular domains of Na,K-ATPase.",
@@ -2036,7 +2203,8 @@ const publicationsData = [
     "image": "img/publications/pub_2013_BiochimicaetBiophysicaActaBiomembranes_Havl.png",
     "id": "10.1016/j.bbamem.2012.10.029",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Lipid bilayer membrane affinity rationalizes inhibition of lipid peroxidation by a natural lignan antioxidant.",
@@ -2055,7 +2223,8 @@ const publicationsData = [
     "image": "img/publications/pub_2013_JournalofPhysicalChemistryB_Podlouck.png",
     "id": "10.1021/jp3127829",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "MOLE 2.0: advanced approach for analysis of biomacromolecular channels.",
@@ -2077,7 +2246,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://moleonline.cz",
-    "github": "https://github.com/sb-ncbr/MOLE"
+    "github": "https://github.com/sb-ncbr/MOLE",
+    "recordType": "article"
   },
   {
     "title": "Molecular insight into affinities of drugs and their metabolites to lipid bilayers.",
@@ -2097,7 +2267,8 @@ const publicationsData = [
     "image": "img/publications/pub_2013_JournalofPhysicalChemistryB_Palonc.png",
     "id": "10.1021/jp311802x",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Binding of quinidine radically increases the stability and decreases the flexibility of the cytochrome P450 2D6 active site.",
@@ -2116,7 +2287,8 @@ const publicationsData = [
     "image": "img/publications/pub_2012_JournalofInorganicBiochemistry_Berka.png",
     "id": "10.1016/j.jinorgbio.2012.02.010",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Convergence of Free Energy Profile of Coumarin in Lipid Bilayer.",
@@ -2137,7 +2309,8 @@ const publicationsData = [
     "image": "img/publications/pub_2012_JournalofChemicalTheoryandComputation_Palonc.png",
     "id": "10.1021/ct2009208",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Dynamics and hydration of the active sites of mammalian cytochromes P450 probed by molecular dynamics simulations",
@@ -2153,7 +2326,8 @@ const publicationsData = [
     "image": "img/publications/pub_2012_CurrentDrugMetabolism_Karel.png",
     "id": "pub_2012_CurrentDrugMetabolism_Karel",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Is there a relationship between the substrate preferences and structural flexibility of cytochromes P450?",
@@ -2173,7 +2347,8 @@ const publicationsData = [
     "image": "img/publications/pub_2012_CurrentDrugMetabolism_Otyepka.png",
     "id": "10.2174/138920012798918372",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "MOLEonline 2.0: interactive web-based analysis of biomacromolecular channels.",
@@ -2194,7 +2369,8 @@ const publicationsData = [
     "oa_url": null,
     "oa_is_preprint": false,
     "web": "https://moleonline.cz",
-    "github": "https://github.com/sb-ncbr/MOLE"
+    "github": "https://github.com/sb-ncbr/MOLE",
+    "recordType": "article"
   },
   {
     "title": "Positioning of antioxidant quercetin and its metabolites in lipid bilayer membranes: implication for their lipid-peroxidation inhibition.",
@@ -2214,7 +2390,8 @@ const publicationsData = [
     "image": "img/publications/pub_2012_JournalofPhysicalChemistryB_Ko.png",
     "id": "10.1021/jp208731g",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Korespondenční seminář inspirovaný chemickou tematikou (KSICHT)",
@@ -2230,7 +2407,8 @@ const publicationsData = [
     "id": "pub_2012_Chemicklisty_UnknownAuthor",
     "oa_url": null,
     "oa_is_preprint": false,
-    "web": "https://ksicht.natur.cuni.cz"
+    "web": "https://ksicht.natur.cuni.cz",
+    "recordType": "article"
   },
   {
     "title": "Insenstivity to Close Contacts and Inability to Predict Protein Foldability",
@@ -2245,7 +2423,8 @@ const publicationsData = [
     "image": "img/publications/pub_2011_JournalofBiomolecularStructureDynamics_Karel.png",
     "id": "pub_2011_JournalofBiomolecularStructureDynamics_Karel",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Membrane position of ibuprofen agrees with suggested access path entrance to cytochrome P450 2C9 active site.",
@@ -2265,7 +2444,8 @@ const publicationsData = [
     "image": "img/publications/pub_2011_JournalofPhysicalChemistryA_Berka.png",
     "id": "10.1021/jp204488j",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Novel covalent bond in proteins: calculations on model systems question the bond stability.",
@@ -2283,7 +2463,8 @@ const publicationsData = [
     "image": "img/publications/pub_2011_ChemPhysChem_On.png",
     "id": "10.1002/cphc.201100664",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Energy matrix of structurally important side-chain/side-chain interactions in proteins",
@@ -2298,7 +2479,8 @@ const publicationsData = [
     "image": "img/publications/pub_2010_JournalofChemicalTheoryandComputation_Karel.png",
     "id": "pub_2010_JournalofChemicalTheoryandComputation_Karel",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "On the Reliability of the AMBER Force Field and its Empirical Dispersion Contribution for the Description of Noncovalent Complexes",
@@ -2313,7 +2495,8 @@ const publicationsData = [
     "image": "img/publications/pub_2010_ChemPhysChem_Karel.png",
     "id": "pub_2010_ChemPhysChem_Karel",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Representative Amino Acid Side Chain Interactions in Proteins. A Comparison of Highly Accurate Correlated ab Initio Quantum Chemical and Empirical Potential Procedures.",
@@ -2332,7 +2515,8 @@ const publicationsData = [
     "image": "img/publications/pub_2009_JournalofChemicalTheoryandComputation_Berka.png",
     "id": "10.1021/ct800508v",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Analysis of energy stabilization inside the hydrophobic core of rubredoxin.",
@@ -2350,7 +2534,8 @@ const publicationsData = [
     "image": "img/publications/pub_2009_ChemPhysChem_Berka.png",
     "id": "10.1002/cphc.200800401",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "The stabilization energy of the Glu-Lys salt bridge in the protein/water environment: Correlated quantum chemical ab initio, DFT and empirical potential studies",
@@ -2368,7 +2553,8 @@ const publicationsData = [
     "image": "img/publications/pub_2008_CollectionofCzechoslovakChemicalCommunications_Karel.png",
     "id": "10.1135/CCCC20080921",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Another role of proline: stabilization interactions in proteins and protein complexes concerning proline and tryptophane.",
@@ -2386,7 +2572,8 @@ const publicationsData = [
     "image": "img/publications/pub_2008_PhysicalChemistryChemicalPhysics_Biedermannova.png",
     "id": "10.1039/b805087b",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Quantum chemical benchmark energy and geometry database for molecular clusters and complex molecular systems (www.begdb.com): A users manual and examples",
@@ -2405,7 +2592,8 @@ const publicationsData = [
     "image": "img/publications/pub_2008_CollectionofCzechoslovakChemicalCommunications_Karel_2.png",
     "id": "10.1135/cccc20081261",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Ligand binding to the human MT2 melatonin receptor: the role of residues in transmembrane domains 3, 6, and 7.",
@@ -2423,7 +2611,8 @@ const publicationsData = [
     "image": "img/publications/pub_2005_NoJournal_Mazna.png",
     "id": "10.1016/j.bbrc.2005.05.017",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Molecular modeling of human MT2 melatonin receptor: the role of Val204, Leu272 and Tyr298 in ligand binding.",
@@ -2442,7 +2631,8 @@ const publicationsData = [
     "image": "img/publications/pub_2004_NoJournal_Mazna.png",
     "id": "10.1111/j.1471-4159.2004.02758.x",
     "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   },
   {
     "title": "Molecular modeling of human MT2 melatonin receptor: the role of Val204, Leu272 and Tyr298 in ligand binding (vol 91, pg 836, 2004)",
@@ -2460,45 +2650,8 @@ const publicationsData = [
     "image": "img/publications/pub_2004_JournalofNeurochemistry_Karel.png",
     "id": "10.1111/J.1471-4159.2004.02965.X",
     "oa_url": null,
-    "oa_is_preprint": false
-  },
-  {
-    "title": "Detection of Channels",
-    "year": "",
-    "journal": "SpringerBriefs in Biochemistry and Molecular Biology",
-    "doi": "10.1007/978-3-319-47388-8_6",
-    "authors": "Jaroslav Koča, Radka Svobodová Vařeková, Lukáš Pravda, Karel Berka, Stanislav Geidl, David Sehnal, Michal Otyepka",
-    "abstract": "",
-    "category": [
-      "Channels"
-    ],
-    "volume": "",
-    "issue": "",
-    "pages": "59-69",
-    "image": "img/publications/pub__NoJournal_Karel.png",
-    "id": "10.1007/978-3-319-47388-8_6",
-    "oa_url": null,
-    "oa_is_preprint": false
-  },
-  {
-    "title": "Structural Bioinformatics Databases of General Use",
-    "year": "",
-    "journal": "SpringerBriefs in Biochemistry and Molecular Biology",
-    "doi": "10.1007/978-3-319-47388-8_3",
-    "authors": "Jaroslav Koča, Radka Svobodová Vařeková, Lukáš Pravda, Karel Berka, Stanislav Geidl, David Sehnal, Michal Otyepka",
-    "abstract": "",
-    "category": [
-      "Databases",
-      "Tools",
-      "Channels"
-    ],
-    "volume": "",
-    "issue": "",
-    "pages": "17-30",
-    "image": "img/publications/pub__NoJournal_Karel_2.png",
-    "id": "10.1007/978-3-319-47388-8_3",
-    "oa_url": null,
-    "oa_is_preprint": false
+    "oa_is_preprint": false,
+    "recordType": "article"
   }
 ];
 
@@ -2554,7 +2707,7 @@ const toolsData = [
       "en": "Interactive web-based application and standalone tool for finding, analyzing, and visualizing biomacromolecular tunnels, channels, and pores.",
       "cs": "Interaktivní webová aplikace a nástroj pro detekci, analýzu a vizualizaci biomakromolekulárních tunelů, kanálů a pórů."
     },
-    "github": "https://github.com/sb-ncbr/MOLE",
+    "github": "https://github.com/sb-ncbr/moleonline-web",
     "web": "https://moleonline.cz",
     "category": [
       "Channels",
@@ -2562,12 +2715,13 @@ const toolsData = [
       "Visualization"
     ],
     "languages": [
-      "C++",
       "TypeScript",
+      "Python",
       "C#"
     ],
     "doi": "10.1093/bioinformatics/btaf486",
-    "org": "sb-ncbr"
+    "org": "sb-ncbr",
+    "github_backup": "https://github.com/sb-ncbr/MOLE"
   },
   {
     "id": "channelsdb",
@@ -2605,12 +2759,13 @@ const toolsData = [
       "Databases"
     ],
     "languages": [
-      "Ruby",
+      "PHP",
       "JavaScript",
       "Python"
     ],
     "doi": "10.1093/database/baz078",
-    "org": "MolMeDB"
+    "org": "MolMeDB",
+    "github_backup": "https://github.com/MolMeDB/MolMeDB-legacy"
   },
   {
     "id": "acc3",
@@ -3024,5 +3179,209 @@ const toolsData = [
       "CSS"
     ],
     "org": "KarelBerka"
+  },
+  {
+    "id": "protein-foldngo",
+    "name": "Protein Fold'N'Go",
+    "description": {
+      "en": "Ubongo-style educational board game and interactive web tool for teaching the concepts of protein folding and structural motifs.",
+      "cs": "Vzdělávací desková hra ve stylu Ubongo a interaktivní webová aplikace pro výuku principů skládání proteinů a strukturních motivů."
+    },
+    "github": "https://github.com/KarelBerka/protein-foldngo",
+    "web": "https://karelberka.github.io/protein-foldngo/",
+    "category": [
+      "Education",
+      "Visualization"
+    ],
+    "languages": [
+      "HTML",
+      "JavaScript",
+      "CSS"
+    ],
+    "org": "KarelBerka"
+  },
+  {
+    "id": "2-5dprot",
+    "name": "2.5DProt",
+    "description": {
+      "en": "Extension of 2DProt adding a depth layer enabling 3D structural reconstruction directly from 2D secondary-structure diagrams.",
+      "cs": "Rozšíření nástroje 2DProt o hloubkovou vrstvu umožňující 3D rekonstrukci proteinové struktury ze 2D diagramů sekundární struktury."
+    },
+    "github": "https://github.com/KarelBerka/2.5DProt",
+    "category": [
+      "Visualization",
+      "Tools"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "org": "KarelBerka"
+  },
+  {
+    "id": "ted-namer",
+    "name": "TED-namer",
+    "description": {
+      "en": "Automated naming utility for Encyclopedia of Domains (TED) protein domains derived from their biological and functional context.",
+      "cs": "Nástroj pro automatické pojmenovávání proteinových domén z databáze TED na základě jejich biologického a funkčního kontextu."
+    },
+    "github": "https://github.com/KarelBerka/TED-namer",
+    "category": [
+      "Alphafoldology",
+      "Tools"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "org": "KarelBerka"
+  },
+  {
+    "id": "ego-ontology",
+    "name": "EGO Ontology",
+    "description": {
+      "en": "Interactive ontology reference and exploration portal for structured domain annotations.",
+      "cs": "Interaktivní ontologický portál a přehled pro strukturované doménové anotace."
+    },
+    "github": "https://github.com/KarelBerka/EGO-ontology",
+    "web": "https://karelberka.github.io/EGO-ontology/",
+    "category": [
+      "Databases",
+      "Tools"
+    ],
+    "languages": [
+      "HTML",
+      "JavaScript"
+    ],
+    "org": "KarelBerka"
+  },
+  {
+    "id": "chargefw2",
+    "name": "ChargeFW2",
+    "description": {
+      "en": "High-performance C++ partial atomic charge calculation framework forming the core engine behind Atomic Charge Calculator III.",
+      "cs": "Vysoce výkonný C++ framework pro výpočet parciálních atomových nábojů tvořící výpočetní jádro nástroje Atomic Charge Calculator III."
+    },
+    "github": "https://github.com/sb-ncbr/ChargeFW2",
+    "web": "https://acc.biodata.ceitec.cz",
+    "category": [
+      "Tools"
+    ],
+    "languages": [
+      "C++",
+      "Python"
+    ],
+    "doi": "10.1093/nar/gkag379",
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "fffold",
+    "name": "FFFold",
+    "description": {
+      "en": "Web tool for rapid force-field optimization of AlphaFold-predicted protein structures to improve local geometry and stereochemistry.",
+      "cs": "Webový nástroj pro rychlou optimalizaci proteinových struktur predikovaných AlphaFoldem pomocí silového pole."
+    },
+    "github": "https://github.com/sb-ncbr/FFFold",
+    "web": "https://fffold.biodata.ceitec.cz/",
+    "category": [
+      "Alphafoldology",
+      "Tools"
+    ],
+    "languages": [
+      "JavaScript",
+      "Python"
+    ],
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "tunnels-schema",
+    "name": "Tunnels mmCIF Schema",
+    "description": {
+      "en": "Community-standard FAIR mmCIF dictionary extension describing protein channel, tunnel, and pore entries from MOLEonline.",
+      "cs": "FAIR rozšíření formátu mmCIF popisující proteinové kanály, tunely a póry z nástroje MOLEonline."
+    },
+    "github": "https://github.com/sb-ncbr/tunnels-schema",
+    "web": "https://moleonline.cz",
+    "category": [
+      "Channels",
+      "Databases"
+    ],
+    "languages": [
+      "mmCIF",
+      "Python"
+    ],
+    "doi": "10.1093/bioinformatics/btaf486",
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "charges-schema",
+    "name": "Charges mmCIF Schema",
+    "description": {
+      "en": "Formal mmCIF dictionary extension for embedding partial atomic charges computed by Atomic Charge Calculator III and PDBCharges.",
+      "cs": "Formální rozšíření schématu mmCIF pro ukládání parciálních atomových nábojů z Atomic Charge Calculator III a PDBCharges."
+    },
+    "github": "https://github.com/sb-ncbr/charges-schema",
+    "web": "https://acc.biodata.ceitec.cz",
+    "category": [
+      "Databases",
+      "Tools"
+    ],
+    "languages": [
+      "mmCIF",
+      "Python"
+    ],
+    "doi": "10.1093/nar/gkag379",
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "sb-ncbr-tools",
+    "name": "SB NCBR Tools Hub",
+    "description": {
+      "en": "Unified portal and catalog summarizing open structural bioinformatics web services and databases co-developed with SB NCBR.",
+      "cs": "Jednotný přehled a katalog otevřených webových služeb a databází strukturní bioinformatiky vyvíjených se skupinou SB NCBR."
+    },
+    "github": "https://github.com/sb-ncbr/sb-ncbr-tools",
+    "web": "https://sb-ncbr-tools.biodata.ceitec.cz",
+    "category": [
+      "Databases",
+      "Tools"
+    ],
+    "languages": [
+      "TypeScript"
+    ],
+    "org": "sb-ncbr"
+  },
+  {
+    "id": "permeability-meta-analysis",
+    "name": "Permeability Meta-Analysis Scripts",
+    "description": {
+      "en": "Reproducible R analysis repository evaluating experimental and computed small-molecule membrane permeability datasets (MolMeDB & ChEMBL).",
+      "cs": "Reprodukovatelné R skripty pro meta-analýzu experimentálních a výpočetních dat membránové permeability z MolMeDB a ChEMBL."
+    },
+    "github": "https://github.com/MolMeDB/How-Usable-Are-Published-Permeability-Data",
+    "category": [
+      "Lipid Membranes",
+      "Tools"
+    ],
+    "languages": [
+      "R"
+    ],
+    "doi": "10.1021/acs.molpharmaceut.4c00975",
+    "org": "MolMeDB"
+  },
+  {
+    "id": "fungim",
+    "name": "FunGIM",
+    "description": {
+      "en": "Analysis scripts and datasets from the FunGIM project investigating functional groups in interactions with lipid membranes.",
+      "cs": "Analytické skripty projektu FunGIM zkoumající vliv funkčních skupin na interakce molekul s lipidovými membránami."
+    },
+    "github": "https://github.com/MolMeDB/FunGIM",
+    "category": [
+      "Lipid Membranes",
+      "Tools"
+    ],
+    "languages": [
+      "R"
+    ],
+    "org": "MolMeDB"
   }
 ];

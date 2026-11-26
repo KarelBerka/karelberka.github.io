@@ -24,7 +24,6 @@
                 <a href="index.html#outreach" class="nav-link">Outreach</a>
                 <a href="index.html#publications" class="nav-link">Publications</a>
                 <button id="theme-toggle" class="btn-icon" aria-label="Toggle dark mode">
-                    <!-- Sun/Moon SVG logic is handled by JS -->
                     <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
@@ -46,10 +45,8 @@
 
     <!-- Subpage Content -->
     <main class="container" style="padding-top: 120px; padding-bottom: 80px; min-height: calc(100vh - 200px);">
-    
-
         <div id="pub-details" class="pub-details-container hidden">
-            <a href="index.html#publications" class="back-link">← Back to all publications</a>
+            <a href="index.html#publications" class="back-link">&larr; Back to all publications</a>
             
             <div class="pub-details-grid">
                 <!-- Left: Large Image -->
@@ -60,6 +57,7 @@
                 <!-- Right: Details -->
                 <div class="pub-details-content">
                     <div class="pub-meta">
+                        <span id="pd-type" class="pub-type">Article</span>
                         <span id="pd-category" class="topic-tag">Category</span>
                         <span id="pd-year" class="pub-year-badge">Year</span>
                     </div>
@@ -67,6 +65,8 @@
                     <h2 id="pd-title" class="pd-title">Title</h2>
                     <p id="pd-authors" class="pd-authors">Authors</p>
                     <p id="pd-journal" class="pd-journal">Journal</p>
+
+                    <div id="pd-metrics-bar" class="pd-metrics-bar hidden"></div>
                     
                     <div class="pd-actions" style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 10px;">
                         <a id="btn-web" href="#" target="_blank" rel="noopener" class="btn btn-primary hidden" style="background: linear-gradient(135deg, #0ea5e9, #0284c7); color: #fff; font-weight: 600;">Web App / Website 🌐</a>
@@ -75,6 +75,7 @@
                         <a id="btn-preprint" href="#" class="btn btn-secondary hidden">Preprint</a>
                         <a id="btn-fairsharing" href="#" class="btn btn-secondary hidden">FAIRsharing Record</a>
                         <a id="btn-github" href="#" target="_blank" rel="noopener" class="btn btn-secondary hidden" style="background-color: #24292e; color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); font-weight: 600;">GitHub 🐙</a>
+                        <a id="btn-github-backup" href="#" target="_blank" rel="noopener" class="btn btn-secondary btn-tool-backup hidden">Backup Repo 🐙</a>
                         <button id="btn-pd-cite" class="btn btn-secondary" style="font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
                             <span class="lang-en">Cite Publication 📄</span>
                             <span class="lang-cs" style="display: none;">Citovat publikaci 📄</span>
@@ -88,7 +89,6 @@
                 </div>
             </div>
         </div>
-
     </main>
 
     <!-- Footer -->
@@ -98,12 +98,12 @@
         </div>
     </footer>
 
-    <!-- Load Data and JS -->
+    <!-- Load Data, Metrics, and JS -->
     <script src="js/data.js"></script>
+    <script src="js/metrics.js"></script>
     <script src="js/script.js"></script>
     <script src="js/citation.js"></script>
     <script>
-        // Publication Rendering Logic
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const pubId = urlParams.get('id');
@@ -113,37 +113,37 @@
                 return;
             }
 
-            // Find the publication in the data array
-            const pub = publicationsData.find(p => p.id === pubId);
-
+            const pub = publicationsData.find(p => p.id === pubId || p.doi === pubId);
             if (!pub) {
                 return;
             }
 
-            // Render Data
             document.getElementById('pd-image').src = pub.image;
             document.getElementById('pd-title').textContent = pub.title;
             document.getElementById('pd-authors').textContent = pub.authors || 'Karel Berka et al.';
-            
-            // Build Journal string with ročník/volume, issue, pages
-            let journalStr = pub.journal || 'Preprint / Manuscript';
-            if (pub.year) {
-                journalStr += ', ' + pub.year;
-            }
-            if (pub.volume) {
-                journalStr += ', ' + pub.volume;
-            }
-            if (pub.issue) {
-                journalStr += '(' + pub.issue + ')';
-            }
-            if (pub.pages) {
-                journalStr += ', ' + pub.pages;
-            }
-            
+
+            const rType = typeof getRecordType === 'function' ? getRecordType(pub) : (pub.recordType || 'article');
+            const typeMap = {
+                article: { label: 'Article', cls: '' },
+                book: { label: 'Book / Chapter', cls: 'type-book' },
+                preprint: { label: 'Preprint', cls: 'type-preprint' },
+                fairsharing: { label: 'FAIRsharing / Record', cls: 'type-fairsharing' }
+            };
+            const tInfo = typeMap[rType] || typeMap.article;
+            const pdType = document.getElementById('pd-type');
+            pdType.textContent = tInfo.label;
+            if (tInfo.cls) pdType.classList.add(tInfo.cls);
+
+            let journalStr = pub.journal || (rType === 'preprint' ? 'Preprint / Manuscript' : 'Database / Software Record');
+            if (pub.year) journalStr += ', ' + pub.year;
+            if (pub.volume) journalStr += ', ' + pub.volume;
+            if (pub.issue) journalStr += '(' + pub.issue + ')';
+            if (pub.pages) journalStr += ', ' + pub.pages;
+
             document.getElementById('pd-journal').textContent = journalStr;
-            document.getElementById('pd-year').textContent = pub.year;
-            document.getElementById('pd-category').textContent = pub.category;
-            
+            document.getElementById('pd-year').textContent = pub.year || '';
+            document.getElementById('pd-category').textContent = Array.isArray(pub.category) ? pub.category.join(' • ') : (pub.category || '');
+
             const abstractElem = document.getElementById('pd-abstract');
             if (pub.abstract) {
                 abstractElem.textContent = pub.abstract;
@@ -151,8 +151,36 @@
                 abstractElem.innerHTML = '<em>No abstract available for this record.</em>';
             }
 
-            // Buttons
-                        const btnWeb = document.getElementById('btn-web');
+            // Citation & Impact Metrics Bar (OpenAlex + BIP! Scholar)
+            const metricsBar = document.getElementById('pd-metrics-bar');
+            if (pub.doi && typeof bibliometricsData !== 'undefined' && bibliometricsData.per_paper) {
+                const m = bibliometricsData.per_paper[pub.doi.toLowerCase()];
+                if (m) {
+                    const items = [];
+                    if (typeof m.openalex_citations === 'number') {
+                        const oaHref = m.openalex_id ? `https://openalex.org/${m.openalex_id}` : `https://openalex.org/works/https://doi.org/${pub.doi}`;
+                        items.push(`<a href="${oaHref}" target="_blank" rel="noopener" class="pub-metric-pill oa-cit">📈 OpenAlex: ${m.openalex_citations} citations</a>`);
+                    }
+                    if (typeof m.bip_citations === 'number') {
+                        items.push(`<span class="pub-metric-pill">📚 BIP! Citations: ${m.bip_citations} (3yr: ${m.bip_3yr ?? 0})</span>`);
+                    }
+                    if (m.bip_pop) {
+                        items.push(`<span class="pub-metric-pill bip-pop">🔥 BIP! Popularity: ${m.bip_pop}</span>`);
+                    }
+                    if (m.bip_inf) {
+                        items.push(`<span class="pub-metric-pill bip-inf">⭐ BIP! Influence: ${m.bip_inf}</span>`);
+                    }
+                    if (m.bip_imp) {
+                        items.push(`<span class="pub-metric-pill">⚡ BIP! Impulse: ${m.bip_imp}</span>`);
+                    }
+                    if (items.length) {
+                        metricsBar.innerHTML = items.join('');
+                        metricsBar.classList.remove('hidden');
+                    }
+                }
+            }
+
+            const btnWeb = document.getElementById('btn-web');
             if (pub.web) {
                 btnWeb.href = pub.web;
                 btnWeb.classList.remove('hidden');
@@ -172,7 +200,7 @@
                     btnPreprint.href = pub.oa_url;
                     btnPreprint.setAttribute('target', '_blank');
                     btnPreprint.setAttribute('rel', 'noopener');
-                    btnPreprint.textContent = "Read Preprint";
+                    btnPreprint.textContent = 'Read Preprint';
                     btnPreprint.classList.remove('hidden');
                 } else {
                     btnOa.href = pub.oa_url;
@@ -180,29 +208,31 @@
                 }
             }
             if (pub.preprint_id) {
-                btnPreprint.href = 'publication.html?id=' + pub.preprint_id;
-                btnPreprint.textContent = "Preprint";
+                btnPreprint.href = 'publication.html?id=' + encodeURIComponent(pub.preprint_id);
+                btnPreprint.textContent = 'Preprint';
                 btnPreprint.classList.remove('hidden');
             }
-            
+
             const btnFairsharing = document.getElementById('btn-fairsharing');
             if (pub.fairsharing_id) {
-                btnFairsharing.href = 'publication.html?id=' + pub.fairsharing_id;
+                btnFairsharing.href = 'publication.html?id=' + encodeURIComponent(pub.fairsharing_id);
                 btnFairsharing.classList.remove('hidden');
             }
-            
+
             const btnGithub = document.getElementById('btn-github');
             if (pub.github) {
                 btnGithub.href = pub.github;
                 btnGithub.classList.remove('hidden');
             }
 
-            // Show details
+            const btnGithubBackup = document.getElementById('btn-github-backup');
+            if (pub.github_backup) {
+                btnGithubBackup.href = pub.github_backup;
+                btnGithubBackup.classList.remove('hidden');
+            }
 
             details.classList.remove('hidden');
-            
-            // Set document title
-            document.title = pub.title + " - Karel Berka";
+            document.title = pub.title + ' - Karel Berka';
         });
     </script>
 </body>

@@ -2197,6 +2197,7 @@ footer {
     font-size: 1.05rem;
     line-height: 1.7;
     color: var(--text-secondary);
+}
 
 /* Publication Filters */
 .pub-filters {
@@ -2675,4 +2676,397 @@ footer {
 .cite-footer-hint {
     font-size: 0.8rem;
     color: var(--text-muted);
+}
+
+
+/* ==========================================================================
+   Bibliometrics Multi-Source Dashboard (WoS, Scopus, OpenAlex, BIP!, Scholar)
+   ========================================================================== */
+.metrics-dashboard {
+    margin-bottom: 36px;
+    padding: 24px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius, 14px);
+    box-shadow: var(--shadow-sm);
+}
+
+.metrics-dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.metrics-dashboard-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.metrics-updated-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+}
+
+@media (max-width: 1100px) {
+    .metrics-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .metrics-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+.metric-source-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--bg-base);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--source-accent, var(--color-primary));
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.metric-source-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--source-accent, var(--color-primary));
+}
+
+.metric-source-card.src-wos { --source-accent: #5e33bf; }
+.metric-source-card.src-scopus { --source-accent: #e9711c; }
+.metric-source-card.src-openalex { --source-accent: #0ea5e9; }
+.metric-source-card.src-bip { --source-accent: #10b981; }
+.metric-source-card.src-scholar { --source-accent: #4285f4; }
+
+.metric-source-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.metric-source-name {
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.metric-source-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--bg-surface-alt);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    white-space: nowrap;
+}
+
+.metric-source-tag.live {
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.35);
+    background: rgba(16, 185, 129, 0.08);
+}
+
+.metric-kpis {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.metric-kpi {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-kpi-val {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--source-accent, var(--color-primary));
+}
+
+.metric-kpi-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+}
+
+.metric-sub {
+    font-size: 0.76rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 8px;
+}
+
+/* ==========================================================================
+   Publication Chapters (Separated Articles, Books, Preprints, FAIRsharing)
+   ========================================================================== */
+.pub-chapter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pub-chapter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.pub-chapter-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--text-primary);
+}
+
+.pub-chapter-btn.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);
+}
+
+.pub-chapter-count {
+    font-size: 0.75rem;
+    padding: 1px 7px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.18);
+    color: inherit;
+    font-weight: 700;
+}
+
+.pub-chapter-btn.active .pub-chapter-count {
+    background: rgba(255, 255, 255, 0.24);
+}
+
+.pub-chapter-block {
+    margin-top: 28px;
+}
+
+.pub-chapter-block:first-child {
+    margin-top: 8px;
+}
+
+.pub-chapter-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.pub-chapter-heading h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pub-chapter-badge {
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+}
+
+.pub-chapter-load-more {
+    text-align: center;
+    margin-top: 18px;
+}
+
+/* Per-paper citation & BIP! impact pills */
+.pub-metrics-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+    align-items: center;
+}
+
+.pub-metric-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-base);
+    color: var(--text-secondary);
+}
+
+.pub-metric-pill.oa-cit {
+    border-color: rgba(14, 165, 233, 0.35);
+    color: #0284c7;
+    background: rgba(14, 165, 233, 0.08);
+}
+
+body.dark-theme .pub-metric-pill.oa-cit {
+    color: #38bdf8;
+}
+
+.pub-metric-pill.bip-pop {
+    border-color: rgba(16, 185, 129, 0.35);
+    color: #059669;
+    background: rgba(16, 185, 129, 0.08);
+}
+
+body.dark-theme .pub-metric-pill.bip-pop {
+    color: #34d399;
+}
+
+.pub-metric-pill.bip-inf {
+    border-color: rgba(139, 92, 246, 0.35);
+    color: #7c3aed;
+    background: rgba(139, 92, 246, 0.08);
+}
+
+body.dark-theme .pub-metric-pill.bip-inf {
+    color: #a78bfa;
+}
+
+/* Publication type badge variants */
+.pub-type.type-book {
+    color: #d97706;
+    background: rgba(217, 119, 6, 0.14);
+}
+.pub-type.type-preprint {
+    color: #9333ea;
+    background: rgba(147, 51, 234, 0.14);
+}
+.pub-type.type-fairsharing {
+    color: #059669;
+    background: rgba(5, 150, 105, 0.14);
+}
+
+/* Tool Card GitHub Live Metadata & Backup Button */
+.tool-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+}
+
+.tool-meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 7px;
+    border-radius: 5px;
+    background: var(--bg-base);
+    border: 1px solid var(--border-color);
+}
+
+.btn-tool-backup {
+    background: transparent !important;
+    border: 1px dashed var(--border-color) !important;
+    color: var(--text-secondary) !important;
+    font-size: 0.8rem !important;
+}
+
+.btn-tool-backup:hover {
+    border-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+}
+
+/* Extra academic profile badge borders */
+.border-wos { border: 1px solid #5e33bf; color: #5e33bf; }
+.border-wos:hover { background-color: #5e33bf; color: #ffffff; }
+.border-scopus { border: 1px solid #e9711c; color: #e9711c; }
+.border-scopus:hover { background-color: #e9711c; color: #ffffff; }
+.border-openalex { border: 1px solid #0ea5e9; color: #0ea5e9; }
+.border-openalex:hover { background-color: #0ea5e9; color: #ffffff; }
+.border-bip { border: 1px solid #10b981; color: #10b981; }
+.border-bip:hover { background-color: #10b981; color: #ffffff; }
+
+body.dark-theme .border-wos { color: #a78bfa; border-color: #8b5cf6; }
+body.dark-theme .border-scopus { color: #fb923c; border-color: #f97316; }
+
+/* Publication Detail Metrics Bar */
+.pd-metrics-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+}
+
+/* CV Bibliometrics Table */
+.cv-metrics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 22px 0;
+    font-size: 0.9rem;
+}
+
+.cv-metrics-table th,
+.cv-metrics-table td {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.cv-metrics-table th {
+    background: var(--bg-surface-alt);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-primary);
 }

@@ -1,0 +1,14 @@
+{
+  "source": "Web of Science",
+  "status": "manual",
+  "fetched_at": "2026-03-15",
+  "checked_at": "2026-11-26T13:21:53Z",
+  "profile_url": "https://www.webofscience.com/wos/author/record/E-2839-2010",
+  "researcher_id": "E-2839-2010",
+  "works_count": 112,
+  "citations": 5300,
+  "citations_without_self": 5123,
+  "h_index": 36,
+  "note_en": "Peer-reviewed IF articles (manual snapshot; update here or via WOS_API_KEY)",
+  "note_cs": "Recenzované články s IF (ruční snímek; lze aktualizovat zde nebo přes WOS_API_KEY)"
+}

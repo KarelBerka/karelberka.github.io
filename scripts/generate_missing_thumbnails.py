@@ -1,89 +1,157 @@
-import os
+"""
+Generate missing or placeholder (<500B) publication thumbnails referenced in js/data.js
+using Google GenAI image generation via generate_content (Gemini Developer API).
+
+Usage:
+    uv run --with google-genai python scripts/generate_missing_thumbnails.py
+"""
 import json
-import base64
+import os
+import re
+import sys
+import time
+from pathlib import Path
+
 from google import genai
 from google.genai import types
 
-# Make sure you have the google-genai library installed:
-# pip install google-genai
-# And set your GEMINI_API_KEY environment variable.
+ROOT = Path(__file__).resolve().parent.parent
+DATA_JS = ROOT / "js" / "data.js"
 
-client = genai.Client()
 
-site_dir = "c:/Users/krapn/Dropbox/Antigravity/karelberka.github.io"
-json_path = "c:/Users/krapn/.gemini/antigravity/brain/28f05e3b-4e88-41b8-91ac-d8535a6dc663/scratch/enriched_works.json"
+def load_publications():
+    txt = DATA_JS.read_text(encoding="utf-8")
+    m = re.search(r"const publicationsData\s*=\s*(\[.*?\]);\s*//", txt, re.S)
+    if not m:
+        raise RuntimeError("Could not parse publicationsData from js/data.js")
+    return json.loads(m.group(1))
 
-# A tiny transparent 1x1 PNG in base64. 
-# We use this to detect which files are the placeholders vs real AI images.
-TRANSPARENT_B64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-transparent_bytes = base64.b64decode(TRANSPARENT_B64)
 
-with open(json_path, "r", encoding="utf-8") as f:
-    works = json.load(f)
+def load_api_key():
+    if os.environ.get("GEMINI_API_KEY"):
+        return os.environ["GEMINI_API_KEY"]
+    dotenv = Path.home() / ".env"
+    if dotenv.exists():
+        for line in dotenv.read_text(encoding="utf-8", errors="ignore").splitlines():
+            m = re.match(r"^\s*GEMINI_API_KEY\s*=\s*['\"]?([^'\"\s#]+)['\"]?", line)
+            if m:
+                os.environ["GEMINI_API_KEY"] = m.group(1)
+                return m.group(1)
+    return None
 
-# Rebuild the name mapping logic to match the current filenames
-name_mapping = {}
-generated_names = {}
-import re
 
-for idx, w in enumerate(works, 1):
-    year = w.get("year", "UnknownYear")
-    journal = w.get("journal", "")
-    authors = w.get("authors", "")
-    
-    if not journal:
-        journal = "NoJournal"
-    
-    if authors:
-        words = re.findall(r'[A-Za-z]+', authors)
-        first_author = words[0] if words else "UnknownAuthor"
-    else:
-        first_author = "UnknownAuthor"
-        
-    journal_clean = re.sub(r'[^a-zA-Z0-9]', '', journal)
-    first_author_clean = re.sub(r'[^a-zA-Z0-9]', '', first_author)
-    
-    base_name = f"pub_{year}_{journal_clean}_{first_author_clean}"
-    
-    if base_name in generated_names:
-        generated_names[base_name] += 1
-        final_name = f"{base_name}_{generated_names[base_name]}.png"
-    else:
-        generated_names[base_name] = 1
-        final_name = f"{base_name}.png"
-        
-    # Check if the file is a placeholder
-    file_path = os.path.join(site_dir, "img", "publications", final_name)
-    
-    # We only generate if the file is small (the transparent placeholder is ~68 bytes)
-    if os.path.exists(file_path):
-        size = os.path.getsize(file_path)
-        if size < 100:
-            print(f"[{final_name}] Needs generation. Triggering AI...")
-            
-            prompt = f"Cartoonish, colorful, high-quality, clean scientific illustration for a paper titled '{w.get('title')}'. Abstract: {w.get('abstract', '')[:500]}..."
-            
+def pick_image_models(client):
+    preferred = [
+        "gemini-2.5-flash-image",
+        "gemini-3.1-flash-image-preview",
+        "gemini-3-pro-image-preview",
+        "gemini-2.5-flash-image-preview",
+        "gemini-2.0-flash-exp-image-generation",
+    ]
+    available = []
+    try:
+        for m in client.models.list():
+            name = (m.name or "").replace("models/", "")
+            if "image" in name.lower():
+                available.append(name)
+    except Exception as exc:
+        print(f"Warning: could not list models ({exc}), using defaults", flush=True)
+
+    print(f"Discovered image models: {available}", flush=True)
+    ordered = [m for m in preferred if not available or m in available]
+    for m in available:
+        if m not in ordered and "imagen" not in m.lower():
+            ordered.append(m)
+    return ordered or preferred
+
+
+def generate_one(client, model_name, prompt):
+    resp = client.models.generate_content(
+        model=model_name,
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            response_modalities=["IMAGE"],
+        ),
+    )
+    for cand in getattr(resp, "candidates", []) or []:
+        content = getattr(cand, "content", None)
+        for part in getattr(content, "parts", []) or []:
+            inline = getattr(part, "inline_data", None)
+            if inline and getattr(inline, "data", None):
+                return inline.data
+    raise RuntimeError("No image bytes returned in response")
+
+
+def main():
+    if not load_api_key():
+        print("ERROR: GEMINI_API_KEY not found in environment or ~/.env", file=sys.stderr)
+        sys.exit(1)
+
+    client = genai.Client()
+    models = pick_image_models(client)
+    pubs = load_publications()
+
+    targets = []
+    for pub in pubs:
+        img_rel = pub.get("image")
+        if not img_rel:
+            continue
+        img_path = ROOT / img_rel
+        if not img_path.exists() or img_path.stat().st_size < 500:
+            targets.append((pub, img_path))
+
+    print(f"Found {len(targets)} missing/placeholder thumbnails to generate.", flush=True)
+    if not targets:
+        return
+
+    ok = 0
+    failed = []
+    active_model = None
+    for idx, (pub, img_path) in enumerate(targets, 1):
+        img_path.parent.mkdir(parents=True, exist_ok=True)
+        title = pub.get("title", "Scientific study")
+        abstract = (pub.get("abstract") or "")[:400]
+        prompt = (
+            "Create a square 1:1 vibrant editorial scientific illustration (strictly NO text, NO letters, NO numbers, NO labels) "
+            f"representing the computational chemistry / structural biology concept of: '{title}'. "
+            f"Scientific context: {abstract}. "
+            "Clean stylized 3D/vector scientific artwork with glowing molecules, protein ribbons, or lipid bilayers on a deep teal-slate gradient background."
+        )
+        print(f"[{idx}/{len(targets)}] Generating {img_path.name} ({pub.get('year')}) ...", flush=True)
+
+        candidates = [active_model] + [m for m in models if m != active_model] if active_model else models
+        generated = False
+        for model_name in candidates:
             try:
-                # Generate using Imagen 4
-                result = client.models.generate_images(
-                    model='imagen-4.0-generate-001',
-                    prompt=prompt,
-                    config=types.GenerateImagesConfig(
-                        number_of_images=1,
-                        output_mime_type="image/png",
-                        aspect_ratio="1:1"
-                    )
-                )
-                
-                # Save the generated image over the placeholder
-                for generated_image in result.generated_images:
-                    with open(file_path, "wb") as img_file:
-                        img_file.write(generated_image.image.image_bytes)
-                print(f"  -> Successfully generated {final_name}")
-                
-            except Exception as e:
-                print(f"  -> Failed to generate {final_name}: {e}")
-        else:
-            pass # Already generated
-            
-print("\nProcess finished.")
+                img_bytes = generate_one(client, model_name, prompt)
+                img_path.write_bytes(img_bytes)
+                active_model = model_name
+                print(f"  -> OK ({model_name}, {img_path.stat().st_size} bytes)", flush=True)
+                ok += 1
+                generated = True
+                break
+            except Exception as exc:
+                err_str = str(exc)
+                print(f"  -> {model_name} failed: {err_str[:180]}", flush=True)
+                if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
+                    time.sleep(8)
+                    try:
+                        img_bytes = generate_one(client, model_name, prompt)
+                        img_path.write_bytes(img_bytes)
+                        active_model = model_name
+                        print(f"  -> OK on retry ({model_name}, {img_path.stat().st_size} bytes)", flush=True)
+                        ok += 1
+                        generated = True
+                        break
+                    except Exception as exc2:
+                        print(f"  -> retry failed: {str(exc2)[:150]}", flush=True)
+                continue
+        if not generated:
+            failed.append(img_path.name)
+        time.sleep(1.0)
+
+    print(f"\nDone: {ok}/{len(targets)} generated. Failed: {len(failed)} {failed}", flush=True)
+
+
+if __name__ == "__main__":
+    main()

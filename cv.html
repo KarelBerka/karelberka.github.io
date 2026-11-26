@@ -329,14 +329,15 @@
         <div class="container" style="text-align: center; padding: 20px 0;">
             <p>&copy; 2026 Prof. Karel Berka. <span class="lang-en">All rights reserved.</span><span class="lang-cs" style="display: none;">Všechna práva vyhrazena.</span></p>
             <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 8px;">
-                <span class="lang-en">Bibliometric profiles: <a href="https://bip.imsi.athenarc.gr/scholar/profile/0000-0001-9472-2589" target="_blank" rel="noopener" class="inline-link">BIP! scholar</a> | <a href="https://fcite.org/0000-0001-9472-2589.html" target="_blank" rel="noopener" class="inline-link">fCite</a></span>
-                <span class="lang-cs" style="display: none;">Bibliometrické profily: <a href="https://bip.imsi.athenarc.gr/scholar/profile/0000-0001-9472-2589" target="_blank" rel="noopener" class="inline-link">BIP! scholar</a> | <a href="https://fcite.org/0000-0001-9472-2589.html" target="_blank" rel="noopener" class="inline-link">fCite</a></span>
+                <span class="lang-en">Bibliometric profiles: <a href="https://www.webofscience.com/wos/author/record/E-2839-2010" target="_blank" rel="noopener" class="inline-link">Web of Science</a> | <a href="https://www.scopus.com/authid/detail.uri?authorId=35585258000" target="_blank" rel="noopener" class="inline-link">Scopus</a> | <a href="https://openalex.org/A5049457524" target="_blank" rel="noopener" class="inline-link">OpenAlex</a> | <a href="https://bip.imsi.athenarc.gr/scholar/profile/0000-0001-9472-2589" target="_blank" rel="noopener" class="inline-link">BIP! Scholar</a> | <a href="https://scholar.google.cz/citations?hl=cs&user=398ACWsAAAAJ" target="_blank" rel="noopener" class="inline-link">Google Scholar</a></span>
+                <span class="lang-cs" style="display: none;">Bibliometrické profily: <a href="https://www.webofscience.com/wos/author/record/E-2839-2010" target="_blank" rel="noopener" class="inline-link">Web of Science</a> | <a href="https://www.scopus.com/authid/detail.uri?authorId=35585258000" target="_blank" rel="noopener" class="inline-link">Scopus</a> | <a href="https://openalex.org/A5049457524" target="_blank" rel="noopener" class="inline-link">OpenAlex</a> | <a href="https://bip.imsi.athenarc.gr/scholar/profile/0000-0001-9472-2589" target="_blank" rel="noopener" class="inline-link">BIP! Scholar</a> | <a href="https://scholar.google.cz/citations?hl=cs&user=398ACWsAAAAJ" target="_blank" rel="noopener" class="inline-link">Google Scholar</a></span>
             </p>
         </div>
     </footer>
 
-    <!-- Load Data first, then script, then local CV rendering logic -->
+    <!-- Load Data, Metrics, script, then local CV rendering logic -->
     <script src="js/data.js"></script>
+    <script src="js/metrics.js"></script>
     <script src="js/script.js"></script>
     <script>
         // Bilingual CV Data Object
@@ -549,41 +550,127 @@
                 return document.documentElement.lang || 'en';
             }
 
-            // Helper to identify actual peer-reviewed publications / preprints
-            function isPublication(p) {
-                if (!p.authors || p.authors.trim() === '') return false;
-                if (p.title && (p.title.includes('FAIRsharing') || p.title.includes('Ownership and Maintenance') || p.title.includes('Ownership of'))) return false;
-                return true;
+            // Helper: classify publication recordType
+            function cvRecordType(p) {
+                if (typeof getRecordType === 'function') return getRecordType(p);
+                return p.recordType || 'article';
             }
 
-            // Function to render non-publication items (registrations/entries)
-            function getNonPublicationsHTML() {
+            // Helper: render multi-source bibliometric table from bibliometricsData
+            function getBibliometricsTableHTML() {
+                if (typeof bibliometricsData === 'undefined' || !bibliometricsData.sources) return '';
                 const lang = getLang();
-                let nonPubs = publicationsData.filter(p => !isPublication(p));
-                
-                // Remove duplicates
+                const isCs = lang === 'cs';
+                const s = bibliometricsData.sources;
+                const fmt = n => (n === null || n === undefined) ? '—' : Number(n).toLocaleString(isCs ? 'cs-CZ' : 'en-US');
+
+                const rows = [
+                    {
+                        name: 'Web of Science',
+                        url: s.wos && s.wos.profile_url,
+                        works: s.wos && s.wos.works_count != null ? `${fmt(s.wos.works_count)}+` : '—',
+                        cits: s.wos && s.wos.citations != null ? `${fmt(s.wos.citations)}+ (${fmt(s.wos.citations_without_self)} ${isCs ? 'bez autocit.' : 'excl. self'})` : '—',
+                        h: s.wos && s.wos.h_index != null ? s.wos.h_index : '—',
+                        date: (s.wos && s.wos.fetched_at) || '—'
+                    },
+                    {
+                        name: 'Scopus',
+                        url: s.scopus && s.scopus.profile_url,
+                        works: s.scopus && s.scopus.works_count != null ? fmt(s.scopus.works_count) : '—',
+                        cits: s.scopus && s.scopus.citations != null ? fmt(s.scopus.citations) : (isCs ? 'Viz profil ↗' : 'View profile ↗'),
+                        h: s.scopus && s.scopus.h_index != null ? s.scopus.h_index : '—',
+                        date: (s.scopus && s.scopus.fetched_at) || (s.scopus && s.scopus.author_id ? `ID ${s.scopus.author_id}` : '—')
+                    },
+                    {
+                        name: 'OpenAlex',
+                        url: s.openalex && s.openalex.profile_url,
+                        works: s.openalex && s.openalex.works_count != null ? fmt(s.openalex.works_count) : '—',
+                        cits: s.openalex && s.openalex.citations != null ? fmt(s.openalex.citations) : '—',
+                        h: s.openalex && s.openalex.h_index != null ? `${s.openalex.h_index} (i10: ${s.openalex.i10_index ?? '—'})` : '—',
+                        date: (s.openalex && s.openalex.fetched_at || '').slice(0, 10) || '—'
+                    },
+                    {
+                        name: 'BIP! Scholar',
+                        url: s.bip && s.bip.profile_url,
+                        works: s.bip && s.bip.works_count != null ? fmt(s.bip.works_count) : '—',
+                        cits: s.bip && s.bip.citations != null ? fmt(s.bip.citations) : '—',
+                        h: s.bip && s.bip.h_index != null ? `${s.bip.h_index} (${s.bip.popular_works ?? '—'} pop. / ${s.bip.influential_works ?? '—'} inf.)` : '—',
+                        date: (s.bip && s.bip.fetched_at || '').slice(0, 10) || '—'
+                    },
+                    {
+                        name: 'Google Scholar',
+                        url: s.scholar && s.scholar.profile_url,
+                        works: '—',
+                        cits: s.scholar && s.scholar.citations != null ? `${fmt(s.scholar.citations)} (5y: ${fmt(s.scholar.citations_5y)})` : '—',
+                        h: s.scholar && s.scholar.h_index != null ? `${s.scholar.h_index} (i10: ${s.scholar.i10_index ?? '—'})` : '—',
+                        date: (s.scholar && s.scholar.fetched_at || '').slice(0, 10) || '—'
+                    }
+                ];
+
+                return `
+                    <table class="cv-metrics-table">
+                        <thead>
+                            <tr>
+                                <th>${isCs ? 'Databáze' : 'Database'}</th>
+                                <th>${isCs ? 'Výstupy' : 'Works'}</th>
+                                <th>${isCs ? 'Citace' : 'Citations'}</th>
+                                <th>h-index / ${isCs ? 'Indikátory' : 'Indicators'}</th>
+                                <th>${isCs ? 'Stav' : 'Updated'}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${rows.map(r => `
+                                <tr>
+                                    <td>${r.url ? `<a href="${r.url}" target="_blank" rel="noopener"><strong>${r.name}</strong></a>` : `<strong>${r.name}</strong>`}</td>
+                                    <td>${r.works}</td>
+                                    <td>${r.cits}</td>
+                                    <td>${r.h}</td>
+                                    <td>${r.date}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                `;
+            }
+
+            // Function to render a specific chapter type (book, preprint, fairsharing)
+            function getChapterListHTML(recordType) {
+                let items = publicationsData.filter(p => cvRecordType(p) === recordType);
                 const seen = new Set();
-                nonPubs = nonPubs.filter(p => {
+                items = items.filter(p => {
                     const key = p.doi || p.id;
                     if (!key) return true;
                     if (seen.has(key)) return false;
                     seen.add(key);
                     return true;
                 });
+                if (items.length === 0) return '';
 
-                if (nonPubs.length === 0) return '';
+                if (recordType === 'fairsharing') {
+                    let html = `<ul style="padding-left: 20px; margin-bottom: 24px; line-height: 1.6;">`;
+                    items.forEach(p => {
+                        const journalStr = p.journal ? `, <em>${p.journal}</em>` : '';
+                        const linkUrl = p.web || p.github;
+                        const urlStr = linkUrl ? ` (<a href="${linkUrl}" target="_blank" rel="noopener">${linkUrl}</a>)` : '';
+                        html += `
+                            <li style="margin-bottom: 8px; font-size: 0.95rem; color: var(--text-secondary);">
+                                <strong>${p.title}</strong> (${p.year || ''})${journalStr}${urlStr}
+                            </li>
+                        `;
+                    });
+                    html += `</ul>`;
+                    return html;
+                }
 
-                let html = `<ul style="padding-left: 20px; margin-bottom: 24px; line-height: 1.6;">`;
-                nonPubs.forEach(p => {
-                    const journalStr = p.journal ? `, <em>${p.journal}</em>` : '';
-                    const urlStr = p.github ? ` (Link: <a href="${p.github}" target="_blank">${p.github}</a>)` : '';
+                let html = `<ol class="cv-pub-list" style="margin-left: 20px;">`;
+                items.forEach(p => {
                     html += `
-                        <li style="margin-bottom: 8px; font-size: 0.95rem; color: var(--text-secondary);">
-                            <strong>${p.title}</strong> (${p.year})${journalStr}${urlStr}
+                        <li class="cv-pub-item" style="margin-bottom: 10px; line-height: 1.5; padding: 4px 0;">
+                            ${formatACS(p)}
                         </li>
                     `;
                 });
-                html += `</ul>`;
+                html += `</ol>`;
                 return html;
             }
 
@@ -625,15 +712,12 @@
                 return `${authors}.${title}${journalPart}${yearPart}${volPart}${pagesPart}.${doiPart}`;
             }
 
-            // Function to render publications list dynamically as a numbered list
+            // Function to render peer-reviewed journal articles as a numbered list
             function getPublicationsHTML(format) {
-                const lang = getLang();
-                let filtered = [...publicationsData];
+                let filtered = publicationsData.filter(p => cvRecordType(p) === 'article');
                 
-                // Remove duplicates by DOI/ID, and exclude non-publications
                 const seen = new Set();
                 filtered = filtered.filter(p => {
-                    if (!isPublication(p)) return false;
                     const key = p.doi || p.id;
                     if (!key) return true;
                     if (seen.has(key)) return false;
@@ -642,16 +726,13 @@
                 });
 
                 if (format === 'onepage') {
-                    // Up to 5 most recent
-                    filtered.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+                    filtered.sort((a, b) => parseInt(b.year || 0) - parseInt(a.year || 0));
                     filtered = filtered.slice(0, 5);
                 } else if (format === 'twopage') {
-                    // Key/Selected ones from the last 10 years (2016-2026)
                     filtered = filtered.filter(p => {
-                        const yr = parseInt(p.year);
+                        const yr = parseInt(p.year || 0);
                         return yr >= 2016 && yr <= 2026 && p.category && p.category.includes('Selected');
                     });
-                    // Slice to fit 2-pager nicely
                     filtered = filtered.slice(0, 8);
                 }
 
@@ -789,17 +870,24 @@
                                 </div>
                             ` : ''}
 
-                            <div class="cv-section-title">${lang === 'cs' ? 'Vědecké Výstupy' : 'Scientific Outputs'}</div>
+                            <div class="cv-section-title">${lang === 'cs' ? 'Vědecké Výstupy a Bibliometrie' : 'Scientific Outputs & Bibliometrics'}</div>
                             <p><strong>${cvData.summaryStats[lang]}</strong></p>
+                            ${!isOnePage ? getBibliometricsTableHTML() : ''}
 
                             <div class="cv-section-title">
-                                ${isOnePage ? (lang === 'cs' ? 'Nedávné Publikace (Výběr)' : 'Recent Publications (Selection)') : (lang === 'cs' ? 'Vybrané Publikace' : 'Key Publications')}
+                                ${isOnePage ? (lang === 'cs' ? 'Nedávné Publikace (Výběr)' : 'Recent Publications (Selection)') : (currentFormat === 'full' ? (lang === 'cs' ? 'Recenzované Vědecké Články' : 'Peer-Reviewed Journal Articles') : (lang === 'cs' ? 'Vybrané Publikace' : 'Key Publications'))}
                             </div>
                             ${getPublicationsHTML(currentFormat)}
 
                             ${currentFormat === 'full' ? `
-                                <div class="cv-section-title">${lang === 'cs' ? 'Databázové a Softwarové Záznamy' : 'Database & Software Registrations'}</div>
-                                ${getNonPublicationsHTML()}
+                                <div class="cv-section-title">${lang === 'cs' ? 'Knihy a Kapitoly v Knihách' : 'Books & Book Chapters'}</div>
+                                ${getChapterListHTML('book')}
+
+                                <div class="cv-section-title">${lang === 'cs' ? 'Preprinty' : 'Preprints'}</div>
+                                ${getChapterListHTML('preprint')}
+
+                                <div class="cv-section-title">${lang === 'cs' ? 'FAIRsharing a Databázové / Softwarové Záznamy' : 'FAIRsharing & Database / Software Registrations'}</div>
+                                ${getChapterListHTML('fairsharing')}
                             ` : ''}
 
                             ${!isOnePage ? `
@@ -837,12 +925,12 @@
             if (pubListElem) {
                 const pubFilterContainer = document.createElement('div');
                 pubFilterContainer.className = 'cv-year-filter-box';
-                pubFilterContainer.style.cssText = 'margin-bottom: 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: var(--bg-tertiary, #f8fafc); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color, #e2e8f0);';
+                pubFilterContainer.style.cssText = 'margin-bottom: 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: var(--bg-surface-alt); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border-color);';
                 pubFilterContainer.innerHTML = `
                     <label for="cv-pub-year-select" style="font-weight: 600; font-size: 0.9rem; color: var(--text-primary);">
                         ${getLang() === 'cs' ? 'Filtrovat podle roku:' : 'Filter by Year:'}
                     </label>
-                    <select id="cv-pub-year-select" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer;">
+                    <select id="cv-pub-year-select" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text-primary); font-size: 0.9rem; font-weight: 500; cursor: pointer;">
                         <option value="all">${getLang() === 'cs' ? 'Všechny roky' : 'All Years'}</option>
                         ${Array.from(new Set(publicationsData.map(p => p.year).filter(Boolean))).sort().reverse().map(y => `<option value="${y}">${y}</option>`).join('')}
                     </select>

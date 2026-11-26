@@ -1,0 +1,52 @@
+name: Update Bibliometrics & GitHub Metadata
+
+on:
+  schedule:
+    # Run every Monday at 05:00 UTC
+    - cron: '0 5 * * 1'
+  workflow_dispatch:
+    inputs:
+      source:
+        description: 'Source to sync (all, openalex, bip, scholar, scopus, wos, github)'
+        required: false
+        default: 'all'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install certifi
+        run: pip install certifi
+
+      - name: Run modular sync script
+        env:
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          ELSEVIER_API_KEY: ${{ secrets.ELSEVIER_API_KEY }}
+          ELSEVIER_INSTTOKEN: ${{ secrets.ELSEVIER_INSTTOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          SOURCE="${{ github.event.inputs.source || 'all' }}"
+          python scripts/sync_metrics.py --source "$SOURCE"
+
+      - name: Commit updated metrics if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/metrics/ js/metrics.js
+          if git diff --cached --quiet; then
+            echo "No metric changes to commit."
+          else
+            git commit -m "chore: update bibliometrics & GitHub metadata"
+            git push
+          fi

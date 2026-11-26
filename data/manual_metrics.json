@@ -1,0 +1,33 @@
+{
+  "identifiers": {
+    "orcid": "0000-0001-9472-2589",
+    "openalex_author_id": "A5049457524",
+    "google_scholar_id": "398ACWsAAAAJ",
+    "scopus_author_id": "35585258000",
+    "wos_researcher_id": "E-2839-2010",
+    "github_user": "KarelBerka",
+    "min_publication_year": 2004
+  },
+  "wos": {
+    "source": "Web of Science",
+    "profile_url": "https://www.webofscience.com/wos/author/record/E-2839-2010",
+    "works_count": 112,
+    "citations": 5300,
+    "citations_without_self": 5123,
+    "h_index": 36,
+    "as_of": "2026-03-15",
+    "note_en": "Peer-reviewed IF articles (manual snapshot; update here or via WOS_API_KEY)",
+    "note_cs": "Recenzované články s IF (ruční snímek; lze aktualizovat zde nebo přes WOS_API_KEY)"
+  },
+  "scopus": {
+    "source": "Scopus",
+    "profile_url": "https://www.scopus.com/authid/detail.uri?authorId=35585258000",
+    "works_count": null,
+    "citations": null,
+    "cited_by_count": null,
+    "h_index": null,
+    "as_of": null,
+    "note_en": "Requires ELSEVIER_API_KEY (free at dev.elsevier.com) for automatic sync or manual values in data/manual_metrics.json",
+    "note_cs": "Pro automatické načítání vyžaduje ELSEVIER_API_KEY (zdarma na dev.elsevier.com) nebo ruční vyplnění v data/manual_metrics.json"
+  }
+}

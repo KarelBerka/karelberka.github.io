@@ -1,0 +1,15 @@
+{
+  "source": "Scopus",
+  "status": "needs_api_key",
+  "fetched_at": null,
+  "checked_at": "2026-11-26T13:21:53Z",
+  "profile_url": "https://www.scopus.com/authid/detail.uri?authorId=35585258000",
+  "author_id": "35585258000",
+  "works_count": null,
+  "citations": null,
+  "cited_by_count": null,
+  "h_index": null,
+  "note_en": "Requires ELSEVIER_API_KEY (free at dev.elsevier.com) for automatic sync or manual values in data/manual_metrics.json",
+  "note_cs": "Pro automatické načítání vyžaduje ELSEVIER_API_KEY (zdarma na dev.elsevier.com) nebo ruční vyplnění v data/manual_metrics.json",
+  "last_attempt_error": "ELSEVIER_API_KEY not configured"
+}

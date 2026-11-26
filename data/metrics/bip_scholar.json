@@ -1,0 +1,908 @@
+{
+  "source": "BIP! Scholar",
+  "status": "ok",
+  "fetched_at": "2026-11-26T13:21:52Z",
+  "profile_url": "https://bip.imsi.athenarc.gr/scholar/profile/0000-0001-9472-2589",
+  "orcid": "0000-0001-9472-2589",
+  "works_count": 114,
+  "citations": 6306,
+  "h_index": 38,
+  "i10_index": 71,
+  "popular_works": 83,
+  "influential_works": 59,
+  "impulse": 2633,
+  "academic_age": 22,
+  "responsible_academic_age": 21.34,
+  "open_access_papers": 71,
+  "open_access_percentage": 100,
+  "per_doi": {
+    "10.1002/cphc.200800401": {
+      "cc": 4,
+      "cc_3yr": 1,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1002/cphc.201100664": {
+      "cc": 5,
+      "cc_3yr": 0,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1002/jcc.24473": {
+      "cc": 9,
+      "cc_3yr": 4,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C5"
+    },
+    "10.1007/978-1-0716-0270-6_1": {
+      "cc": 6,
+      "cc_3yr": 4,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C5"
+    },
+    "10.1007/978-1-0716-4007-4_12": {
+      "cc": 1,
+      "cc_3yr": 1,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1007/978-1-4939-9161-7_3": {
+      "cc": 4,
+      "cc_3yr": 4,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C5"
+    },
+    "10.1007/978-3-319-47388-8": {
+      "cc": 2,
+      "cc_3yr": 1,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1007/978-3-319-47388-8_3": {
+      "cc": 0,
+      "cc_3yr": 0,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1007/978-3-319-47388-8_6": {
+      "cc": 1,
+      "cc_3yr": 1,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1007/s11103-016-0509-0": {
+      "cc": 58,
+      "cc_3yr": 9,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.bbagen.2017.08.002": {
+      "cc": 12,
+      "cc_3yr": 8,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.bbamem.2012.10.029": {
+      "cc": 6,
+      "cc_3yr": 2,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1016/j.bbamem.2017.07.016": {
+      "cc": 3,
+      "cc_3yr": 2,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1016/j.bbrc.2005.05.017": {
+      "cc": 22,
+      "cc_3yr": 7,
+      "pop_class": "C5",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.bmc.2015.05.031": {
+      "cc": 13,
+      "cc_3yr": 7,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.bmc.2023.117504": {
+      "cc": 6,
+      "cc_3yr": 6,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C5"
+    },
+    "10.1016/j.bmcl.2015.04.030": {
+      "cc": 12,
+      "cc_3yr": 7,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.bpj.2016.11.984": {
+      "cc": 1,
+      "cc_3yr": 1,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1016/j.bpj.2017.11.1912": {
+      "cc": 1,
+      "cc_3yr": 1,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1016/j.bpj.2017.11.307": {
+      "cc": 1,
+      "cc_3yr": 1,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1016/j.bpj.2017.11.308": {
+      "cc": 0,
+      "cc_3yr": 0,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1016/j.carbon.2014.01.008": {
+      "cc": 278,
+      "cc_3yr": 74,
+      "pop_class": "C3",
+      "inf_class": "C3",
+      "imp_class": "C3",
+      "cc_class": "C3"
+    },
+    "10.1016/j.ejmech.2014.03.054": {
+      "cc": 34,
+      "cc_3yr": 8,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.ejmech.2015.12.023": {
+      "cc": 45,
+      "cc_3yr": 23,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.ejmech.2017.01.018": {
+      "cc": 10,
+      "cc_3yr": 5,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.ejmech.2019.06.040": {
+      "cc": 25,
+      "cc_3yr": 9,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.ejmech.2019.111812": {
+      "cc": 22,
+      "cc_3yr": 12,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.ejmech.2022.114831": {
+      "cc": 8,
+      "cc_3yr": 8,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C5"
+    },
+    "10.1016/j.ijpharm.2019.118711": {
+      "cc": 7,
+      "cc_3yr": 3,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1016/j.jinorgbio.2012.02.010": {
+      "cc": 17,
+      "cc_3yr": 12,
+      "pop_class": "C5",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.jinorgbio.2018.03.002": {
+      "cc": 171,
+      "cc_3yr": 57,
+      "pop_class": "C3",
+      "inf_class": "C4",
+      "imp_class": "C3",
+      "cc_class": "C3"
+    },
+    "10.1016/j.jsbmb.2023.106365": {
+      "cc": 1,
+      "cc_3yr": 1,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1016/j.nbt.2016.06.1292": {
+      "cc": 2,
+      "cc_3yr": 2,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1016/j.phrs.2016.06.030": {
+      "cc": 52,
+      "cc_3yr": 20,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.phrs.2018.02.029": {
+      "cc": 20,
+      "cc_3yr": 12,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.steroids.2014.04.007": {
+      "cc": 22,
+      "cc_3yr": 6,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.toxlet.2015.01.013": {
+      "cc": 38,
+      "cc_3yr": 18,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1016/j.toxlet.2016.11.013": {
+      "cc": 41,
+      "cc_3yr": 13,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1021/acs.jcim.6b00353": {
+      "cc": 25,
+      "cc_3yr": 8,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1021/acs.jcim.6c01154": {
+      "cc": 0,
+      "cc_3yr": 0,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1021/acs.jctc.6b00075": {
+      "cc": 51,
+      "cc_3yr": 30,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C3",
+      "cc_class": "C4"
+    },
+    "10.1021/acs.jmedchem.7b01529": {
+      "cc": 40,
+      "cc_3yr": 16,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1021/acs.jpcb.5b05522": {
+      "cc": 46,
+      "cc_3yr": 24,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1021/acs.jpcb.6b10108": {
+      "cc": 27,
+      "cc_3yr": 13,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1021/acs.molpharmaceut.2c01078": {
+      "cc": 17,
+      "cc_3yr": 17,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1021/acs.molpharmaceut.3c00766": {
+      "cc": 6,
+      "cc_3yr": 6,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C5"
+    },
+    "10.1021/acs.molpharmaceut.4c00975": {
+      "cc": 17,
+      "cc_3yr": 17,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1021/ci500645k": {
+      "cc": 29,
+      "cc_3yr": 9,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1021/ct2009208": {
+      "cc": 110,
+      "cc_3yr": 40,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C3",
+      "cc_class": "C3"
+    },
+    "10.1021/ct500419b": {
+      "cc": 82,
+      "cc_3yr": 33,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C3",
+      "cc_class": "C4"
+    },
+    "10.1021/ct800508v": {
+      "cc": 90,
+      "cc_3yr": 33,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C3",
+      "cc_class": "C4"
+    },
+    "10.1021/jm4006884": {
+      "cc": 47,
+      "cc_3yr": 14,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1021/jp204488j": {
+      "cc": 132,
+      "cc_3yr": 39,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C3",
+      "cc_class": "C3"
+    },
+    "10.1021/jp208731g": {
+      "cc": 138,
+      "cc_3yr": 25,
+      "pop_class": "C3",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C3"
+    },
+    "10.1021/jp311802x": {
+      "cc": 52,
+      "cc_3yr": 21,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1021/jp3127829": {
+      "cc": 23,
+      "cc_3yr": 11,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1021/jp4059559": {
+      "cc": 106,
+      "cc_3yr": 29,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C3"
+    },
+    "10.1021/jp4112052": {
+      "cc": 107,
+      "cc_3yr": 37,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C3",
+      "cc_class": "C3"
+    },
+    "10.1021/jp5092366": {
+      "cc": 29,
+      "cc_3yr": 13,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1021/la503289v": {
+      "cc": 28,
+      "cc_3yr": 9,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1038/nmeth.4499": {
+      "cc": 140,
+      "cc_3yr": 80,
+      "pop_class": "C3",
+      "inf_class": "C3",
+      "imp_class": "C3",
+      "cc_class": "C3"
+    },
+    "10.1038/s41467-020-17949-0": {
+      "cc": 92,
+      "cc_3yr": 57,
+      "pop_class": "C3",
+      "inf_class": "C4",
+      "imp_class": "C3",
+      "cc_class": "C4"
+    },
+    "10.1038/s41598-021-91494-8": {
+      "cc": 28,
+      "cc_3yr": 8,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1038/s41598-025-01074-3": {
+      "cc": 3,
+      "cc_3yr": 3,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1039/b805087b": {
+      "cc": 84,
+      "cc_3yr": 6,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1039/c5cc00636h": {
+      "cc": 70,
+      "cc_3yr": 23,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1039/c6ob01479h": {
+      "cc": 27,
+      "cc_3yr": 6,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1039/c7nr07342a": {
+      "cc": 22,
+      "cc_3yr": 11,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1039/d0me00160k": {
+      "cc": 10,
+      "cc_3yr": 4,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1039/d6cp00146g": {
+      "cc": 0,
+      "cc_3yr": 0,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1055/s-0033-1351098": {
+      "cc": 39,
+      "cc_3yr": 12,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1093/bioadv/vbaf231": {
+      "cc": 1,
+      "cc_3yr": 1,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1093/bioinformatics/btab505": {
+      "cc": 6,
+      "cc_3yr": 4,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C5"
+    },
+    "10.1093/bioinformatics/btac384": {
+      "cc": 3,
+      "cc_3yr": 2,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1093/bioinformatics/btaf486": {
+      "cc": 5,
+      "cc_3yr": 5,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C5"
+    },
+    "10.1093/database/baz078": {
+      "cc": 19,
+      "cc_3yr": 4,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1093/europace/euag156": {
+      "cc": 0,
+      "cc_3yr": 0,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1093/nar/gkaa1079": {
+      "cc": 469,
+      "cc_3yr": 225,
+      "pop_class": "C2",
+      "inf_class": "C3",
+      "imp_class": "C2",
+      "cc_class": "C2"
+    },
+    "10.1093/nar/gkaa367": {
+      "cc": 58,
+      "cc_3yr": 23,
+      "pop_class": "C3",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1093/nar/gkab314": {
+      "cc": 1072,
+      "cc_3yr": 675,
+      "pop_class": "C1",
+      "inf_class": "C2",
+      "imp_class": "C1",
+      "cc_class": "C2"
+    },
+    "10.1093/nar/gkab988": {
+      "cc": 75,
+      "cc_3yr": 57,
+      "pop_class": "C3",
+      "inf_class": "C4",
+      "imp_class": "C3",
+      "cc_class": "C4"
+    },
+    "10.1093/nar/gkad1012": {
+      "cc": 17,
+      "cc_3yr": 17,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1093/nar/gkad349": {
+      "cc": 4,
+      "cc_3yr": 4,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C5"
+    },
+    "10.1093/nar/gkad411": {
+      "cc": 2,
+      "cc_3yr": 2,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1093/nar/gkaf401": {
+      "cc": 2,
+      "cc_3yr": 2,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1093/nar/gkag372": {
+      "cc": 0,
+      "cc_3yr": 0,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1093/nar/gkag379": {
+      "cc": 0,
+      "cc_3yr": 0,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1093/nar/gkag511": {
+      "cc": 0,
+      "cc_3yr": 0,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1093/nar/gks363": {
+      "cc": 140,
+      "cc_3yr": 41,
+      "pop_class": "C3",
+      "inf_class": "C4",
+      "imp_class": "C3",
+      "cc_class": "C3"
+    },
+    "10.1093/nar/gkt940": {
+      "cc": 287,
+      "cc_3yr": 106,
+      "pop_class": "C3",
+      "inf_class": "C3",
+      "imp_class": "C2",
+      "cc_class": "C3"
+    },
+    "10.1093/nar/gkv1116": {
+      "cc": 132,
+      "cc_3yr": 36,
+      "pop_class": "C3",
+      "inf_class": "C3",
+      "imp_class": "C3",
+      "cc_class": "C3"
+    },
+    "10.1093/nar/gkx868": {
+      "cc": 30,
+      "cc_3yr": 13,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1093/nar/gky309": {
+      "cc": 330,
+      "cc_3yr": 100,
+      "pop_class": "C2",
+      "inf_class": "C3",
+      "imp_class": "C3",
+      "cc_class": "C3"
+    },
+    "10.1093/nar/gkz853": {
+      "cc": 114,
+      "cc_3yr": 66,
+      "pop_class": "C2",
+      "inf_class": "C3",
+      "imp_class": "C3",
+      "cc_class": "C3"
+    },
+    "10.1107/s2059798320014515": {
+      "cc": 5,
+      "cc_3yr": 3,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1111/cbdd.12618": {
+      "cc": 17,
+      "cc_3yr": 5,
+      "pop_class": "C4",
+      "inf_class": "C5",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1111/febs.16270": {
+      "cc": 12,
+      "cc_3yr": 9,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1111/j.1471-4159.2004.02758.x": {
+      "cc": 32,
+      "cc_3yr": 12,
+      "pop_class": "C5",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1111/j.1471-4159.2004.02965.x": {
+      "cc": 1,
+      "cc_3yr": 0,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1124/dmd.115.068569": {
+      "cc": 41,
+      "cc_3yr": 21,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.1135/cccc20080921": {
+      "cc": 3,
+      "cc_3yr": 1,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1135/cccc20081261": {
+      "cc": 156,
+      "cc_3yr": 29,
+      "pop_class": "C3",
+      "inf_class": "C3",
+      "imp_class": "C4",
+      "cc_class": "C3"
+    },
+    "10.1186/1758-2946-5-39": {
+      "cc": 295,
+      "cc_3yr": 64,
+      "pop_class": "C3",
+      "inf_class": "C3",
+      "imp_class": "C3",
+      "cc_class": "C3"
+    },
+    "10.1186/s12859-014-0379-x": {
+      "cc": 113,
+      "cc_3yr": 15,
+      "pop_class": "C3",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C3"
+    },
+    "10.1186/s13321-021-00528-w": {
+      "cc": 5,
+      "cc_3yr": 3,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1186/s13321-025-01082-5": {
+      "cc": 1,
+      "cc_3yr": 1,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.1186/s13321-026-01208-3": {
+      "cc": 0,
+      "cc_3yr": 0,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.12688/f1000research.74502.1": {
+      "cc": 10,
+      "cc_3yr": 5,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.2174/138920012798918372": {
+      "cc": 61,
+      "cc_3yr": 25,
+      "pop_class": "C4",
+      "inf_class": "C4",
+      "imp_class": "C4",
+      "cc_class": "C4"
+    },
+    "10.26434/chemrxiv.15001700/v1": {
+      "cc": 0,
+      "cc_3yr": 0,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    },
+    "10.64898/2026.06.28.735151": {
+      "cc": 0,
+      "cc_3yr": 0,
+      "pop_class": "C5",
+      "inf_class": "C5",
+      "imp_class": "C5",
+      "cc_class": "C5"
+    }
+  }
+}
